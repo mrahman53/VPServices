@@ -41,14 +41,14 @@ public class ConnectDB {
 
     public MongoDatabase connectMongoClientDB(){
         MongoClient mongoClient = new MongoClient();
-        mongoDatabase = mongoClient.getDatabase("test");
+        mongoDatabase = mongoClient.getDatabase("vp_profile");
         System.out.println("Database Connected");
 
         return mongoDatabase;
     }
     public MongoDatabase connectDBClient(){
         MongoClient mongoClient = new MongoClient();
-        mongoDatabase = mongoClient.getDatabase("test");
+        mongoDatabase = mongoClient.getDatabase("vp_profile");
         System.out.println("Database Connected");
 
         return mongoDatabase;
