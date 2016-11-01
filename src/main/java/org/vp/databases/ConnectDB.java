@@ -48,7 +48,7 @@ public class ConnectDB {
     }
     public MongoDatabase connectDBClient(){
         MongoClient mongoClient = new MongoClient();
-        mongoDatabase = mongoClient.getDatabase("vp_profile");
+        mongoDatabase = mongoClient.getDatabase("test");
         System.out.println("Database Connected");
 
         return mongoDatabase;

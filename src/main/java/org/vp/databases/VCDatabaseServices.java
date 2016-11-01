@@ -32,7 +32,7 @@ public class VCDatabaseServices {
         String st = profile.getVcInfo().getVcName()+" "+ "is Inserted";
         mongoDatabase1 = connectDB1.connectMongoClientDB();
 //        MongoCollection mongoCollection = mongoDatabase1.getCollection("vc");
-        MongoCollection mongoCollection = mongoDatabase1.getCollection("vc");
+        MongoCollection mongoCollection = mongoDatabase1.getCollection("demo");
         Document vcInfoDocument = documentVCInfoDataDelta(profile);
         Document socialDataDocument = documentVCSocialData(profile);
         List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
@@ -174,7 +174,7 @@ public class VCDatabaseServices {
     public List<VCProfile> queryListOfCompany(){
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         mongoDatabase = connectDB.connectMongoClientDB();
-        MongoCollection<Document> coll = mongoDatabase.getCollection("vc");
+        MongoCollection<Document> coll = mongoDatabase.getCollection("demo");
         BasicDBObject basicDBObject = new BasicDBObject();
         FindIterable<Document> iterable = coll.find();
         iterable.forEach(new Block<Document>() {
@@ -228,7 +228,7 @@ public class VCDatabaseServices {
     public List<VCProfile> queryListOfCompany(String vcId){
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         mongoDatabase = connectDB.connectMongoClientDB();
-        MongoCollection<Document> coll = mongoDatabase.getCollection("vc");
+        MongoCollection<Document> coll = mongoDatabase.getCollection("demo");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("vcInfo.vcName", vcId);
         FindIterable<Document> iterable = coll.find(basicDBObject);
