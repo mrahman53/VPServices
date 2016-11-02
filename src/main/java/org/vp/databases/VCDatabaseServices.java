@@ -30,8 +30,7 @@ public class VCDatabaseServices {
         MongoDatabase mongoDatabase1 = null;
         ConnectDB connectDB1 = new ConnectDB();
         String st = profile.getVcInfo().getVcName()+" "+ "is Inserted";
-        mongoDatabase1 = connectDB1.connectMongoClientDB();
-//        MongoCollection mongoCollection = mongoDatabase1.getCollection("vc");
+        mongoDatabase1 = connectDB1.connectDBClient();
         MongoCollection mongoCollection = mongoDatabase1.getCollection("demo");
         Document vcInfoDocument = documentVCInfoDataDelta(profile);
         Document socialDataDocument = documentVCSocialData(profile);
@@ -49,7 +48,7 @@ public class VCDatabaseServices {
         MongoDatabase mongoDatabase1 = null;
         ConnectDB connectDB1 = new ConnectDB();
         String st = profile.getVcInfo().getVcName()+" "+ "is Inserted";
-        mongoDatabase1 = connectDB1.connectMongoClientDB();
+        mongoDatabase1 = connectDB1.connectDBClient();
         MongoCollection mongoCollection = mongoDatabase1.getCollection("vc");
         Document vcInfoDocument = documentVCInfoDataDelta(profile);
         Document socialDataDocument = documentVCSocialData(profile);
@@ -116,7 +115,7 @@ public class VCDatabaseServices {
         Map<Integer, Document> sData = new LinkedHashMap<>();
         Map<Integer, Object> pData = new LinkedHashMap<>();
         Map<Integer, Object> data = new LinkedHashMap<>();
-        mongoDatabase = connectDB.connectMongoClientDB();
+        mongoDatabase = connectDB.connectDBClient();
         MongoCollection<Document> coll = mongoDatabase.getCollection("vp");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("vcInfo.vcName", vcId);
@@ -173,7 +172,7 @@ public class VCDatabaseServices {
 
     public List<VCProfile> queryListOfCompany(){
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
-        mongoDatabase = connectDB.connectMongoClientDB();
+        mongoDatabase = connectDB.connectDBClient();
         MongoCollection<Document> coll = mongoDatabase.getCollection("demo");
         BasicDBObject basicDBObject = new BasicDBObject();
         FindIterable<Document> iterable = coll.find();
@@ -227,7 +226,7 @@ public class VCDatabaseServices {
 
     public List<VCProfile> queryListOfCompany(String vcId){
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
-        mongoDatabase = connectDB.connectMongoClientDB();
+        mongoDatabase = connectDB.connectDBClient();
         MongoCollection<Document> coll = mongoDatabase.getCollection("demo");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("vcInfo.vcName", vcId);

@@ -17,7 +17,7 @@ public class UserDatabaseServices {
 
     public String adminRegistration(User user){
         String profile = user.getName();
-        mongoDatabase = connectDB.connectMongoClientDB();
+        mongoDatabase = connectDB.connectDBClient();
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         Document document = new Document().append("name",user.getName()).append("email",
                 user.getEmail()).append("password", user.getPassword()).append("phoneNumber",
@@ -27,7 +27,7 @@ public class UserDatabaseServices {
     }
     public String updateAdminUserProfile(User user){
         String profile = user.getName();
-        mongoDatabase = connectDB.connectMongoClientDB();
+        mongoDatabase = connectDB.connectDBClient();
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         Document document = new Document().append("name",user.getName()).append("email",
                 user.getEmail()).append("password", user.getPassword()).append("phoneNumber",

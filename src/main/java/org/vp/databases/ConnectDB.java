@@ -38,14 +38,6 @@ public class ConnectDB {
 
         return mongoDatabase;
     }
-
-    public MongoDatabase connectMongoClientDB(){
-        MongoClient mongoClient = new MongoClient();
-        mongoDatabase = mongoClient.getDatabase("vp_profile");
-        System.out.println("Database Connected");
-
-        return mongoDatabase;
-    }
     public MongoDatabase connectDBClient(){
         MongoClient mongoClient = new MongoClient();
         mongoDatabase = mongoClient.getDatabase("test");
@@ -78,7 +70,7 @@ public class ConnectDB {
 
     }
     public Map<String,String> queryData(){
-        mongoDatabase = connectMongoClientDB();
+        mongoDatabase = connectDBClient();
         MongoCollection coll = mongoDatabase.getCollection("startup");
         FindIterable<Document> iterable = coll.find();
 
@@ -93,7 +85,7 @@ public class ConnectDB {
       return list;
     }
     public List<Document> queryDataList(){
-        mongoDatabase = connectMongoClientDB();
+        mongoDatabase = connectDBClient();
         MongoCollection coll = mongoDatabase.getCollection("startup");
         FindIterable<Document> iterable = coll.find();
 
@@ -108,7 +100,7 @@ public class ConnectDB {
         return docList;
     }
     public List<Document> queryDocumentList(){
-        mongoDatabase = connectMongoClientDB();
+        mongoDatabase = connectDBClient();
         MongoCollection coll = mongoDatabase.getCollection("startup");
         List<Document> list = (List<Document>)coll.find().into(new ArrayList<Document>());
         for(Document doc:list){
@@ -118,7 +110,7 @@ public class ConnectDB {
         return documentList;
     }
     public List<Object> queryOneCompany(String companyId){
-        mongoDatabase = connectMongoClientDB();
+        mongoDatabase = connectDBClient();
         MongoCollection coll = mongoDatabase.getCollection("startup");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("name", companyId);
