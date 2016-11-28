@@ -30,8 +30,8 @@ public class VCDatabaseServices {
         MongoDatabase mongoDatabase1 = null;
         ConnectDB connectDB1 = new ConnectDB();
         String st = profile.getVcInfo().getVcName()+" "+ "is Inserted";
-        mongoDatabase1 = connectDB1.connectDBClient();
-        MongoCollection mongoCollection = mongoDatabase1.getCollection("demo");
+        mongoDatabase1 = ConnectDB.connectAtlasMongoClientDB();
+        MongoCollection mongoCollection = mongoDatabase1.getCollection("profile");
         Document vcInfoDocument = documentVCInfoDataDelta(profile);
         Document socialDataDocument = documentVCSocialData(profile);
         List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
@@ -48,7 +48,7 @@ public class VCDatabaseServices {
         MongoDatabase mongoDatabase1 = null;
         ConnectDB connectDB1 = new ConnectDB();
         String st = profile.getVcInfo().getVcName()+" "+ "is Inserted";
-        mongoDatabase1 = connectDB1.connectDBClient();
+        mongoDatabase1 = connectDB1.connectLocalMongoDBClient();
         MongoCollection mongoCollection = mongoDatabase1.getCollection("vc");
         Document vcInfoDocument = documentVCInfoDataDelta(profile);
         Document socialDataDocument = documentVCSocialData(profile);
@@ -115,7 +115,7 @@ public class VCDatabaseServices {
         Map<Integer, Document> sData = new LinkedHashMap<>();
         Map<Integer, Object> pData = new LinkedHashMap<>();
         Map<Integer, Object> data = new LinkedHashMap<>();
-        mongoDatabase = connectDB.connectDBClient();
+        mongoDatabase = connectDB.connectLocalMongoDBClient();
         MongoCollection<Document> coll = mongoDatabase.getCollection("vp");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("vcInfo.vcName", vcId);
@@ -172,8 +172,8 @@ public class VCDatabaseServices {
 
     public List<VCProfile> queryListOfCompany(){
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
-        mongoDatabase = connectDB.connectDBClient();
-        MongoCollection<Document> coll = mongoDatabase.getCollection("demo");
+        mongoDatabase = connectDB.connectWithSSLToAtlas();
+        MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
         BasicDBObject basicDBObject = new BasicDBObject();
         FindIterable<Document> iterable = coll.find();
         iterable.forEach(new Block<Document>() {
@@ -181,13 +181,14 @@ public class VCDatabaseServices {
             public void apply(final Document document) {
 
                 Document vcInfoDocument = (Document) document.get("vcInfo");
+                Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
                 Document socialDataDocument = (Document)document.get("socialData");
                 List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
 
                 String vcName = (String)vcInfoDocument.get("vcName");
                 String vcType = (String)vcInfoDocument.get("vcType");
-                String vcLocationCity = (String)vcInfoDocument.get("city");
-                String vcLocationState = (String)vcInfoDocument.get("state");
+                String vcLocationCity = (String)vcLocationDocument.get("city");
+                String vcLocationState = (String)vcLocationDocument.get("state");
                 Location vcLocation = new Location(vcLocationCity, vcLocationState);
                 String numberOfDeals = (String)vcInfoDocument.get("numberOfDeals");
                 String vcUrl = (String)vcInfoDocument.get("vcUrl");
@@ -226,8 +227,8 @@ public class VCDatabaseServices {
 
     public List<VCProfile> queryListOfCompany(String vcId){
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
-        mongoDatabase = connectDB.connectDBClient();
-        MongoCollection<Document> coll = mongoDatabase.getCollection("demo");
+        mongoDatabase = connectDB.connectWithSSLToAtlas();
+        MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("vcInfo.vcName", vcId);
         FindIterable<Document> iterable = coll.find(basicDBObject);
@@ -279,13 +280,4 @@ public class VCDatabaseServices {
 
         return vcList;
     }
-        /*
-    public static Document documentVCFundingHistoryData(VCProfile profile){
-        Document document = new Document().append(vcFields.fundingDate, profile.getFundingHistory().get(1).getFundingDate()).append(
-                vcFields.companyName, fundingHistory.getCompanyName()).append(vcFields.fundingAmount,
-                fundingHistory.getFundingAmount()).append(vcFields.fundingRound, fundingHistory.getFundingRound())
-                .append(vcFields.categories, fundingHistory.getCategories());
-
-        return document;
-    }  */
 }

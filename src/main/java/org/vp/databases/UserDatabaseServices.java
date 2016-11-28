@@ -17,7 +17,7 @@ public class UserDatabaseServices {
 
     public String adminRegistration(User user){
         String profile = user.getName();
-        mongoDatabase = connectDB.connectDBClient();
+        mongoDatabase = connectDB.connectLocalMongoDBClient();
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         Document document = new Document().append("name",user.getName()).append("email",
                 user.getEmail()).append("password", user.getPassword()).append("phoneNumber",
@@ -27,7 +27,7 @@ public class UserDatabaseServices {
     }
     public String updateAdminUserProfile(User user){
         String profile = user.getName();
-        mongoDatabase = connectDB.connectDBClient();
+        mongoDatabase = connectDB.connectLocalMongoDBClient();
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         Document document = new Document().append("name",user.getName()).append("email",
                 user.getEmail()).append("password", user.getPassword()).append("phoneNumber",
@@ -38,7 +38,7 @@ public class UserDatabaseServices {
     }
     public User login(String email){
         User user = new User();
-        mongoDatabase = connectDB.connectDBClient();
+        mongoDatabase = connectDB.connectLocalMongoDBClient();
         BasicDBObject basicDBObject = new BasicDBObject().append("email", email);
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         FindIterable<Document> iterable = collection.find(basicDBObject);

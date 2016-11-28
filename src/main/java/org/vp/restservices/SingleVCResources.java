@@ -23,10 +23,8 @@ public class SingleVCResources {
     @Produces(MediaType.APPLICATION_JSON)
     public List<VCProfile> getACompany(@PathParam("vcId") String vcId){
 
-        //return ConnectDB.queryOneCompanyObject(companyId);
-        // return cps.getCompanyProfile(companyId);
         System.out.println("GET Request has come to get "+vcId+" profile");
-//        return vcDatabaseServices.findOneVCProfile(vcId);
+        //return vcDatabaseServices.findOneVCProfile(vcId);
         return vcDatabaseServices.queryListOfCompany(vcId);
     }
 

@@ -1,13 +1,11 @@
 package org.vp.databases;
 
 import com.mongodb.BasicDBObject;
-import com.mongodb.Block;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.vp.authentication.LoginUser;
-import org.vp.authentication.User;
 
 
 /**
@@ -19,7 +17,7 @@ public class LoginDatabaseServices {
 
     public String adminRegistration(LoginUser user){
         String profile = user.getUsername();
-        mongoDatabase = connectDB.connectMongoClientDB();
+        mongoDatabase = connectDB.connectLocalMongoDBClient();
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         Document document = new Document().append("username",user.getUsername()).append("password", user.getPassword());
         collection.insertOne(document);
@@ -27,7 +25,7 @@ public class LoginDatabaseServices {
     }
     public String updateAdminUserProfile(LoginUser user){
         String profile = user.getUsername();
-        mongoDatabase = connectDB.connectMongoClientDB();
+        mongoDatabase = connectDB.connectLocalMongoDBClient();
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         Document document = new Document().append("username",user.getUsername()).append("password", user.getPassword());
 
@@ -35,7 +33,7 @@ public class LoginDatabaseServices {
     }
     public LoginUser register(String username){
         LoginUser user = new LoginUser();
-        mongoDatabase = connectDB.connectDBClient();
+        mongoDatabase = connectDB.connectLocalMongoDBClient();
         BasicDBObject basicDBObject = new BasicDBObject().append("username", username);
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         FindIterable<Document> iterable = collection.find(basicDBObject);
@@ -53,7 +51,7 @@ public class LoginDatabaseServices {
     }
     public LoginUser login(String username){
         LoginUser user = new LoginUser();
-        mongoDatabase = connectDB.connectDBClient();
+        mongoDatabase = connectDB.connectLocalMongoDBClient();
         //BasicDBObject basicDBObject = new BasicDBObject().append("username", username);
         MongoCollection<Document> collection = mongoDatabase.getCollection("login");
         BasicDBObject basicDBObject = new BasicDBObject();
@@ -74,7 +72,7 @@ public class LoginDatabaseServices {
     }
     public boolean loginVerify(String username, String password){
         LoginUser user = new LoginUser();
-        mongoDatabase = connectDB.connectDBClient();
+        mongoDatabase = connectDB.connectLocalMongoDBClient();
         //BasicDBObject basicDBObject = new BasicDBObject().append("username", username);
         MongoCollection<Document> collection = mongoDatabase.getCollection("login");
         BasicDBObject basicDBObject = new BasicDBObject();
@@ -100,7 +98,7 @@ public class LoginDatabaseServices {
     }
     public boolean loginVerify(String username){
         LoginUser user = new LoginUser();
-        mongoDatabase = connectDB.connectDBClient();
+        mongoDatabase = connectDB.connectLocalMongoDBClient();
         //BasicDBObject basicDBObject = new BasicDBObject().append("username", username);
         MongoCollection<Document> collection = mongoDatabase.getCollection("login");
         BasicDBObject basicDBObject = new BasicDBObject();

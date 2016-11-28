@@ -26,7 +26,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="vp-restful-services" target="1.7" />
+      <module name="vp-restful-services" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
