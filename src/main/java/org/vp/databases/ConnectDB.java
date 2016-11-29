@@ -35,78 +35,6 @@ public class ConnectDB {
     public static List<Document> documentList = new ArrayList<>();
     public static List<Object> dbObjectList = new ArrayList<>();
 
-    private static SocketFactory _sf = null;
-
-
-    /*
-    public static void main(String[] args) {
-
-        List<VCProfile> list = vc.queryListOfCompany("Look");
-        //connectMLabMongoDB();
-
-        try {
-            SSLContext context = SSLContext.getInstance("TLS");
-            context.init(null, trustAllCerts, null);
-            _sf = context.getSocketFactory();
-        } catch (GeneralSecurityException e) {
-            System.out.println(e.getStackTrace());
-        }
-        MongoClientOptions o = new MongoClientOptions.Builder().socketFactory(_sf).build();
-        MongoClient m = new MongoClient("mongodb://vpcluster0:vpdatahosting0@cluster0-shard-00-00-b2mbe.mongodb.net:27017,cluster0-shard-00-01- b2mbe.mongodb.net:27017,cluster0-shard-00-02-b2mbe.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin", o);
-        MongoDatabase db = m.getDatabase("devVcProfile");
-
-     MongoClientOptions options = new MongoClientOptions.Builder().socketFactory(_sf).build();
-     MongoClientURI uri = new MongoClientURI("mongodb://vpcluster0:PASSWORD@cluster0-shard-00-00-b2mbe.mongodb.net:27017,cluster0-shard-00-01-b2mbe.mongodb.net:27017,cluster0-shard-00-02-b2mbe.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin");
-     MongoClient client = new MongoClient(uri, options);
-     MongoDatabase db = client.getDatabase("devVcProfile");
-    }   */
-
-    public MongoDatabase connectWithSSLToAtlas() {
-        try {
-            SSLContext context = SSLContext.getInstance("TLS");
-            context.init(null, trustAllCerts, null);
-            _sf = context.getSocketFactory();
-
-        } catch (GeneralSecurityException e) {
-            System.out.println(e.getStackTrace());
-        }
-        String userName = "vpcluster0";
-        String authDB = "admin";
-        char[] password = new char[]{'v', 'p', 'd', 'a', 't', 'a', 'h', 'o', 's', 't', 'i', 'n', 'g', '0'};
-        MongoCredential credential = MongoCredential.createCredential(userName, authDB, password);
-
-        MongoClientOptions.Builder optionBuilder = new MongoClientOptions.Builder();
-        optionBuilder.sslEnabled(true);
-        optionBuilder.socketFactory(_sf);
-        MongoClientOptions options = optionBuilder.build();
-
-        mongoClient = new MongoClient(
-                Arrays.asList(
-                        new ServerAddress("cluster0-shard-00-00-b2mbe.mongodb.net", 27017),
-                        new ServerAddress("cluster0-shard-00-01-b2mbe.mongodb.net", 27017),
-                        new ServerAddress("cluster0-shard-00-02-b2mbe.mongodb.net", 27017)
-                ),
-                Arrays.asList(credential), options);
-        mongoDatabase = mongoClient.getDatabase("devVcProfile");
-
-        return mongoDatabase;
-    }
-
-
-    private static TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
-        public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-            return null;
-        }
-
-        public void checkClientTrusted(X509Certificate[] certs, String authType) {
-
-        }
-
-        public void checkServerTrusted(X509Certificate[] certs, String authType) {
-
-        }
-    }};
-
 
     public static MongoDatabase connectMLabVpDatabase1MongoDB() {
 
@@ -116,31 +44,6 @@ public class ConnectDB {
         System.out.println("MongoDB Remote Connection Eastablished");
         mongoDatabase = mongoClient.getDatabase("vpdatabase1");
         System.out.println("Database Connected");
-
-        return mongoDatabase;
-    }
-
-    public static MongoDatabase connectAtlasMongoClientDB() {
-        try {
-            SSLContext context = SSLContext.getInstance("TLS");
-            context.init(null, trustAllCerts, null);
-            _sf = context.getSocketFactory();
-        } catch (GeneralSecurityException e) {
-            System.out.println(e.getStackTrace());
-        }
-        mongoClientOptions = new MongoClientOptions.Builder().socketFactory(_sf).build();
-        mongoClientURI = new MongoClientURI("mongodb://vpcluster0:vpdatahosting0@cluster0-shard-00-00-b2mbe.mongodb.net:27017,cluster0-shard-00-01-b2mbe.mongodb.net:27017,cluster0-shard-00-02-b2mbe.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin");//,cluster0-shard-00-01-b2mbe.mongodb.net:27017,cluster0-shard-00-02-b2mbe.mongodb.net:27017
-        mongoClient = new MongoClient("mongodb://vpcluster0:vpdatahosting0@cluster0-shard-00-00-b2mbe.mongodb.net:27017,cluster0-shard-00-01-b2mbe.mongodb.net:27017,cluster0-shard-00-02-b2mbe.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin", mongoClientOptions);
-
-        String host = "mongodb://vpcluster0:vpdatahosting0@cluster0-shard-00-00-b2mbe.mongodb.net:27017,cluster0-shard-00-01-b2mbe.mongodb.net:27017,cluster0-shard-00-02-b2mbe.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin";
-        //MongoClient mongoClient = new MongoClient(new ServerAddress(host, 27017), Arrays.asList(credential));
-
-        MongoClientURI mongoClientURI = new MongoClientURI(host);
-        //MongoClientOptions options = MongoClientOptions.builder().sslEnabled(true).build();
-        mongoClient = new MongoClient(mongoClientURI);
-        System.out.println("Atlas Client Connection Eastablished");
-        mongoDatabase = mongoClient.getDatabase("devVcProfile");
-        System.out.println("Atlas Database is Connected");
 
         return mongoDatabase;
     }

@@ -30,7 +30,7 @@ public class VCDatabaseServices {
         MongoDatabase mongoDatabase1 = null;
         ConnectDB connectDB1 = new ConnectDB();
         String st = profile.getVcInfo().getVcName()+" "+ "is Inserted";
-        mongoDatabase1 = ConnectDB.connectAtlasMongoClientDB();
+        mongoDatabase1 = ConnectDB.connectMLabVpDatabase1MongoDB();
         MongoCollection mongoCollection = mongoDatabase1.getCollection("profile");
         Document vcInfoDocument = documentVCInfoDataDelta(profile);
         Document socialDataDocument = documentVCSocialData(profile);
@@ -172,7 +172,7 @@ public class VCDatabaseServices {
 
     public List<VCProfile> queryListOfCompany(){
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
-        mongoDatabase = connectDB.connectWithSSLToAtlas();
+        mongoDatabase = connectDB.connectMLabVpDatabase1MongoDB();
         MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
         BasicDBObject basicDBObject = new BasicDBObject();
         FindIterable<Document> iterable = coll.find();
@@ -227,7 +227,7 @@ public class VCDatabaseServices {
 
     public List<VCProfile> queryListOfCompany(String vcId){
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
-        mongoDatabase = connectDB.connectWithSSLToAtlas();
+        mongoDatabase = connectDB.connectMLabVpDatabase1MongoDB();
         MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("vcInfo.vcName", vcId);
