@@ -1,9 +1,7 @@
 package org.vp.restservices;
 
-import org.vp.authentication.LoginUser;
-import org.vp.authentication.LoginUserProfile;
-import org.vp.authentication.User;
-import org.vp.authentication.UserProfile;
+import org.vp.authentication.AdminUserProfile;
+import org.vp.authentication.AdminUserOperation;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -17,19 +15,19 @@ import javax.ws.rs.core.MediaType;
 //@Produces(MediaType.APPLICATION_JSON)
 public class LoginAuth {
 
-        LoginUserProfile loginUserProfile = new LoginUserProfile();
+        AdminUserOperation adminUserOperation = new AdminUserOperation();
 
         @POST
         @Consumes(MediaType.APPLICATION_JSON)
         @Produces(MediaType.APPLICATION_JSON)
-        public boolean postIt(LoginUser user) {
-            return loginUserProfile.verifyUser(user);
+        public boolean postIt(AdminUserProfile user) {
+            return adminUserOperation.verifyUser(user);
         }
         @PUT
         @Consumes(MediaType.APPLICATION_JSON)
         @Produces(MediaType.APPLICATION_JSON)
-        public String updateProfile(LoginUser user) {
-            return loginUserProfile.updateUserProfileSetting(user);
+        public String updateProfile(AdminUserProfile user) {
+            return adminUserOperation.updateUserProfileSetting(user);
         }
 
        /*
@@ -37,9 +35,9 @@ public class LoginAuth {
         //@Path("/{profileId}")
         @Consumes(MediaType.APPLICATION_JSON)
         @Produces(MediaType.APPLICATION_JSON)
-        public boolean loginProfile(@PathParam("profileId")LoginUser profileId){
-            //return loginUserProfile.getUserProfile(profileId);
-            return loginUserProfile.verifyUser(profileId);
+        public boolean loginProfile(@PathParam("profileId")AdminUserProfile profileId){
+            //return adminUserOperation.getUserProfile(profileId);
+            return adminUserOperation.verifyUser(profileId);
         }  */
 
 }
