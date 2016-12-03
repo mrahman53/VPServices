@@ -60,6 +60,15 @@
             <!-- artifactId>jersey-container-servlet</artifactId -->
         </dependency>
         <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-grizzly2-http</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.ext</groupId>
+            <artifactId>jersey-bean-validation</artifactId>
+            <version>2.0-m12</version>
+        </dependency>
+        <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-moxy</artifactId>
         </dependency>
@@ -98,11 +107,11 @@
             <artifactId>jersey-media-multipart</artifactId>
             <version>2.22.1</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.thetransactioncompany</groupId>-->
-            <!--<artifactId>cors-filter</artifactId>-->
-            <!--<version>2.5</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.thetransactioncompany</groupId>
+            <artifactId>cors-filter</artifactId>
+            <version>2.5</version>
+        </dependency>
 
     </dependencies>
 
