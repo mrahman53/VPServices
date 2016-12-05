@@ -8,6 +8,9 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.vp.vc.profile.*;
 
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -170,9 +173,9 @@ public class VCDatabaseServices {
         return vcProfile;
     }
 
-    public List<VCProfile> queryListOfCompany(){
+    public List<VCProfile> queryListOfCompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
-        mongoDatabase = connectDB.connectWithSSLToAtlas();
+        mongoDatabase = connectDB.connectRecommendedSSLAtlas();
         MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
         BasicDBObject basicDBObject = new BasicDBObject();
         FindIterable<Document> iterable = coll.find();
@@ -225,9 +228,9 @@ public class VCDatabaseServices {
         return vcList;
     }
 
-    public List<VCProfile> queryListOfCompany(String vcId){
+    public List<VCProfile> queryListOfCompany(String vcId) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
-        mongoDatabase = connectDB.connectWithSSLToAtlas();
+        mongoDatabase = connectDB.connectRecommendedSSLAtlas();
         MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("vcInfo.vcName", vcId);

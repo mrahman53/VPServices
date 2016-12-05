@@ -9,13 +9,16 @@ import org.vp.vc.profile.VCProfile;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
  * Created by mrahman on 7/17/16.
  */
 
-@Path("SingleVcResources")
+@Path("/SingleVcResources")
 public class SingleVCResources {
 
     VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
@@ -23,9 +26,9 @@ public class SingleVCResources {
     @GET
     @Path("/{vcId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<VCProfile> getACompany(@PathParam("vcId") String vcId){
-        final ResourceConfig rc = new ResourceConfig().packages("org.vp");
-        rc.register(CORSResponseFilter.class);
+    public List<VCProfile> getACompany(@PathParam("vcId") String vcId)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+//        final ResourceConfig rc = new ResourceConfig().packages("org.vp");
+//        rc.register(CORSResponseFilter.class);
         System.out.println("GET Request has come to get "+vcId+" profile");
         //return vcDatabaseServices.findOneVCProfile(vcId);
         return vcDatabaseServices.queryListOfCompany(vcId);

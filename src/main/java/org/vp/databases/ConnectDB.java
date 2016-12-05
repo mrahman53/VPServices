@@ -11,10 +11,8 @@ import com.mongodb.MongoClientOptions;
 import org.vp.vc.profile.VCProfile;
 import javax.net.*;
 import javax.net.SocketFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
-import java.security.GeneralSecurityException;
+import javax.net.ssl.*;
+import java.security.*;
 import java.security.cert.X509Certificate;
 import java.util.*;
 
@@ -60,6 +58,38 @@ public class ConnectDB {
      MongoClient client = new MongoClient(uri, options);
      MongoDatabase db = client.getDatabase("devVcProfile");
     }   */
+
+    public MongoDatabase connectRecommendedSSLAtlas() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+
+
+        final TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+        trustManagerFactory.init((KeyStore) null);
+        final TrustManager defaultTm = Arrays.stream(trustManagerFactory.getTrustManagers())
+                .filter(tm -> tm instanceof X509TrustManager)
+                .findFirst()
+                .get();
+        final SSLContext context = SSLContext.getInstance("TLS");
+        context.init(new KeyManager[0], new TrustManager[]{defaultTm}, null);
+
+        String userName = "vpcluster0";
+        String authDB = "admin";
+        char[] password = new char[]{'v', 'p', 'd', 'a', 't', 'a', 'h', 'o', 's', 't', 'i', 'n', 'g', '0'};
+        MongoCredential credential = MongoCredential.createCredential(userName, authDB, password);
+
+        MongoClientOptions.Builder optionBuilder = new MongoClientOptions.Builder();
+        optionBuilder.sslEnabled(true);
+        optionBuilder.socketFactory(context.getSocketFactory());
+        MongoClientOptions options = optionBuilder.build();
+
+        mongoClient = new MongoClient(Arrays.asList(
+                        new ServerAddress("cluster0-shard-00-00-b2mbe.mongodb.net", 27017),
+                        new ServerAddress("cluster0-shard-00-01-b2mbe.mongodb.net", 27017),
+                        new ServerAddress("cluster0-shard-00-02-b2mbe.mongodb.net", 27017)
+                ),
+                Arrays.asList(credential), options);
+        mongoDatabase = mongoClient.getDatabase("devVcProfile");
+        return mongoDatabase;
+    }
 
     public MongoDatabase connectWithSSLToAtlas() {
         try {
@@ -251,7 +281,7 @@ public class ConnectDB {
         return dbObjectList;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException  {
         List<VCProfile> list = vc.queryListOfCompany("bonsai");
     }
 
