@@ -3,9 +3,6 @@ package org.vp.restservices;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
 import  org.vp.databases.VCDatabaseServices;
-import org.vp.filter.CORSFilter;
-import org.vp.filter.CORSResponseFilter;
-import org.vp.filter.MyAppConfig;
 import  org.vp.vc.profile.VCProfile;
 
 import javax.ws.rs.*;
@@ -19,7 +16,7 @@ import java.util.List;
  * Created by mrahman on 9/15/16.
  */
 
-@Path("/AllVcResources")
+@Path("AllVcResources")
 public class AllVcResources {
 
     VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
@@ -27,15 +24,6 @@ public class AllVcResources {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<VCProfile> getACompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-
-      // final ResourceConfig resourceConfig = new ResourceConfig().packages("org.vp");
-//        resourceConfig.register(org.glassfish.jersey.server.filter.UriConnegFilter.class);
-//        resourceConfig.register(org.glassfish.jersey.server.validation.ValidationFeature.class);
-//        //resourceConfig.register(org.glassfish.jersey.server.spring.SpringComponentProvider.class);
-//        resourceConfig.register(org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainerProvider.class);
-//        resourceConfig.property(ServerProperties.METAINF_SERVICES_LOOKUP_DISABLE, true);
-//
-       // resourceConfig.register(MyAppConfig.class);
         return vcDatabaseServices.queryListOfCompany();
     }
 

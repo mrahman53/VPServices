@@ -1,9 +1,6 @@
 package org.vp.restservices;
 
-import org.glassfish.jersey.server.JSONP;
-import org.glassfish.jersey.server.ResourceConfig;
 import org.vp.databases.VCDatabaseServices;
-import org.vp.filter.CORSResponseFilter;
 import org.vp.vc.profile.VCProfile;
 
 import javax.ws.rs.*;
@@ -18,7 +15,7 @@ import java.util.List;
  * Created by mrahman on 7/17/16.
  */
 
-@Path("/SingleVcResources")
+@Path("SingleVcResources")
 public class SingleVCResources {
 
     VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
@@ -27,9 +24,6 @@ public class SingleVCResources {
     @Path("/{vcId}")
     @Produces(MediaType.APPLICATION_JSON)
     public List<VCProfile> getACompany(@PathParam("vcId") String vcId)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-//        final ResourceConfig rc = new ResourceConfig().packages("org.vp");
-//        rc.register(CORSResponseFilter.class);
-        System.out.println("GET Request has come to get "+vcId+" profile");
         //return vcDatabaseServices.findOneVCProfile(vcId);
         return vcDatabaseServices.queryListOfCompany(vcId);
     }
@@ -39,7 +33,6 @@ public class SingleVCResources {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON) //MediaType.APPLICATION_FORM_URLENCODED
     public boolean postOrganizationProfile(VCProfile profile) {
-        System.out.println("POST Request has come to post to Insert a vc profile");
         //String postMessage = vcDatabaseServices.insertVCProfile(profile);
         boolean postMessage = vcDatabaseServices.insertVCProfileNReturn(profile);
         return postMessage;
