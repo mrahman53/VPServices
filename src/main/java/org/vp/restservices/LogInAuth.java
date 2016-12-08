@@ -33,15 +33,15 @@ public class LogInAuth {
         public String updateProfile(AdminUserProfile user) {
             return adminUserOperation.updateUserProfileSetting(user);
         }
-        /*
-        /*
+        */
+
         @GET
         @Path("/{profileId}")
         @Consumes(MediaType.APPLICATION_JSON)
         @Produces(MediaType.APPLICATION_JSON)
-        public boolean loginProfile(@PathParam("profileId")String profile){
+        public boolean loginProfile(@PathParam("profileId")String profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
             //return adminUserOperation.getUserProfile(profileId);
             return adminUserOperation.verifyUser(profile);
-        } */
+        }
 
 }

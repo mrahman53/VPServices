@@ -35,7 +35,7 @@ public class SignUp {
     }
 
 
-    @GET
+ @GET
     @Path("/{profileId}")
     public AdminUserProfile loginProfile(@PathParam("profileId")String profileId)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         return adminUserOperation.getUserProfile(profileId);

@@ -44,6 +44,12 @@ public class AdminUserOperation {
 
             return loginUser;
     }
+    public boolean verifyUser(String userProfile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        AdminUserProfile user = new AdminUserProfile();
+        boolean loginUser = adminUserDatabaseServices.loginVerify(user.getEmail(), user.getPassword());
+
+        return loginUser;
+    }
 
     public boolean registerProfile(AdminUserProfile user)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         boolean message = adminUserDatabaseServices.adminRegistration(user);

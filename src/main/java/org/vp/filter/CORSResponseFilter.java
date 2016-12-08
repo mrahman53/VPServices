@@ -24,8 +24,7 @@ public class CORSResponseFilter implements ContainerResponseFilter, ContainerReq
         headers.add("Access-Control-Allow-Origin", "*");
         headers.add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
         headers.add("Access-Control-Allow-Headers", "Access-Control-Allow-Origin,Access-Control-Allow-Headers, Origin,Accept," +
-                "Authorization,X-Requested-With,Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Requested-With," +
-                "Content-Type, X-Codingpedia");
+                "Authorization,X-Requested-With,Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Codingpedia");
     }
 
     @Override
@@ -38,8 +37,7 @@ public class CORSResponseFilter implements ContainerResponseFilter, ContainerReq
         request.add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
         //headers.add("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, X-Codingpedia");
         request.add("Access-Control-Allow-Headers", "Access-Control-Allow-Origin,Access-Control-Allow-Headers, Origin,Accept," +
-                "Authorization,X-Requested-With,Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Requested-With," +
-                "Content-Type, X-Codingpedia");
+                "Authorization,X-Requested-With,Content-Type,Access-Control-Request-Method, Access-Control-Request-Headers,X-Codingpedia");
     }
 
 
