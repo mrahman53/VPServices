@@ -31,7 +31,7 @@ public class AllVcResources {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON) //MediaType.APPLICATION_FORM_URLENCODED
-    public boolean postOrganizationProfile(VCProfile profile) {
+    public boolean postOrganizationProfile(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException  {
         System.out.println("POST Request has come to post to Insert a vc profile");
         //String postMessage = vcDatabaseServices.insertVCProfile(profile);
         boolean postMessage = vcDatabaseServices.insertVCProfileNReturn(profile);

@@ -59,7 +59,7 @@ public class ConnectDB {
      MongoDatabase db = client.getDatabase("devVcProfile");
     }   */
 
-    public MongoDatabase connectRecommendedSSLAtlas() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public MongoDatabase connectRecommendedSSLAtlas(String dataBaseName) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
 
         final TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
@@ -87,7 +87,7 @@ public class ConnectDB {
                         new ServerAddress("cluster0-shard-00-02-b2mbe.mongodb.net", 27017)
                 ),
                 Arrays.asList(credential), options);
-        mongoDatabase = mongoClient.getDatabase("devVcProfile");
+        mongoDatabase = mongoClient.getDatabase(dataBaseName);
         return mongoDatabase;
     }
 

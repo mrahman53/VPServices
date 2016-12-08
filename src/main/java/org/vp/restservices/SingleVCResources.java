@@ -32,7 +32,7 @@ public class SingleVCResources {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON) //MediaType.APPLICATION_FORM_URLENCODED
-    public boolean postOrganizationProfile(VCProfile profile) {
+    public boolean postOrganizationProfile(VCProfile profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         //String postMessage = vcDatabaseServices.insertVCProfile(profile);
         boolean postMessage = vcDatabaseServices.insertVCProfileNReturn(profile);
         return postMessage;

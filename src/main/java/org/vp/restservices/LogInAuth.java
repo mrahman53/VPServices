@@ -5,6 +5,9 @@ import org.vp.authentication.AdminUserOperation;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by mrahman on 8/24/16.
@@ -20,16 +23,17 @@ public class LogInAuth {
         @POST
         @Consumes(MediaType.APPLICATION_JSON)
         @Produces(MediaType.APPLICATION_JSON)
-        public boolean postIt(AdminUserProfile user) {
+        public boolean postIt(AdminUserProfile user)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
             return adminUserOperation.verifyUser(user);
         }
+        /*
         @PUT
         @Consumes(MediaType.APPLICATION_JSON)
         @Produces(MediaType.APPLICATION_JSON)
         public String updateProfile(AdminUserProfile user) {
             return adminUserOperation.updateUserProfileSetting(user);
         }
-
+        /*
         /*
         @GET
         @Path("/{profileId}")

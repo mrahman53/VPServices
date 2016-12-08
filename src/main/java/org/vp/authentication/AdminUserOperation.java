@@ -2,6 +2,10 @@ package org.vp.authentication;
 
 import org.vp.databases.AdminUserDatabaseServices;
 
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+
 /**
  * Created by mrahman on 8/24/16.
  */
@@ -13,15 +17,15 @@ public class AdminUserOperation {
 
         return user;
     }
-    public AdminUserProfile verifyUserProfile(AdminUserProfile user){
-        AdminUserProfile adminUserProfile = adminUserDatabaseServices.login(user.getUsername());
+    public AdminUserProfile verifyUserProfile(AdminUserProfile user)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        AdminUserProfile adminUserProfile = adminUserDatabaseServices.login(user.getEmail());
         verifyUser(user);
         return adminUserProfile;
     }
     public AdminUserProfile verifyValidUser(AdminUserProfile user){
-        AdminUserProfile adminUserProfile = adminUserDatabaseServices.login(user.getUsername());
+        AdminUserProfile adminUserProfile = adminUserDatabaseServices.login(user.getEmail());
 
-        if(adminUserProfile.username.equals(user.username)) {
+        if(adminUserProfile.email.equals(user.getEmail())) {
 
             if (adminUserProfile.password.equals(user.password)) {
 
@@ -35,16 +39,17 @@ public class AdminUserOperation {
             return null;
         }
     }
-    public boolean verifyUser(AdminUserProfile user){
-        boolean loginUser = adminUserDatabaseServices.loginVerify(user.getUsername(), user.getPassword());
+    public boolean verifyUser(AdminUserProfile user)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        boolean loginUser = adminUserDatabaseServices.loginVerify(user.getEmail(), user.getPassword());
 
             return loginUser;
     }
 
-    public String registerProfile(AdminUserProfile user){
-        String message = adminUserDatabaseServices.adminRegistration(user);
+    public boolean registerProfile(AdminUserProfile user)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        boolean message = adminUserDatabaseServices.adminRegistration(user);
         return message;
     }
+
 
     public String updateUserProfileSetting(AdminUserProfile user){
         String message = adminUserDatabaseServices.updateAdminUserProfile(user);

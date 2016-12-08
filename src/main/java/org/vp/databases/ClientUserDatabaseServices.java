@@ -7,6 +7,10 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.vp.authentication.ClientUserProfile;
 
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+
 /**
  * Created by mrahman on 2/9/16.
  */
@@ -15,9 +19,9 @@ public class ClientUserDatabaseServices {
     public ConnectDB connectDB = new ConnectDB();
     public MongoDatabase mongoDatabase = null;
 
-    public String adminRegistration(ClientUserProfile clientUserProfile){
+    public String adminRegistration(ClientUserProfile clientUserProfile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         String profile = clientUserProfile.getName();
-        mongoDatabase = connectDB.connectLocalMongoDBClient();
+        mongoDatabase = connectDB.connectRecommendedSSLAtlas("ClientProfileDB");
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         Document document = new Document().append("name", clientUserProfile.getName()).append("email",
                 clientUserProfile.getEmail()).append("password", clientUserProfile.getPassword()).append("phoneNumber",

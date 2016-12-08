@@ -12,19 +12,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class AdminUserProfile {
 
-    String username;
-    String password;
+    //String username;
     String email;
+    String password;
     boolean value ;
 
     public AdminUserProfile() {
 
     }
 
-    public AdminUserProfile(String username, String password, String email, String lastName, boolean value) {
-        this.username = username;
-        this.password = password;
+    public AdminUserProfile(String email, String password, String lastName, boolean value) {
+        //this.username = username;
         this.email = email;
+        this.password = password;
         this.value = value;
     }
 
@@ -36,13 +36,13 @@ public class AdminUserProfile {
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
-    }
+//    public String getUsername() {
+//        return username;
+//    }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+//    public void setUsername(String username) {
+//        this.username = username;
+//    }
 
     public String getPassword() {
         return password;

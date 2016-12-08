@@ -29,11 +29,11 @@ public class VCDatabaseServices {
     public List<FundingHistory> fundingHistoryList = new ArrayList<FundingHistory>();
     public VCProfile vcProfile = null;
 
-    public boolean insertVCProfileNReturn(VCProfile profile){
+    public boolean insertVCProfileNReturn(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         MongoDatabase mongoDatabase1 = null;
         ConnectDB connectDB1 = new ConnectDB();
         String st = profile.getVcInfo().getVcName()+" "+ "is Inserted";
-        mongoDatabase1 = ConnectDB.connectAtlasMongoClientDB();
+        mongoDatabase1 = connectDB1.connectRecommendedSSLAtlas("devVcProfile");
         MongoCollection mongoCollection = mongoDatabase1.getCollection("profile");
         Document vcInfoDocument = documentVCInfoDataDelta(profile);
         Document socialDataDocument = documentVCSocialData(profile);
@@ -175,7 +175,7 @@ public class VCDatabaseServices {
 
     public List<VCProfile> queryListOfCompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
-        mongoDatabase = connectDB.connectRecommendedSSLAtlas();
+        mongoDatabase = connectDB.connectRecommendedSSLAtlas("devVcProfile");
         MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
         BasicDBObject basicDBObject = new BasicDBObject();
         FindIterable<Document> iterable = coll.find();
@@ -230,7 +230,7 @@ public class VCDatabaseServices {
 
     public List<VCProfile> queryListOfCompany(String vcId) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
-        mongoDatabase = connectDB.connectRecommendedSSLAtlas();
+        mongoDatabase = connectDB.connectRecommendedSSLAtlas("devVcProfile");
         MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("vcInfo.vcName", vcId);
