@@ -57,8 +57,6 @@
           <element id="library" level="project" name="Maven: javax.ws.rs:jsr311-api:1.1.1" />
           <element id="library" level="project" name="Maven: org.glassfish.jersey.media:jersey-media-multipart:2.22.1" />
           <element id="library" level="project" name="Maven: org.jvnet.mimepull:mimepull:1.9.6" />
-          <element id="library" level="project" name="Maven: com.thetransactioncompany:cors-filter:2.5" />
-          <element id="library" level="project" name="Maven: com.thetransactioncompany:java-property-utils:1.9.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
