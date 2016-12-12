@@ -1,6 +1,7 @@
 package org.vp.databases;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -16,23 +17,47 @@ import java.security.NoSuchAlgorithmException;
  * Created by mrahman on 8/24/16.
  */
 public class AdminUserDatabaseServices {
-    public ConnectDB connectDB = new ConnectDB();
+    public ConnectMongo connectMongo = new ConnectMongo();
+    public MongoClient mongoClient = null;
     public MongoDatabase mongoDatabase = null;
 
     public boolean adminRegistration(AdminUserProfile user)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-       // String profile = user.getUsername();
-        mongoDatabase = connectDB.connectRecommendedSSLAtlas("AdminProfileDB");
-        MongoCollection<Document> collection = mongoDatabase.getCollection("admin_login");
-        Document document = new Document().append("email",user.getEmail()).append("password", user.getPassword());
-        collection.insertOne(document);
+
+        try{
+            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("AdminProfileDB");
+            MongoCollection<Document> collection = mongoDatabase.getCollection("admin_login");
+            Document document = new Document().append("email",user.getEmail()).append("password", user.getPassword());
+            collection.insertOne(document);
+                connectMongo.mongoClient.close();
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }finally {
+                if (connectMongo.mongoClient != null) {
+
+                    connectMongo.mongoClient = null;
+                }
+            }
+
         return true;
     }
 
     public String updateAdminUserProfile(AdminUserProfile user){
         String profile = user.getEmail();
-        mongoDatabase = connectDB.connectLocalMongoDBClient();
-        MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
+        try{
+        mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+        mongoDatabase = mongoClient.getDatabase("AdminProfileDB");
+        MongoCollection<Document> collection = mongoDatabase.getCollection("admin_login");
         Document document = new Document().append("email",user.getEmail()).append("password", user.getPassword());
+        mongoClient.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if (mongoClient != null) {
+
+                mongoClient = null;
+            }
+        }
 
         return profile + " has been updated";
     }
@@ -40,25 +65,31 @@ public class AdminUserDatabaseServices {
 
     public AdminUserProfile register(String email){
         AdminUserProfile user = new AdminUserProfile();
-        mongoDatabase = connectDB.connectLocalMongoDBClient();
-        BasicDBObject basicDBObject = new BasicDBObject().append("email", email);
-        MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
-        FindIterable<Document> iterable = collection.find(basicDBObject);
-        for(Document doc:iterable){
-            String emailPosted = (String)doc.get("email");
-            String passwordPosted = (String)doc.get("password");
-            String firstNamePosted = (String)doc.get("firstName");
-            String lastNamePosted = (String)doc.get("lastName");
-            user.setEmail(emailPosted);
-            user.setPassword(passwordPosted);
+
+        try{
+            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("AdminProfileDB");
+            MongoCollection<Document> collection = mongoDatabase.getCollection("admin_login");
+            Document document = new Document().append("email",user.getEmail()).append("password", user.getPassword());
+            collection.insertOne(document);
+            connectMongo.mongoClient.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if (mongoClient != null) {
+
+                mongoClient = null;
+            }
         }
+
         return user;
     }
 
 
     public AdminUserProfile login(String email){
         AdminUserProfile user = new AdminUserProfile();
-        mongoDatabase = connectDB.connectLocalMongoDBClient();
+        try{
+        mongoDatabase = connectMongo.connectLocalMongoDBClient();
         //BasicDBObject basicDBObject = new BasicDBObject().append("username", username);
         MongoCollection<Document> collection = mongoDatabase.getCollection("login");
         BasicDBObject basicDBObject = new BasicDBObject();
@@ -67,19 +98,28 @@ public class AdminUserDatabaseServices {
         for(Document doc:iterable){
             String emailPosted = (String)doc.get("email");
             String passwordPosted = (String)doc.get("password");
-            //String firstNamePosted = (String)doc.get("firstName");
-            //String lastNamePosted = (String)doc.get("lastName");
             user.setEmail(emailPosted);
             user.setPassword(passwordPosted);
             user.setValue(true);
+        }
+            connectMongo.mongoClient.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if (connectMongo.mongoClient != null) {
+
+                connectMongo.mongoClient = null;
+            }
         }
         return user;
     }
 
     public boolean loginVerify(String email, String password)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         AdminUserProfile user = new AdminUserProfile();
-        mongoDatabase = connectDB.connectRecommendedSSLAtlas("AdminProfileDB");
-        //BasicDBObject basicDBObject = new BasicDBObject().append("username", username);
+        try{
+
+         mongoClient =   connectMongo.connectToRecommendedSSLAtlasMongoClient();
+        MongoDatabase mongoDatabase = mongoClient.getDatabase("AdminProfileDB");
         MongoCollection<Document> collection = mongoDatabase.getCollection("admin_login");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("email", email);
@@ -87,23 +127,29 @@ public class AdminUserDatabaseServices {
         for(Document doc:iterable){
             String emailPosted = (String)doc.get("email");
             String passwordPosted = (String)doc.get("password");
-            //String firstNamePosted = (String)doc.get("firstName");
-            //String lastNamePosted = (String)doc.get("lastName");
             user.setEmail(emailPosted);
             user.setPassword(passwordPosted);
             user.setValue(true);
+        }
+            mongoClient.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if (mongoClient != null) {
+
+                mongoClient = null;
+            }
         }
         if(user.getEmail().equals(email) && user.getPassword().equals(password)){
             return true;
         }else{
             return false;
         }
-
     }
 
     public boolean loginVerify(String email){
         AdminUserProfile user = new AdminUserProfile();
-        mongoDatabase = connectDB.connectLocalMongoDBClient();
+        mongoDatabase = connectMongo.connectLocalMongoDBClient();
         //BasicDBObject basicDBObject = new BasicDBObject().append("username", username);
         MongoCollection<Document> collection = mongoDatabase.getCollection("login");
         BasicDBObject basicDBObject = new BasicDBObject();

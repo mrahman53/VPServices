@@ -16,12 +16,12 @@ import java.security.NoSuchAlgorithmException;
  */
 public class ClientUserDatabaseServices {
 
-    public ConnectDB connectDB = new ConnectDB();
+    public ConnectMongo connectMongo = new ConnectMongo();
     public MongoDatabase mongoDatabase = null;
 
     public String adminRegistration(ClientUserProfile clientUserProfile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         String profile = clientUserProfile.getName();
-        mongoDatabase = connectDB.connectRecommendedSSLAtlas("ClientProfileDB");
+        mongoDatabase = connectMongo.connectRecommendedSSLAtlas("ClientProfileDB");
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         Document document = new Document().append("name", clientUserProfile.getName()).append("email",
                 clientUserProfile.getEmail()).append("password", clientUserProfile.getPassword()).append("phoneNumber",
@@ -31,7 +31,7 @@ public class ClientUserDatabaseServices {
     }
     public String updateAdminUserProfile(ClientUserProfile clientUserProfile){
         String profile = clientUserProfile.getName();
-        mongoDatabase = connectDB.connectLocalMongoDBClient();
+        mongoDatabase = connectMongo.connectLocalMongoDBClient();
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         Document document = new Document().append("name", clientUserProfile.getName()).append("email",
                 clientUserProfile.getEmail()).append("password", clientUserProfile.getPassword()).append("phoneNumber",
@@ -42,7 +42,7 @@ public class ClientUserDatabaseServices {
     }
     public ClientUserProfile login(String email){
         ClientUserProfile clientUserProfile = new ClientUserProfile();
-        mongoDatabase = connectDB.connectLocalMongoDBClient();
+        mongoDatabase = connectMongo.connectLocalMongoDBClient();
         BasicDBObject basicDBObject = new BasicDBObject().append("email", email);
         MongoCollection<Document> collection = mongoDatabase.getCollection("registration");
         FindIterable<Document> iterable = collection.find(basicDBObject);

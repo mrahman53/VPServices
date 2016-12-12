@@ -36,7 +36,26 @@ public class SingleVCResources {
         //String postMessage = vcDatabaseServices.insertVCProfile(profile);
         boolean postMessage = vcDatabaseServices.insertVCProfileNReturn(profile);
         return postMessage;
-
     }
 
+    @PUT
+    @Path("/{vcId}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON) //MediaType.APPLICATION_FORM_URLENCODED
+    public boolean updateOrganizationProfile(VCProfile profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        //String postMessage = vcDatabaseServices.insertVCProfile(profile);
+        boolean postMessage = vcDatabaseServices.updateVCProfileNReturn(profile);
+        return postMessage;
+    }
+
+    @DELETE
+    @Path("/{vcId}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON) //MediaType.APPLICATION_FORM_URLENCODED
+    public boolean deleteOrganizationProfile(VCProfile profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        //String postMessage = vcDatabaseServices.insertVCProfile(profile);
+        boolean postMessage = vcDatabaseServices.deleteVCProfileNReturn(profile);
+        return postMessage;
+
+    }
 }
