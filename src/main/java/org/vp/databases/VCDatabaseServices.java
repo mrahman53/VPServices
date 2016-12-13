@@ -17,6 +17,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.mongodb.client.model.Filters.eq;
+
 /**
  * Created by mrahman on 7/17/16.
  */
@@ -61,7 +63,7 @@ public class VCDatabaseServices {
     public boolean updateVCProfileNReturn(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
         try{
-
+            //String filter = profile.getVcInfo().getVcName();
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
             MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
@@ -72,7 +74,7 @@ public class VCDatabaseServices {
             Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument)
                     .append("fundingHistory", fundingHistoryDocument);
 
-            mongoCollection.updateOne(filter,new Document("$set",preparedDocument));
+            mongoCollection.updateOne(eq("vcName",filter),new Document("$set",preparedDocument));
             mongoClient.close();
         }catch(Exception ex){
             ex.printStackTrace();
