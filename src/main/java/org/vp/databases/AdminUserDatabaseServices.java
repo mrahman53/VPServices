@@ -29,13 +29,13 @@ public class AdminUserDatabaseServices {
             MongoCollection<Document> collection = mongoDatabase.getCollection("admin_login");
             Document document = new Document().append("email",user.getEmail()).append("password", user.getPassword());
             collection.insertOne(document);
-                connectMongo.mongoClient.close();
+                mongoClient.close();
             }catch(Exception ex){
                 ex.printStackTrace();
             }finally {
-                if (connectMongo.mongoClient != null) {
+                if (mongoClient != null) {
 
-                    connectMongo.mongoClient = null;
+                    mongoClient = null;
                 }
             }
 
@@ -116,35 +116,39 @@ public class AdminUserDatabaseServices {
 
     public boolean loginVerify(String email, String password)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         AdminUserProfile user = new AdminUserProfile();
-        try{
+        boolean verify = false;
+        try {
 
-         mongoClient =   connectMongo.connectToRecommendedSSLAtlasMongoClient();
-        MongoDatabase mongoDatabase = mongoClient.getDatabase("AdminProfileDB");
-        MongoCollection<Document> collection = mongoDatabase.getCollection("admin_login");
-        BasicDBObject basicDBObject = new BasicDBObject();
-        basicDBObject.put("email", email);
-        FindIterable<Document> iterable = collection.find(basicDBObject);
-        for(Document doc:iterable){
-            String emailPosted = (String)doc.get("email");
-            String passwordPosted = (String)doc.get("password");
-            user.setEmail(emailPosted);
-            user.setPassword(passwordPosted);
-            user.setValue(true);
-        }
+            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("AdminProfileDB");
+            MongoCollection<Document> collection = mongoDatabase.getCollection("admin_login");
+            BasicDBObject basicDBObject = new BasicDBObject();
+            basicDBObject.put("email", email);
+            FindIterable<Document> iterable = collection.find(basicDBObject);
+            for (Document doc : iterable) {
+                String emailPosted = (String) doc.get("email");
+                String passwordPosted = (String) doc.get("password");
+                user.setEmail(emailPosted);
+                user.setPassword(passwordPosted);
+                user.setValue(true);
+            }
+            if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
+                verify = true;
+            } else {
+                verify = false;
+            }
+
             mongoClient.close();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
-        }finally {
+        } finally {
             if (mongoClient != null) {
 
                 mongoClient = null;
             }
         }
-        if(user.getEmail().equals(email) && user.getPassword().equals(password)){
-            return true;
-        }else{
-            return false;
-        }
+    return verify;
+
     }
 
     public boolean loginVerify(String email){
