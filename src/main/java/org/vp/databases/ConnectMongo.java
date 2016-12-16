@@ -98,6 +98,37 @@ public class ConnectMongo {
         return mongoClient;
     }
 
+    public MongoClient connectMongoClientSSLToAtlasWithMinimalSecurity() {
+        try {
+            SSLContext context = SSLContext.getInstance("TLS");
+            context.init(null, trustAllCerts, null);
+            _sf = context.getSocketFactory();
+
+        } catch (GeneralSecurityException e) {
+            System.out.println(e.getStackTrace());
+        }
+        String userName = "vpcluster0";
+        String authDB = "admin";
+        char[] password = new char[]{'v', 'p', 'd', 'a', 't', 'a', 'h', 'o', 's', 't', 'i', 'n', 'g', '0'};
+        MongoCredential credential = MongoCredential.createCredential(userName, authDB, password);
+
+        MongoClientOptions.Builder optionBuilder = new MongoClientOptions.Builder();
+        optionBuilder.sslEnabled(true);
+        optionBuilder.socketFactory(_sf);
+        MongoClientOptions options = optionBuilder.build();
+
+        mongoClient = new MongoClient(
+                Arrays.asList(
+                        new ServerAddress("cluster0-shard-00-00-b2mbe.mongodb.net", 27017),
+                        new ServerAddress("cluster0-shard-00-01-b2mbe.mongodb.net", 27017),
+                        new ServerAddress("cluster0-shard-00-02-b2mbe.mongodb.net", 27017)
+                ),
+                Arrays.asList(credential), options);
+
+
+        return mongoClient;
+    }
+
     public MongoDatabase connectWithSSLToAtlasWithMinimalSecurity() {
         try {
             SSLContext context = SSLContext.getInstance("TLS");

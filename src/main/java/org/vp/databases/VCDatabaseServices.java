@@ -7,6 +7,7 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.vp.vc.profile.*;
 
 import java.security.KeyManagementException;
@@ -64,17 +65,17 @@ public class VCDatabaseServices {
 
         try{
             //String filter = profile.getVcInfo().getVcName();
-            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            mongoClient = connectMongo.connectMongoClientSSLToAtlasWithMinimalSecurity();
             MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             Document vcInfoDocument = documentVCInfoDataDelta(profile);
             Document socialDataDocument = documentVCSocialData(profile);
             List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
-            Document filter = new Document("vcName", profile.getVcInfo().getVcName());
+            Document filter = new Document("vcInfo.vcName", profile.getVcInfo().getVcName());
             Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument)
                     .append("fundingHistory", fundingHistoryDocument);
 
-            mongoCollection.updateOne(eq("vcName",filter),new Document("$set",preparedDocument));
+            mongoCollection.updateMany(filter,new Document("$set",preparedDocument));
             mongoClient.close();
         }catch(Exception ex){
             ex.printStackTrace();
@@ -86,7 +87,26 @@ public class VCDatabaseServices {
         }
         return true;
     }
+    public boolean deleteVCProfileNReturn(String profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
+        try{
+            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
+            MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
+            Document filter = new Document("vcInfo.vcName", profile);
+            mongoCollection.findOneAndDelete(filter);
+
+            mongoClient.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if (mongoClient != null) {
+
+                mongoClient = null;
+            }
+        }
+        return true;
+    }
     public boolean deleteVCProfileNReturn(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
         try{
@@ -97,11 +117,11 @@ public class VCDatabaseServices {
         Document vcInfoDocument = documentVCInfoDataDelta(profile);
         Document socialDataDocument = documentVCSocialData(profile);
         List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
-
+        Document filter = new Document("vcInfo.vcName", profile.getVcInfo().getVcName());
         Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument)
                 .append("fundingHistory", fundingHistoryDocument);
 
-        mongoCollection.findOneAndDelete(preparedDocument);
+        mongoCollection.findOneAndDelete(filter);
 
         mongoClient.close();
         }catch(Exception ex){
