@@ -44,7 +44,7 @@ public class SingleVCResources {
     @Produces(MediaType.APPLICATION_JSON) //MediaType.APPLICATION_FORM_URLENCODED
     public boolean updateOrganizationProfile(VCProfile profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         //String postMessage = vcDatabaseServices.insertVCProfile(profile);
-        boolean postMessage = vcDatabaseServices.deleteVCProfileNReturn(profile);
+        boolean postMessage = vcDatabaseServices.updateVCProfileNReturn(profile);
         return postMessage;
     }
 

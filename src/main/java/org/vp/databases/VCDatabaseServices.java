@@ -61,11 +61,39 @@ public class VCDatabaseServices {
         return true;
     }
 
+    public boolean insertVCProfileNReturn(List<VCProfile> profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+
+        try {
+
+            MongoClient mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
+            MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
+            Document vcInfoDocument = documentVCInfoDataDelta(profile.get(1));
+            Document socialDataDocument = documentVCSocialData(profile.get(1));
+            List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile.get(1));
+
+            Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument)
+                    .append("fundingHistory", fundingHistoryDocument);
+
+            mongoCollection.insertOne(preparedDocument);
+            mongoClient.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if (connectMongo.mongoClient != null) {
+
+                connectMongo.mongoClient = null;
+            }
+        }
+
+        return true;
+    }
+
     public boolean updateVCProfileNReturn(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
         try{
             //String filter = profile.getVcInfo().getVcName();
-            mongoClient = connectMongo.connectMongoClientSSLToAtlasWithMinimalSecurity();
+            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
             MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             Document vcInfoDocument = documentVCInfoDataDelta(profile);
@@ -366,7 +394,6 @@ public class VCDatabaseServices {
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(final Document document) {
-
                 Document vcInfoDocument = (Document) document.get("vcInfo");
                 Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
                 Document socialDataDocument = (Document)document.get("socialData");
