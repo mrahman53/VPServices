@@ -12,7 +12,10 @@ public class VCFields {
     public String   vcType = "vcType";
     public String   city = "city";
     public String   state = "state";
+    public String   country = "country";
+    public String   vcLocation = "vcLocation";
     public String   numberOfDeals = "numberOfDeals";
+    public String   numberOfExits = "numberOfExits";
     public String   vcUrl = "vcUrl";
     public String   vcEmail = "vcEmail";
     public String   vcFoundedYear = "vcFoundedYear";

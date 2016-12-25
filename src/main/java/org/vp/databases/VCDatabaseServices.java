@@ -38,7 +38,7 @@ public class VCDatabaseServices {
         try {
             String st = profile.getVcInfo().getVcName() + " " + "is Inserted";
             MongoClient mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             Document vcInfoDocument = documentVCInfoDataDelta(profile);
             Document socialDataDocument = documentVCSocialData(profile);
@@ -192,11 +192,11 @@ public class VCDatabaseServices {
     }
 
     public static Document documentVCInfoDataDelta(VCProfile profile){
-        String vcLocation = "vcLocation";
         Document document = new Document().append(vcFields.vcName, profile.getVcInfo().getVcName())
-                .append(vcFields.vcType, profile.getVcInfo().getVcType()).append(vcLocation,vcLocationDocument(profile))
-                .append(vcFields.numberOfDeals, profile.getVcInfo().getNumberOfDeals()).append(vcFields.vcUrl,
-                        profile.getVcInfo().getVcUrl()).append(vcFields.vcEmail,profile.getVcInfo().getVcEmail())
+                .append(vcFields.vcType, profile.getVcInfo().getVcType()).append(vcFields.vcLocation,vcLocationDocument(profile))
+                .append(vcFields.numberOfDeals, profile.getVcInfo().getNumberOfDeals())
+                .append(vcFields.numberOfExits, profile.getVcInfo().getNumberOfExits()).append(vcFields.vcUrl,
+                 profile.getVcInfo().getVcUrl()).append(vcFields.vcEmail,profile.getVcInfo().getVcEmail())
                 .append(vcFields.vcFoundedYear, profile.getVcInfo().getVcFoundedYear());
 
         return document;
@@ -204,7 +204,8 @@ public class VCDatabaseServices {
 
     public static Document vcLocationDocument(VCProfile profile){
         Document document = new Document().append(vcFields.city, profile.getVcInfo()
-                .getVcLocation().getCity()).append(vcFields.state, profile.getVcInfo().getVcLocation().getState());
+                .getVcLocation().getCity()).append(vcFields.state, profile.getVcInfo().getVcLocation().getState())
+                .append(vcFields.country, profile.getVcInfo().getVcLocation().getCountry());
 
         return document;
     }
@@ -245,6 +246,7 @@ public class VCDatabaseServices {
         Map<Integer, Document> sData = new LinkedHashMap<>();
         Map<Integer, Object> pData = new LinkedHashMap<>();
         Map<Integer, Object> data = new LinkedHashMap<>();
+        List<String> categoriesList = new ArrayList<String>();
         try{
 
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
@@ -267,13 +269,15 @@ public class VCDatabaseServices {
                 String vcType = (String)vcInfoDocument.get("vcType");
                 String vcLocationCity = (String)vcLocationDocument.get("city");
                 String vcLocationState = (String)vcLocationDocument.get("state");
-                Location vcLocation = new Location(vcLocationCity, vcLocationState);
+                String vcLocationCountry = (String)vcLocationDocument.get("country");
+                Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
                 String numberOfDeals = (String)vcInfoDocument.get("numberOfDeals");
+                String numberOfExits = (String)vcInfoDocument.get("numberOfExits");
                 String vcUrl = (String)vcInfoDocument.get("vcUrl");
                 String vcEmail = (String)vcInfoDocument.get("vcEmail");
                 String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
 
-                vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals, vcUrl,vcEmail,vcFoundedYear);
+                vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals, numberOfExits, vcUrl,vcEmail,vcFoundedYear);
 
                 String facebookUrl = (String)socialDataDocument.get("facebookUrl");
                 String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
@@ -286,9 +290,13 @@ public class VCDatabaseServices {
                     String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
                     String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
                     String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
-                    String categories = (String) fundingHistoryDocument.get(i).get("categories");
+                    List<Document> categoriesDocumentList = (List<Document>)document.get("categories");
+                    for(int j=0; j<categoriesDocumentList.size(); j++) {
+                        String category = (String) categoriesDocumentList.get(j).get("categories");
+                        categoriesList.add(category);
+                    }
 
-                    fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categories);
+                    fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
                     fundingHistoryList.add(fundingHistory);
                 }
 
@@ -320,7 +328,7 @@ public class VCDatabaseServices {
         try{
 
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
             MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
             FindIterable<Document> iterable = coll.find();
             iterable.forEach(new Block<Document>() {
@@ -331,18 +339,19 @@ public class VCDatabaseServices {
                 Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
                 Document socialDataDocument = (Document)document.get("socialData");
                 List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
-
                 String vcName = (String)vcInfoDocument.get("vcName");
                 String vcType = (String)vcInfoDocument.get("vcType");
                 String vcLocationCity = (String)vcLocationDocument.get("city");
                 String vcLocationState = (String)vcLocationDocument.get("state");
-                Location vcLocation = new Location(vcLocationCity, vcLocationState);
+                String vcLocationCountry = (String)vcLocationDocument.get("country");
+                Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
                 String numberOfDeals = (String)vcInfoDocument.get("numberOfDeals");
+                String numberOfExits = (String)vcInfoDocument.get("numberOfExits");
                 String vcUrl = (String)vcInfoDocument.get("vcUrl");
                 String vcEmail = (String)vcInfoDocument.get("vcEmail");
                 String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
 
-                vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals, vcUrl,vcEmail,vcFoundedYear);
+                vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals,numberOfExits,vcUrl,vcEmail,vcFoundedYear);
 
                 String facebookUrl = (String)socialDataDocument.get("facebookUrl");
                 String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
@@ -355,12 +364,17 @@ public class VCDatabaseServices {
                     String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
                     String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
                     String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
-                    String categories = (String) fundingHistoryDocument.get(i).get("categories");
-                    fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categories);
+                    List<String> categoriesDocumentList = (List<String>)fundingHistoryDocument.get(i).get("categories");
+                    List<String> categoriesList = new ArrayList<String>();
+                    for(int j=0; j<categoriesDocumentList.size(); j++) {
+                        String category = categoriesDocumentList.get(j);
+                        categoriesList.add(category);
+                    }
+
+                    fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
                     fundingHistoryList.add(fundingHistory);
+
                 }
-
-
                 vcProfile = new VCProfile(vcInfo,socialData,fundingHistoryList);
                 vcList.add(vcProfile);
 
@@ -386,7 +400,7 @@ public class VCDatabaseServices {
         try{
 
         mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-        MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
+        MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
         MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("vcInfo.vcName", vcId);
@@ -403,13 +417,15 @@ public class VCDatabaseServices {
                 String vcType = (String)vcInfoDocument.get("vcType");
                 String vcLocationCity = (String)vcLocationDocument.get("city");
                 String vcLocationState = (String)vcLocationDocument.get("state");
-                Location vcLocation = new Location(vcLocationCity, vcLocationState);
+                String vcLocationCountry = (String)vcLocationDocument.get("country");
+                Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
                 String numberOfDeals = (String)vcInfoDocument.get("numberOfDeals");
+                String numberOfExits = (String)vcInfoDocument.get("numberOfExits");
                 String vcUrl = (String)vcInfoDocument.get("vcUrl");
                 String vcEmail = (String)vcInfoDocument.get("vcEmail");
                 String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
 
-                vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals, vcUrl,vcEmail,vcFoundedYear);
+                vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals, numberOfExits, vcUrl,vcEmail,vcFoundedYear);
 
                 String facebookUrl = (String)socialDataDocument.get("facebookUrl");
                 String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
@@ -422,9 +438,16 @@ public class VCDatabaseServices {
                     String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
                     String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
                     String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
-                    String categories = (String) fundingHistoryDocument.get(i).get("categories");
-                    fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categories);
+                    List<String> categoriesDocumentList = (List<String>)fundingHistoryDocument.get(i).get("categories");
+                    List<String> categoriesList = new ArrayList<String>();
+                    //categoriesList.clear();
+                    for(int j=0; j<categoriesDocumentList.size(); j++) {
+                        String category = categoriesDocumentList.get(j);
+                        categoriesList.add(category);
+                    }
+                    fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
                     fundingHistoryList.add(fundingHistory);
+
                 }
 
 

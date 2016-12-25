@@ -17,13 +17,13 @@ public class FundingHistory {
     public String companyName;
     public String fundingAmount;
     public String fundingRound;
-    public String categories;
+    public List<String> categories;
 
     public FundingHistory(){
 
     }
 
-    public FundingHistory(String fundingDate, String companyName, String fundingAmount, String fundingRound, String categories) {
+    public FundingHistory(String fundingDate, String companyName, String fundingAmount, String fundingRound, List<String> categories) {
         this.fundingDate = fundingDate;
         this.companyName = companyName;
         this.fundingAmount = fundingAmount;
@@ -63,11 +63,11 @@ public class FundingHistory {
         this.fundingRound = fundingRound;
     }
 
-    public String getCategories() {
+    public List<String> getCategories() {
         return categories;
     }
 
-    public void setCategories(String categories) {
+    public void setCategories(List<String> categories) {
         this.categories = categories;
     }
 
