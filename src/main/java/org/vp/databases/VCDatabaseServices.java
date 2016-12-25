@@ -30,7 +30,7 @@ public class VCDatabaseServices {
     public static VCInfo vcInfo = null;
     public static SocialData socialData = null;
     public static FundingHistory fundingHistory = null;
-    public List<FundingHistory> fundingHistoryList = new ArrayList<FundingHistory>();
+    public List<FundingHistory> fundingHistoryList = null;
     public VCProfile vcProfile = null;
 
     public boolean insertVCProfileNReturn(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
@@ -284,7 +284,7 @@ public class VCDatabaseServices {
                 String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
 
                 socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
-
+                fundingHistoryList = new ArrayList<FundingHistory>();
                 for(int i=0; i<fundingHistoryDocument.size(); i++) {
                     String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
                     String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
@@ -297,6 +297,7 @@ public class VCDatabaseServices {
                     }
 
                     fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
+
                     fundingHistoryList.add(fundingHistory);
                 }
 
@@ -334,7 +335,7 @@ public class VCDatabaseServices {
             iterable.forEach(new Block<Document>() {
                 @Override
                 public void apply(final Document document) {
-
+                //Document dbID = (Document) document.get("_id");
                 Document vcInfoDocument = (Document) document.get("vcInfo");
                 Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
                 Document socialDataDocument = (Document)document.get("socialData");
@@ -358,7 +359,7 @@ public class VCDatabaseServices {
                 String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
 
                 socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
-
+                fundingHistoryList = new ArrayList<FundingHistory>();
                 for(int i=0; i<fundingHistoryDocument.size(); i++) {
                     String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
                     String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
@@ -372,6 +373,7 @@ public class VCDatabaseServices {
                     }
 
                     fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
+
                     fundingHistoryList.add(fundingHistory);
 
                 }
@@ -432,7 +434,7 @@ public class VCDatabaseServices {
                 String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
 
                 socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
-
+                fundingHistoryList = new ArrayList<FundingHistory>();
                 for(int i=0; i<fundingHistoryDocument.size(); i++) {
                     String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
                     String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
