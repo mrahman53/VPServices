@@ -13,6 +13,7 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class VCProfile {
 
+    public String _id;
     public VCInfo vcInfo;
     public SocialData socialData;
     public List<FundingHistory> fundingHistory;
@@ -27,6 +28,21 @@ public class VCProfile {
         this.fundingHistory = fundingHistory;
     }
 
+
+    public VCProfile(String id,VCInfo vcInfo, SocialData socialData, List<FundingHistory> fundingHistory) {
+        this._id = id;
+        this.vcInfo = vcInfo;
+        this.socialData = socialData;
+        this.fundingHistory = fundingHistory;
+    }
+
+    public String getId() {
+        return _id;
+    }
+
+    public void setId(String id) {
+        this._id = id;
+    }
 
     public VCInfo getVcInfo() {
         return vcInfo;

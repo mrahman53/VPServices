@@ -8,6 +8,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
 import org.vp.vc.profile.*;
 
 import java.security.KeyManagementException;
@@ -94,12 +95,40 @@ public class VCDatabaseServices {
         try{
             //String filter = profile.getVcInfo().getVcName();
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             Document vcInfoDocument = documentVCInfoDataDelta(profile);
             Document socialDataDocument = documentVCSocialData(profile);
             List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
             Document filter = new Document("vcInfo.vcName", profile.getVcInfo().getVcName());
+            Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument)
+                    .append("fundingHistory", fundingHistoryDocument);
+
+            mongoCollection.updateMany(filter,new Document("$set",preparedDocument));
+            mongoClient.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if (mongoClient != null) {
+
+                mongoClient = null;
+            }
+        }
+        return true;
+    }
+    public boolean updateVCProfileByIDNReturn(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+
+        try{
+            //String filter = profile.getVcInfo().getVcName();
+            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
+            MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
+            Document vcInfoDocument = documentVCInfoDataDelta(profile);
+            Document socialDataDocument = documentVCSocialData(profile);
+            List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
+            //Document objectId = new ObjectId(profile.getId());
+            Document filter = new Document("_id", profile.getId());
+
             Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument)
                     .append("fundingHistory", fundingHistoryDocument);
 
@@ -122,6 +151,26 @@ public class VCDatabaseServices {
             MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             Document filter = new Document("vcInfo.vcName", profile);
+            mongoCollection.findOneAndDelete(filter);
+
+            mongoClient.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if (mongoClient != null) {
+
+                mongoClient = null;
+            }
+        }
+        return true;
+    }
+    public boolean deleteVCProfileByIDNReturn(String profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+
+        try{
+            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
+            MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
+            Document filter = new Document("_id", profile);
             mongoCollection.findOneAndDelete(filter);
 
             mongoClient.close();
@@ -210,16 +259,6 @@ public class VCDatabaseServices {
         return document;
     }
 
-    public static Document documentVCInfoData(VCProfile profile){
-        Document document = new Document().append(vcFields.vcName, profile.getVcInfo().getVcName())
-                .append(vcFields.vcType, profile.getVcInfo().getVcType()).append(vcFields.city, profile.getVcInfo()
-                .getVcLocation().getCity()).append(vcFields.state, profile.getVcInfo().getVcLocation().getState())
-                .append(vcFields.numberOfDeals, profile.getVcInfo().getNumberOfDeals()).append(vcFields.vcUrl,
-                 profile.getVcInfo().getVcUrl()).append(vcFields.vcEmail,profile.getVcInfo().getVcEmail())
-                .append(vcFields.vcFoundedYear, profile.getVcInfo().getVcFoundedYear());
-
-        return document;
-    }
     public static Document documentVCSocialData(VCProfile profile){
         Document document = new Document().append(vcFields.facebookUrl, profile.getSocialData().getFacebookUrl())
                 .append(vcFields.twitterUrl, profile.getSocialData().getTwitterUrl()).append(vcFields.linkedinUrl,
@@ -335,11 +374,13 @@ public class VCDatabaseServices {
             iterable.forEach(new Block<Document>() {
                 @Override
                 public void apply(final Document document) {
-                //Document dbID = (Document) document.get("_id");
+                ObjectId idDocument = (ObjectId)document.get("_id");
                 Document vcInfoDocument = (Document) document.get("vcInfo");
                 Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
                 Document socialDataDocument = (Document)document.get("socialData");
                 List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
+
+                String vcID = idDocument.toString();
                 String vcName = (String)vcInfoDocument.get("vcName");
                 String vcType = (String)vcInfoDocument.get("vcType");
                 String vcLocationCity = (String)vcLocationDocument.get("city");
@@ -377,7 +418,7 @@ public class VCDatabaseServices {
                     fundingHistoryList.add(fundingHistory);
 
                 }
-                vcProfile = new VCProfile(vcInfo,socialData,fundingHistoryList);
+                vcProfile = new VCProfile(vcID,vcInfo,socialData,fundingHistoryList);
                 vcList.add(vcProfile);
 
             }
@@ -410,11 +451,13 @@ public class VCDatabaseServices {
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(final Document document) {
+                ObjectId idDocument = (ObjectId)document.get("_id");
                 Document vcInfoDocument = (Document) document.get("vcInfo");
                 Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
                 Document socialDataDocument = (Document)document.get("socialData");
                 List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
 
+                String vcID = idDocument.toString();
                 String vcName = (String)vcInfoDocument.get("vcName");
                 String vcType = (String)vcInfoDocument.get("vcType");
                 String vcLocationCity = (String)vcLocationDocument.get("city");
@@ -453,7 +496,7 @@ public class VCDatabaseServices {
                 }
 
 
-                vcProfile = new VCProfile(vcInfo,socialData,fundingHistoryList);
+                vcProfile = new VCProfile(vcID, vcInfo,socialData,fundingHistoryList);
                 vcList.add(vcProfile);
 
             }
@@ -473,8 +516,9 @@ public class VCDatabaseServices {
         return vcList;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         VCProfile profile = new VCProfile();
-        //VCDatabaseServices.updateVCProfileNReturn("Uber");
+        VCDatabaseServices vp = new VCDatabaseServices();
+        vp.queryListOfCompany("FuzzBeta");
     }
 }

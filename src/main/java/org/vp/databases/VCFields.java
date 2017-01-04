@@ -8,6 +8,7 @@ import org.vp.vc.profile.Location;
 public class VCFields {
 
 
+    public String   vcID = "id";
     public String   vcName = "vcName";
     public String   vcType = "vcType";
     public String   city = "city";
