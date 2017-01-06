@@ -67,7 +67,7 @@ public class VCDatabaseServices {
         try {
 
             MongoClient mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             Document vcInfoDocument = documentVCInfoDataDelta(profile.get(1));
             Document socialDataDocument = documentVCSocialData(profile.get(1));
@@ -126,13 +126,12 @@ public class VCDatabaseServices {
             Document vcInfoDocument = documentVCInfoDataDelta(profile);
             Document socialDataDocument = documentVCSocialData(profile);
             List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
-            //Document objectId = new ObjectId(profile.getId());
             Document filter = new Document("_id", profile.getId());
-
+            String id = filter.values().toString().replace("[","").replace("]","");
             Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument)
                     .append("fundingHistory", fundingHistoryDocument);
 
-            mongoCollection.updateMany(filter,new Document("$set",preparedDocument));
+            mongoCollection.updateOne(new BasicDBObject("_id",new ObjectId(id)),new BasicDBObject("$set",new BasicDBObject(preparedDocument)));
             mongoClient.close();
         }catch(Exception ex){
             ex.printStackTrace();
@@ -148,7 +147,7 @@ public class VCDatabaseServices {
 
         try{
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             Document filter = new Document("vcInfo.vcName", profile);
             mongoCollection.findOneAndDelete(filter);
@@ -164,14 +163,20 @@ public class VCDatabaseServices {
         }
         return true;
     }
-    public boolean deleteVCProfileByIDNReturn(String profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public boolean deleteVCProfileByIDNReturn(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
         try{
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
             MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
-            Document filter = new Document("_id", profile);
-            mongoCollection.findOneAndDelete(filter);
+            Document vcInfoDocument = documentVCInfoDataDelta(profile);
+            Document socialDataDocument = documentVCSocialData(profile);
+            List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
+            Document filter = new Document("_id", profile.getId());
+//            String id = filter.values().toString().replace("[","").replace("]","");
+//            Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument)
+//                    .append("fundingHistory", fundingHistoryDocument);
+            mongoCollection.deleteOne(filter);
 
             mongoClient.close();
         }catch(Exception ex){
