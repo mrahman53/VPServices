@@ -194,7 +194,7 @@ public class VCDatabaseServices {
         try{
         String st = profile.getVcInfo().getVcName()+" "+ "is Inserted";
         mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-        MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
+        MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
         MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
         Document vcInfoDocument = documentVCInfoDataDelta(profile);
         Document socialDataDocument = documentVCSocialData(profile);
@@ -221,7 +221,7 @@ public class VCDatabaseServices {
         String st = profile.getVcInfo().getVcName() + " " + "is Inserted";
         try {
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("devVcProfile");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
             MongoCollection mongoCollection = mongoDatabase.getCollection("vc");
             Document vcInfoDocument = documentVCInfoDataDelta(profile);
             Document socialDataDocument = documentVCSocialData(profile);
