@@ -15,7 +15,7 @@ node {
                  flatten: false,
                  showDirectlyInBrowser: true,
                  keepForever: true
-                        ]
+              ]
         ])
     }
     catch(err) {
