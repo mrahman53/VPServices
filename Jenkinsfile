@@ -5,7 +5,7 @@ node {
         archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
         currentBuild.result = "SUCCESS"
         sh "cp target/vpservices.war ${BRANCH_NAME}-${BUILD_NUMBER}-vpservices.war"
-        step([$class: 'S3BucketPublisher', profileName: "jenkins", entries: [[
+        step([$class: 'S3BucketPublisher', profileName: "jenkins", entries: [
              sourceFile: "${BRANCH_NAME}-${BUILD_NUMBER}-vpservices.war",
              bucket: 'api-artifact',
              selectedRegion: 'us-east-1',
@@ -13,7 +13,7 @@ node {
              managedArtifacts: false,
              flatten: false,
              showDirectlyInBrowser: false,
-             keepForever: true]]
+             keepForever: true]
         ])
     }
     catch(err) {
