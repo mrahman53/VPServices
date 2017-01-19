@@ -24,14 +24,13 @@ public class SingleVCResources {
     @Path("/{vcId}")
     @Produces(MediaType.APPLICATION_JSON)
     public List<VCProfile> getACompany(@PathParam("vcId") String vcId)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        //return vcDatabaseServices.findOneVCProfile(vcId);
-        return vcDatabaseServices.queryListOfCompany(vcId);
+        return vcDatabaseServices.queryListOfCompanyByID(vcId);
     }
 
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON) //MediaType.APPLICATION_FORM_URLENCODED
+    @Produces(MediaType.APPLICATION_JSON)
     public boolean postOrganizationProfile(VCProfile profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         //String postMessage = vcDatabaseServices.insertVCProfile(profile);
         boolean postMessage = vcDatabaseServices.insertVCProfileNReturn(profile);
@@ -41,9 +40,8 @@ public class SingleVCResources {
     @PUT
     @Path("/{vcId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON) //MediaType.APPLICATION_FORM_URLENCODED
+    @Produces(MediaType.APPLICATION_JSON)
     public boolean updateOrganizationProfile(VCProfile profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        //String postMessage = vcDatabaseServices.insertVCProfile(profile);
         boolean postMessage = vcDatabaseServices.updateVCProfileByIDNReturn(profile);
         return postMessage;
     }
@@ -51,10 +49,9 @@ public class SingleVCResources {
     @DELETE
     @Path("/{vcId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON) //MediaType.APPLICATION_FORM_URLENCODED
-    public boolean deleteOrganizationProfile(VCProfile profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        //String postMessage = vcDatabaseServices.insertVCProfile(profile);
-        boolean postMessage = vcDatabaseServices.deleteVCProfileNReturn(profile);
+    @Produces(MediaType.APPLICATION_JSON)
+    public boolean deleteOrganizationProfile(@PathParam("vcId")String profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        boolean postMessage = vcDatabaseServices.deleteVCProfileByIDNReturn(profile);
         return postMessage;
 
     }

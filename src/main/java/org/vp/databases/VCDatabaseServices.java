@@ -119,7 +119,6 @@ public class VCDatabaseServices {
     public boolean updateVCProfileByIDNReturn(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
         try{
-            //String filter = profile.getVcInfo().getVcName();
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
             MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
@@ -151,7 +150,6 @@ public class VCDatabaseServices {
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             Document filter = new Document("vcInfo.vcName", profile);
             mongoCollection.findOneAndDelete(filter);
-
             mongoClient.close();
         }catch(Exception ex){
             ex.printStackTrace();
@@ -163,21 +161,14 @@ public class VCDatabaseServices {
         }
         return true;
     }
-    public boolean deleteVCProfileByIDNReturn(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public boolean deleteVCProfileByIDNReturn(String vcId)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
         try{
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
             MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
-            Document vcInfoDocument = documentVCInfoDataDelta(profile);
-            Document socialDataDocument = documentVCSocialData(profile);
-            List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
-            Document filter = new Document("_id", profile.getId());
-//            String id = filter.values().toString().replace("[","").replace("]","");
-//            Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument)
-//                    .append("fundingHistory", fundingHistoryDocument);
-            mongoCollection.deleteOne(filter);
-
+            BasicDBObject basicDBObject = new BasicDBObject("_id", new ObjectId(vcId));
+            mongoCollection.deleteOne(basicDBObject);
             mongoClient.close();
         }catch(Exception ex){
             ex.printStackTrace();
@@ -442,6 +433,82 @@ public class VCDatabaseServices {
         }
         return vcList;
     }
+    public List<VCProfile> queryListOfCompanyByID(String vcId) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        List<VCProfile> vcList = new ArrayList<VCProfile>();
+        try{
+
+            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
+            MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
+            BasicDBObject basicDBObject = new BasicDBObject("_id", new ObjectId(vcId));
+            FindIterable<Document> iterable = coll.find(basicDBObject);
+            iterable.forEach(new Block<Document>() {
+                @Override
+                public void apply(final Document document) {
+                    ObjectId idDocument = (ObjectId)document.get("_id");
+                    Document vcInfoDocument = (Document) document.get("vcInfo");
+                    Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
+                    Document socialDataDocument = (Document)document.get("socialData");
+                    List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
+
+                    String vcID = idDocument.toString();
+                    String vcName = (String)vcInfoDocument.get("vcName");
+                    String vcType = (String)vcInfoDocument.get("vcType");
+                    String vcLocationCity = (String)vcLocationDocument.get("city");
+                    String vcLocationState = (String)vcLocationDocument.get("state");
+                    String vcLocationCountry = (String)vcLocationDocument.get("country");
+                    Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
+                    String numberOfDeals = (String)vcInfoDocument.get("numberOfDeals");
+                    String numberOfExits = (String)vcInfoDocument.get("numberOfExits");
+                    String vcUrl = (String)vcInfoDocument.get("vcUrl");
+                    String vcEmail = (String)vcInfoDocument.get("vcEmail");
+                    String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
+
+                    vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals, numberOfExits, vcUrl,vcEmail,vcFoundedYear);
+
+                    String facebookUrl = (String)socialDataDocument.get("facebookUrl");
+                    String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
+                    String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
+
+                    socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
+                    fundingHistoryList = new ArrayList<FundingHistory>();
+                    for(int i=0; i<fundingHistoryDocument.size(); i++) {
+                        String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
+                        String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
+                        String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
+                        String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
+                        List<String> categoriesDocumentList = (List<String>)fundingHistoryDocument.get(i).get("categories");
+                        List<String> categoriesList = new ArrayList<String>();
+                        //categoriesList.clear();
+                        for(int j=0; j<categoriesDocumentList.size(); j++) {
+                            String category = categoriesDocumentList.get(j);
+                            categoriesList.add(category);
+                        }
+                        fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
+                        fundingHistoryList.add(fundingHistory);
+
+                    }
+
+
+                    vcProfile = new VCProfile(vcID, vcInfo,socialData,fundingHistoryList);
+                    vcList.add(vcProfile);
+
+                }
+
+            });
+
+            mongoClient.close();
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if (mongoClient != null) {
+
+                mongoClient = null;
+            }
+        }
+        return vcList;
+    }
 
     public List<VCProfile> queryListOfCompany(String vcId) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
@@ -524,6 +591,6 @@ public class VCDatabaseServices {
     public static void main(String[] args) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         VCProfile profile = new VCProfile();
         VCDatabaseServices vp = new VCDatabaseServices();
-        vp.queryListOfCompany("FuzzBeta");
+        vp.deleteVCProfileByIDNReturn("58785d65394dce196a1bd0ff");
     }
 }
