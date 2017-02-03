@@ -11,6 +11,9 @@ import org.vp.authentication.AdminUserProfile;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -20,6 +23,9 @@ public class AdminUserDatabaseServices {
     public ConnectMongo connectMongo = new ConnectMongo();
     public MongoClient mongoClient = null;
     public MongoDatabase mongoDatabase = null;
+    public List<String> usernameList =  Arrays.asList("rahmanww@gmail.com","riponwen@gmail.com","hasantarek.ny@gmail.com",
+            "kazinoor@juno.com");
+
 
     public boolean adminRegistration(AdminUserProfile user)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
