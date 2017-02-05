@@ -50,9 +50,10 @@ public class SingleVCResources {
     @Path("/{vcId}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public boolean deleteOrganizationProfile(@PathParam("vcId")String profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        boolean postMessage = vcDatabaseServices.deleteVCProfileByIDNReturn(profile);
-        return postMessage;
+    public void deleteOrganizationProfile(@PathParam("vcId")String profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        //boolean postMessage =
+        vcDatabaseServices.deleteVCProfileByIDNReturn(profile);
+        //return postMessage;
 
     }
 }

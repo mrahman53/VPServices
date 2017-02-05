@@ -161,7 +161,7 @@ public class VCDatabaseServices {
         }
         return true;
     }
-    public boolean deleteVCProfileByIDNReturn(String vcId)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public void deleteVCProfileByIDNReturn(String vcId)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
         try{
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
@@ -178,7 +178,7 @@ public class VCDatabaseServices {
                 mongoClient = null;
             }
         }
-        return true;
+        //return true;
     }
     public boolean deleteVCProfileNReturn(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 

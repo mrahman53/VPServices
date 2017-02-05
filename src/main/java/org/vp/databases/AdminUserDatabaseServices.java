@@ -23,19 +23,24 @@ public class AdminUserDatabaseServices {
     public ConnectMongo connectMongo = new ConnectMongo();
     public MongoClient mongoClient = null;
     public MongoDatabase mongoDatabase = null;
-    public List<String> usernameList =  Arrays.asList("rahmanww@gmail.com","riponwen@gmail.com","hasantarek.ny@gmail.com",
+    public List<String> userNameList =  Arrays.asList("rahmanww@gmail.com","riponwen@gmail.com","hasantarek.ny@gmail.com",
             "kazinoor@juno.com");
 
 
     public boolean adminRegistration(AdminUserProfile user)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-
+        boolean message = false;
         try{
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
             MongoDatabase mongoDatabase = mongoClient.getDatabase("AdminProfileDB");
             MongoCollection<Document> collection = mongoDatabase.getCollection("admin_login");
-            Document document = new Document().append("email",user.getEmail()).append("password", user.getPassword());
-            collection.insertOne(document);
-                mongoClient.close();
+            if (userNameList.contains(user.getEmail())) {
+                Document document = new Document().append("email", user.getEmail()).append("password", user.getPassword());
+                collection.insertOne(document);
+                message = true;
+            }else{
+                message = false;
+            }
+            mongoClient.close();
             }catch(Exception ex){
                 ex.printStackTrace();
             }finally {
@@ -44,8 +49,7 @@ public class AdminUserDatabaseServices {
                     mongoClient = null;
                 }
             }
-
-        return true;
+            return message;
     }
 
     public String updateAdminUserProfile(AdminUserProfile user){
