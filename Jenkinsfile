@@ -19,7 +19,7 @@ node {
 
         stage ('Deploy to Production') {
             sh "/usr/local/bin/aws s3 sync s3://api-artifact/${BRANCH_NAME}/${BUILD_NUMBER} s3://api-artifact/production"
-            if ($ { BRANCH_NAME } == 'modeling') {
+            if (BRANCH_NAME == 'modeling') {
                 sh "ssh -i ~/.ssh/id_rsa ubuntu@10.20.20.133 '~/copy-server.sh'"
             }
         }
