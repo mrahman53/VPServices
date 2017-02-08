@@ -11,23 +11,16 @@ node {
 
             // Copy artifact to s3
             sh "/usr/local/bin/aws s3 cp target/vpservices.war s3://api-artifact/${BRANCH_NAME}/${BUILD_NUMBER}/vpservices.war"
-
-            if ($ { BRANCH_NAME } == 'modeling') {
-                sh "ssh -i path-to-key.pem ec2-user@<api-server-ip> '/path/to/server/script'"
-            }
-
-            currentBuild.result = "SUCCESS"
         }
 
-        stage ('Deploy to staging') {
+        // stage ('Deploy to staging') {
             // Deploy Step
-
-            // Run integration Tests
-        }
+        // }
 
         stage ('Deploy to Production') {
+            sh "/usr/local/bin/aws s3 sync s3://api-artifact/${BRANCH_NAME}/${BUILD_NUMBER} s3://api-artifact/production"
             if ($ { BRANCH_NAME } == 'modeling') {
-                sh "ssh -i path-to-key.pem ec2-user@<api-server-ip> '/path/to/server/script'"
+                sh "ssh -i ~/.ssh/id_rsa ubuntu@10.20.20.133 '~/copy-server.sh'"
             }
         }
 
