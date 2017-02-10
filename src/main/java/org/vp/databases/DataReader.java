@@ -22,7 +22,7 @@ public class DataReader {
     {
         /** Our view of Google Spreadsheets as an authenticated Google user. */
         SpreadsheetService service = new SpreadsheetService("Print Google Spreadsheet Demo");
-
+        System.out.println("test");
         // Login and prompt the user to pick a sheet to use.
         service.setUserCredentials(GOOGLE_ACCOUNT_USERNAME, GOOGLE_ACCOUNT_PASSWORD);
 
