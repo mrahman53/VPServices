@@ -13,6 +13,14 @@ import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.sheets.v4.SheetsScopes;
 import com.google.api.services.sheets.v4.model.*;
 import com.google.api.services.sheets.v4.Sheets;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+import org.vp.databases.ConnectMongo;
+import org.vp.databases.VCFields;
+import org.vp.vc.profile.Location;
+import org.vp.vc.profile.SocialData;
 import org.vp.vc.profile.VCInfo;
 import org.vp.vc.profile.VCProfile;
 
@@ -28,10 +36,11 @@ import java.util.List;
  */
 
 public class VcModelScraping {
+
+    public static VCFields vcFields = new VCFields();
     /** Application name. */
     private static final String APPLICATION_NAME =
             "Google Sheets API Java VcModelScraping";
-///Users/mrahman/develop/vp/services/VPServices/src/client_secret.json
     /** Directory to store user credentials for this application. */
     private static final java.io.File DATA_STORE_DIR = new java.io.File(
             System.getProperty("user.home"), ".credentials/sheets.googleapis.com-java-quickstart");
@@ -108,12 +117,15 @@ public class VcModelScraping {
     }
 
     public static void main(String[] args) throws IOException {
-        VCProfile vcProfile = new VCProfile();
+        ConnectMongo connectMongo = new ConnectMongo();
+        VCProfile vcProfile = null;
         VCInfo vcInfo = new VCInfo();
+        Location location = new Location();
+        SocialData socialData = new SocialData();
         List<VCProfile> listProfile = new ArrayList<VCProfile>();
+        List<Document> documentProfile = new ArrayList<Document>();
         // Build a new authorized API client service.
         Sheets service = getSheetsService();
-
         // Prints the names and majors of students in a sample spreadsheet:
         // https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
         String spreadsheetId = "1l2Xp4_SP2yNynVAs86wWrlkmaZt0gOtU7G8fmP_cO68";
@@ -125,19 +137,101 @@ public class VcModelScraping {
         if (values == null || values.size() == 0) {
             System.out.println("No data found.");
         } else {
-            //System.out.println("Name, Country");
-            for (List row : values) {
-                for(int i=1; i<row.size(); i++) {
-                    String vcName = (String) row.get(i).toString();
-                    String vcType = (String) row.get(i).toString();
-                    //vcProfile.setVcInfo(vcInfo.setVcName(vcName),vcInfo.setVcType(vcType),);
-                    // Print columns A and E, which correspond to indices 0 and 4.
-                    System.out.printf("%s, %s,%s, %s,%s, %s,%s, %s,%s, %s,\n", row.get(0), row.get(1), row.get(2), row.get(3),
-                            row.get(4), row.get(5), row.get(6), row.get(7), row.get(8), row.get(9));
-                }
+                for (List row : values) {
+                    String vcName = (String) row.get(0).toString();
+                    String vcType = (String) row.get(1).toString();
+                    String city = (String) row.get(2).toString();
+                    String state = (String) row.get(3).toString();
+                    String country = (String) row.get(4).toString();
+                    String numberOfDeals = (String) row.get(5).toString();
+                    String numberOfExits = (String) row.get(6).toString();
+                    String vcUrl = (String) row.get(7).toString();
+                    String vcEmail = (String) row.get(8).toString();
+                    String vcFoundedYear = (String) row.get(9).toString();
+                    String facebookUrl = (String) row.get(10).toString();
+                    String twitterUrl = (String) row.get(11).toString();
+                    String linkedInUrl = (String) row.get(12).toString();
+                    vcInfo.setVcName(vcName);
+                    vcInfo.setVcType(vcType);
+                    location.setCity(city);
+                    location.setState(state);
+                    location.setCountry(country);
+                    vcInfo.setNumberOfDeals(numberOfDeals);
+                    vcInfo.setNumberOfExits(numberOfExits);
+                    vcInfo.setVcUrl(vcUrl);
+                    vcInfo.setVcEmail(vcEmail);
+                    vcInfo.setVcFoundedYear(vcFoundedYear);
+
+                    socialData.setFacebookUrl(facebookUrl);
+                    socialData.setTwitterUrl(twitterUrl);
+                    socialData.setLinkedinUrl(linkedInUrl);
+
+                    location = new Location(location.getCity(),location.getState(),location.getCountry());
+                    vcInfo = new VCInfo(vcInfo.getVcName(),vcInfo.getVcType(),location,
+                    vcInfo.getNumberOfDeals(),vcInfo.getNumberOfExits(),vcInfo.getVcUrl(),vcInfo.getVcEmail(),
+                    vcInfo.getVcFoundedYear());
+                    socialData = new SocialData(socialData.getFacebookUrl(),socialData.getTwitterUrl(),
+                            socialData.getLinkedinUrl());
+                    vcProfile = new VCProfile(vcInfo,socialData);
+                    listProfile.add(vcProfile);
+                    location = new Location();
+                    vcInfo = new VCInfo();
+                    socialData = new SocialData();
+                    vcProfile = new VCProfile();
+                        // Print columns A and E, which correspond to indices 0 and 4.
+                        System.out.printf("%s, %s,%s, %s,%s, %s,%s, %s,%s, %s,\n", row.get(0), row.get(1), row.get(2), row.get(3),
+                                row.get(4), row.get(5), row.get(6), row.get(7), row.get(8), row.get(9));
+
             }
         }
+
+        for(int i=1; i<listProfile.size(); i++) {
+            Document vcInfoDocument = documentVCInfoDataDelta(listProfile.get(i));
+            Document socialDataDocument = documentVCSocialData(listProfile.get(i));
+            Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument);
+            documentProfile.add(preparedDocument);
+        }
+        try{
+        MongoClient mongoClient = connectMongo.connectMongoClientSSLToAtlasWithMinimalSecurity();
+        MongoDatabase mongoDatabase = mongoClient.getDatabase("TEST_PROD");
+        MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
+        mongoCollection.insertMany(documentProfile);
+        mongoClient.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if (connectMongo.mongoClient != null) {
+
+                connectMongo.mongoClient = null;
+            }
+        }
+
+        }
+
+    public static Document documentVCInfoDataDelta(VCProfile profile){
+        Document document = new Document().append(vcFields.vcName, profile.getVcInfo().getVcName())
+                .append(vcFields.vcType, profile.getVcInfo().getVcType()).append(vcFields.vcLocation,vcLocationDocument(profile))
+                .append(vcFields.numberOfDeals, profile.getVcInfo().getNumberOfDeals())
+                .append(vcFields.numberOfExits, profile.getVcInfo().getNumberOfExits()).append(vcFields.vcUrl,
+                        profile.getVcInfo().getVcUrl()).append(vcFields.vcEmail,profile.getVcInfo().getVcEmail())
+                .append(vcFields.vcFoundedYear, profile.getVcInfo().getVcFoundedYear());
+
+        return document;
     }
 
+    public static Document vcLocationDocument(VCProfile profile){
+        Document document = new Document().append(vcFields.city, profile.getVcInfo()
+                .getVcLocation().getCity()).append(vcFields.state, profile.getVcInfo().getVcLocation().getState())
+                .append(vcFields.country, profile.getVcInfo().getVcLocation().getCountry());
 
+        return document;
+    }
+
+    public static Document documentVCSocialData(VCProfile profile){
+        Document document = new Document().append(vcFields.facebookUrl, profile.getSocialData().getFacebookUrl())
+                .append(vcFields.twitterUrl, profile.getSocialData().getTwitterUrl()).append(vcFields.linkedinUrl,
+                        profile.getSocialData().getLinkedinUrl());
+
+        return document;
+    }
 }
