@@ -39,7 +39,7 @@ public class VCDatabaseServices {
         try {
             String st = profile.getVcInfo().getVcName() + " " + "is Inserted";
             MongoClient mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("TEST_PROD");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             Document vcInfoDocument = documentVCInfoDataDelta(profile);
             Document socialDataDocument = documentVCSocialData(profile);
@@ -120,7 +120,7 @@ public class VCDatabaseServices {
 
         try{
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("TEST_PROD");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             Document vcInfoDocument = documentVCInfoDataDelta(profile);
             Document socialDataDocument = documentVCSocialData(profile);
@@ -165,7 +165,7 @@ public class VCDatabaseServices {
 
         try{
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("TEST_PROD");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             BasicDBObject basicDBObject = new BasicDBObject("_id", new ObjectId(vcId));
             mongoCollection.deleteOne(basicDBObject);
@@ -361,7 +361,7 @@ public class VCDatabaseServices {
         try{
 
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("TEST_PROD");
             MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
             FindIterable<Document> iterable = coll.find();
             iterable.forEach(new Block<Document>() {
@@ -435,7 +435,7 @@ public class VCDatabaseServices {
         try{
 
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("TEST_PROD");
             MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
             BasicDBObject basicDBObject = new BasicDBObject("_id", new ObjectId(vcId));
             FindIterable<Document> iterable = coll.find(basicDBObject);
@@ -512,7 +512,7 @@ public class VCDatabaseServices {
         try{
 
         mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-        MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD");
+        MongoDatabase mongoDatabase = mongoClient.getDatabase("TEST_PROD");
         MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("vcInfo.vcName", vcId);
