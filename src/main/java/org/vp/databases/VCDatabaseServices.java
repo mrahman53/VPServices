@@ -278,9 +278,6 @@ public class VCDatabaseServices {
     }
 
     public VCProfile findOneVCProfile(String vcId)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException{
-        Map<Integer, Document> sData = new LinkedHashMap<>();
-        Map<Integer, Object> pData = new LinkedHashMap<>();
-        Map<Integer, Object> data = new LinkedHashMap<>();
         List<String> categoriesList = new ArrayList<String>();
         try{
 
@@ -360,7 +357,7 @@ public class VCDatabaseServices {
     }
 
     public List<VCProfile> queryListOfCompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        final List<VCProfile> vcList = new ArrayList<VCProfile>();
+        List<VCProfile> vcList = new ArrayList<VCProfile>();
         try{
 
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
