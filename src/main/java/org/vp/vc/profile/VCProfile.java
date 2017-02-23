@@ -28,6 +28,7 @@ public class VCProfile {
     }
 
     public VCProfile(String id,VCInfo vcInfo, SocialData socialData) {
+        this._id = id;
         this.vcInfo = vcInfo;
         this.socialData = socialData;
     }

@@ -396,8 +396,8 @@ public class VCDatabaseServices {
                 String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
 
                 socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
+                    fundingHistoryList = new ArrayList<FundingHistory>();
                     if(fundingHistoryDocument!=null) {
-                        fundingHistoryList = new ArrayList<FundingHistory>();
                         for (int i = 0; i < fundingHistoryDocument.size(); i++) {
                             String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
                             String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
