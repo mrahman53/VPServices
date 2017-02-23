@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7c73fb5-0882-4c9b-9451-df570ec537b2" name="Default" comment="user-profile">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$2.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$3.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices.war" afterPath="$PROJECT_DIR$/target/vpservices.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$2.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$3.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java" />
     </list>
     <ignored path="vp-restful-services.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +35,13 @@
       <file leaf-file-name="VCDatabaseServices.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="493" column="25" selection-start-line="493" selection-start-column="25" selection-end-line="493" selection-end-column="25" />
+            <state relative-caret-position="31">
+              <caret line="526" column="67" selection-start-line="526" selection-start-column="67" selection-end-line="526" selection-end-column="67" />
               <folding>
                 <element signature="e#12598#12606#0" expanded="true" />
                 <element signature="e#16532#16543#0" expanded="true" />
+                <element signature="e#19680#19688#0" expanded="true" />
+                <element signature="e#20964#20975#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,8 +114,8 @@
       <file leaf-file-name="SingleVCResources.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+            <state relative-caret-position="705">
+              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -491,7 +499,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/org/vp" />
     </key>
   </component>
-  <component name="RunManager" selected="GlassFish Server.vp-rest-api">
+  <component name="RunManager" selected="GlassFish Server.192.168.0.12">
     <configuration default="false" name="ConnectMongo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1232,8 +1240,8 @@
         </option>
       </method>
     </configuration>
-    <configuration default="false" name="192.168.0.8" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.1.0" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://192.168.0.8:8080/vpservices/" />
+    <configuration default="false" name="192.168.0.12" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.1.0" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://192.168.0.12:8080/vpservices/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="vp-restful-services:war">
@@ -1306,7 +1314,7 @@
     </configuration>
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="GlassFish Server.vp-rest-api" />
-      <item index="1" class="java.lang.String" itemvalue="GlassFish Server.192.168.0.8" />
+      <item index="1" class="java.lang.String" itemvalue="GlassFish Server.192.168.0.12" />
       <item index="2" class="java.lang.String" itemvalue="Application.ConnectMongo" />
       <item index="3" class="java.lang.String" itemvalue="Application.DataScraper" />
       <item index="4" class="java.lang.String" itemvalue="Application.DataReader" />
@@ -1355,7 +1363,7 @@
       <workItem from="1486241719888" duration="9421000" />
       <workItem from="1486687924091" duration="752000" />
       <workItem from="1486688918517" duration="4722000" />
-      <workItem from="1487371404961" duration="2796000" />
+      <workItem from="1487371404961" duration="6084000" />
     </task>
     <task id="LOCAL-00001" summary="user-profile">
       <created>1486135457686</created>
@@ -1382,7 +1390,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258705000" />
+    <option name="totallyTimeSpent" value="261993000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1382" height="860" extended-state="0" />
@@ -1394,12 +1402,12 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3830594" sideWeight="0.16063675" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3830594" sideWeight="0.16931982" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294271" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1845152" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.49710566" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261694" sideWeight="0.4479016" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2692794" sideWeight="0.7872648" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2692794" sideWeight="0.77858174" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22648336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1409,7 +1417,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3830594" sideWeight="0.8393632" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3830594" sideWeight="0.8306802" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1469,103 +1477,19 @@
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>106</line>
-          <properties />
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>196</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>186</line>
-          <properties />
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>147</line>
-          <properties />
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>153</line>
-          <properties />
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>110</line>
-          <properties />
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>601</line>
-          <properties />
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>595</line>
-          <properties />
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>529</line>
-          <properties />
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>558</line>
-          <properties />
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>568</line>
-          <properties />
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>573</line>
-          <properties />
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>578</line>
-          <properties />
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java</url>
           <line>35</line>
           <properties />
           <option name="timeStamp" value="134" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java</url>
-          <line>26</line>
-          <properties />
-          <option name="timeStamp" value="171" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java</url>
-          <line>26</line>
+          <line>54</line>
           <properties />
-          <option name="timeStamp" value="180" />
+          <option name="timeStamp" value="189" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="181" />
+      <option name="time" value="190" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1927,14 +1851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.0-rc1/mongo-java-driver-3.4.0-rc1.jar!/com/mongodb/OperationIterable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1943,21 +1859,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="493" column="25" selection-start-line="493" selection-start-column="25" selection-end-line="493" selection-end-column="25" />
+        <state relative-caret-position="31">
+          <caret line="526" column="67" selection-start-line="526" selection-start-column="67" selection-end-line="526" selection-end-column="67" />
           <folding>
             <element signature="e#12598#12606#0" expanded="true" />
             <element signature="e#16532#16543#0" expanded="true" />
+            <element signature="e#19680#19688#0" expanded="true" />
+            <element signature="e#20964#20975#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+        <state relative-caret-position="705">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding />
         </state>
       </provider>

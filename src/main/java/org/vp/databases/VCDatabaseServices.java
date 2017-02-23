@@ -413,6 +413,7 @@ public class VCDatabaseServices {
 
                         }
                         vcProfile = new VCProfile(vcID, vcInfo, socialData, fundingHistoryList);
+                        vcList.add(vcProfile);
                     }else{
 
                         vcProfile = new VCProfile(vcID, vcInfo, socialData);
