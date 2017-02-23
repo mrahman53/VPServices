@@ -396,27 +396,32 @@ public class VCDatabaseServices {
                 String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
 
                 socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
-                fundingHistoryList = new ArrayList<FundingHistory>();
-                for(int i=0; i<fundingHistoryDocument.size(); i++) {
-                    String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
-                    String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
-                    String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
-                    String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
-                    List<String> categoriesDocumentList = (List<String>)fundingHistoryDocument.get(i).get("categories");
-                    List<String> categoriesList = new ArrayList<String>();
-                    for(int j=0; j<categoriesDocumentList.size(); j++) {
-                        String category = categoriesDocumentList.get(j);
-                        categoriesList.add(category);
+                    if(fundingHistoryDocument!=null) {
+                        fundingHistoryList = new ArrayList<FundingHistory>();
+                        for (int i = 0; i < fundingHistoryDocument.size(); i++) {
+                            String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
+                            String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
+                            String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
+                            String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
+                            List<String> categoriesDocumentList = (List<String>) fundingHistoryDocument.get(i).get("categories");
+                            List<String> categoriesList = new ArrayList<String>();
+                            for (int j = 0; j < categoriesDocumentList.size(); j++) {
+                                String category = categoriesDocumentList.get(j);
+                                categoriesList.add(category);
+                            }
+
+                            fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
+
+                            fundingHistoryList.add(fundingHistory);
+
+                        }
+                        vcProfile = new VCProfile(vcID, vcInfo, socialData, fundingHistoryList);
+                        vcList.add(vcProfile);
+
+                    }else{
+                        vcProfile = new VCProfile(vcID,vcInfo,socialData);
+                        vcList.add(vcProfile);
                     }
-
-                    fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
-
-                    fundingHistoryList.add(fundingHistory);
-
-                }
-                vcProfile = new VCProfile(vcID,vcInfo,socialData,fundingHistoryList);
-                vcList.add(vcProfile);
-
             }
 
         });
@@ -472,26 +477,31 @@ public class VCDatabaseServices {
 
                     socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
                     fundingHistoryList = new ArrayList<FundingHistory>();
-                    for(int i=0; i<fundingHistoryDocument.size(); i++) {
-                        String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
-                        String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
-                        String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
-                        String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
-                        List<String> categoriesDocumentList = (List<String>)fundingHistoryDocument.get(i).get("categories");
-                        List<String> categoriesList = new ArrayList<String>();
-                        //categoriesList.clear();
-                        for(int j=0; j<categoriesDocumentList.size(); j++) {
-                            String category = categoriesDocumentList.get(j);
-                            categoriesList.add(category);
+                    if(fundingHistoryDocument != null) {
+                        for (int i = 0; i < fundingHistoryDocument.size(); i++) {
+                            String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
+                            String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
+                            String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
+                            String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
+                            List<String> categoriesDocumentList = (List<String>) fundingHistoryDocument.get(i).get("categories");
+                            List<String> categoriesList = new ArrayList<String>();
+                            //categoriesList.clear();
+                            for (int j = 0; j < categoriesDocumentList.size(); j++) {
+                                String category = categoriesDocumentList.get(j);
+                                categoriesList.add(category);
+                            }
+                            fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
+                            fundingHistoryList.add(fundingHistory);
+
                         }
-                        fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
-                        fundingHistoryList.add(fundingHistory);
 
+
+                        vcProfile = new VCProfile(vcID, vcInfo, socialData, fundingHistoryList);
+                        vcList.add(vcProfile);
+                    }else{
+                        vcProfile = new VCProfile(vcID,vcInfo, socialData);
+                        vcList.add(vcProfile);
                     }
-
-
-                    vcProfile = new VCProfile(vcID, vcInfo,socialData,fundingHistoryList);
-                    vcList.add(vcProfile);
 
                 }
 
