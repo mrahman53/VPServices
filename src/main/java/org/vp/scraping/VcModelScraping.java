@@ -19,10 +19,7 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.vp.databases.ConnectMongo;
 import org.vp.databases.VCFields;
-import org.vp.vc.profile.Location;
-import org.vp.vc.profile.SocialData;
-import org.vp.vc.profile.VCInfo;
-import org.vp.vc.profile.VCProfile;
+import org.vp.vc.profile.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -122,10 +119,12 @@ public class VcModelScraping {
         VCInfo vcInfo = new VCInfo();
         Location location = new Location();
         SocialData socialData = new SocialData();
+        List<FundingHistory> fh = new ArrayList<FundingHistory>();
         List<VCProfile> listProfile = new ArrayList<VCProfile>();
         List<Document> documentProfile = new ArrayList<Document>();
         // Build a new authorized API client service.
         Sheets service = getSheetsService();
+        //1l2Xp4_SP2yNynVAs86wWrlkmaZt0gOtU7G8fmP_cO68
         // Prints the names and majors of students in a sample spreadsheet:
         // https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
         String spreadsheetId = "1l2Xp4_SP2yNynVAs86wWrlkmaZt0gOtU7G8fmP_cO68";
@@ -172,7 +171,7 @@ public class VcModelScraping {
                     vcInfo.getVcFoundedYear());
                     socialData = new SocialData(socialData.getFacebookUrl(),socialData.getTwitterUrl(),
                             socialData.getLinkedinUrl());
-                    vcProfile = new VCProfile(vcInfo,socialData);
+                    vcProfile = new VCProfile(vcInfo,socialData,fh);
                     listProfile.add(vcProfile);
                     location = new Location();
                     vcInfo = new VCInfo();
@@ -193,7 +192,7 @@ public class VcModelScraping {
         }
         try{
         MongoClient mongoClient = connectMongo.connectMongoClientSSLToAtlasWithMinimalSecurity();
-        MongoDatabase mongoDatabase = mongoClient.getDatabase("TEST_PROD");
+        MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
         MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
         mongoCollection.insertMany(documentProfile);
         mongoClient.close();

@@ -22,6 +22,12 @@ public class VCProfile {
 
     }
 
+    public VCProfile(VCInfo vcInfo, SocialData socialData) {
+        this.vcInfo = vcInfo;
+        this.socialData = socialData;
+    }
+
+
     public VCProfile(VCInfo vcInfo, SocialData socialData, List<FundingHistory> fundingHistory) {
         this.vcInfo = vcInfo;
         this.socialData = socialData;
