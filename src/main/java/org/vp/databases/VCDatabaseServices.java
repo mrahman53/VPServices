@@ -148,7 +148,7 @@ public class VCDatabaseServices {
     }
 
 
-    public List<VCProfile> queryListOfCompanyByName()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> queryListOfCompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try{
 
@@ -227,7 +227,7 @@ public class VCDatabaseServices {
         }
         return vcList;
     }
-    public List<VCProfile> queryListOfCompany(int start, int size)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> queryListOfCompanyByPagination(int start, int size)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try{
 

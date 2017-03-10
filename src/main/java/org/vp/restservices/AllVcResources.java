@@ -22,16 +22,16 @@ public class AllVcResources {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<VCProfile> getACompany(@QueryParam("start")int start, @QueryParam("size")int size)throws
+    public List<VCProfile> getCompanyList(@QueryParam("start")int start, @QueryParam("size")int size)throws
             KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        return vcDatabaseServices.queryListOfCompany(start,size);
+        return vcDatabaseServices.queryListOfCompany();
     }
 
     //@GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<VCProfile> getACompanies()throws
             KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        return vcDatabaseServices.queryListOfCompanyByName();
+        return vcDatabaseServices.queryListOfCompanyByPagination(0,199);
     }
 
     @POST
