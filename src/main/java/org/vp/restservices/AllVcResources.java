@@ -1,12 +1,11 @@
 package org.vp.restservices;
 
-import org.glassfish.jersey.server.ResourceConfig;
-import org.glassfish.jersey.server.ServerProperties;
 import  org.vp.databases.VCDatabaseServices;
 import  org.vp.vc.profile.VCProfile;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.QueryParam;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
@@ -23,10 +22,17 @@ public class AllVcResources {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<VCProfile> getACompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        return vcDatabaseServices.queryListOfCompany();
+    public List<VCProfile> getACompany(@QueryParam("start")int start, @QueryParam("size")int size)throws
+            KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        return vcDatabaseServices.queryListOfCompany(start,size);
     }
 
+    //@GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<VCProfile> getACompanies()throws
+            KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        return vcDatabaseServices.queryListOfCompanyByName();
+    }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
