@@ -160,7 +160,7 @@ public class VCDatabaseServices {
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
             MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
             MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
-            FindIterable<Document> iterable = coll.find().limit(200);
+            FindIterable<Document> iterable = coll.find();
             iterable.forEach(new Block<Document>() {
                 @Override
                 public void apply(final Document document) {
