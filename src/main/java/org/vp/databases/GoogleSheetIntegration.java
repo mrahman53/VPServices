@@ -141,8 +141,7 @@ public class GoogleSheetIntegration {
                         fundingHistory.getFundingAmount(), fundingHistory.getFundingRound(), fundingHistory.getCategories());
                 fh.add(fundingHistory);
                 vcProfile = new VCProfile(fh);
-                fh.clear();
-                categoriesList = null;
+                fundingHistory = new FundingHistory();
                 //System.out.printf("%s, %s,%s, %s,%s,\n", row.get(0), row.get(1), row.get(2), row.get(3),row.get(4));
 
             }
