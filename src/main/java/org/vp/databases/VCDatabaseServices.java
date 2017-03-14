@@ -14,6 +14,7 @@ import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
@@ -149,42 +150,46 @@ public class VCDatabaseServices {
 
 
     public List<VCProfile> queryListOfCompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        List<VCProfile> vcList = new ArrayList<VCProfile>();
+        vcList = readData();
+        return vcList;
+    }
+    public List<VCProfile> readData()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException{
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try{
-
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
             MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
             MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
-            FindIterable<Document> iterable = coll.find();
+            FindIterable<Document> iterable = coll.find().limit(200);
             iterable.forEach(new Block<Document>() {
                 @Override
                 public void apply(final Document document) {
-                ObjectId idDocument = (ObjectId)document.get("_id");
-                Document vcInfoDocument = (Document) document.get("vcInfo");
-                Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
-                Document socialDataDocument = (Document)document.get("socialData");
-                List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
+                    ObjectId idDocument = (ObjectId)document.get("_id");
+                    Document vcInfoDocument = (Document) document.get("vcInfo");
+                    Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
+                    Document socialDataDocument = (Document)document.get("socialData");
+                    List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
 
-                String vcID = idDocument.toString();
-                String vcName = (String)vcInfoDocument.get("vcName");
-                String vcType = (String)vcInfoDocument.get("vcType");
-                String vcLocationCity = (String)vcLocationDocument.get("city");
-                String vcLocationState = (String)vcLocationDocument.get("state");
-                String vcLocationCountry = (String)vcLocationDocument.get("country");
-                Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
-                String numberOfDeals = (String)vcInfoDocument.get("numberOfDeals");
-                String numberOfExits = (String)vcInfoDocument.get("numberOfExits");
-                String vcUrl = (String)vcInfoDocument.get("vcUrl");
-                String vcEmail = (String)vcInfoDocument.get("vcEmail");
-                String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
+                    String vcID = idDocument.toString();
+                    String vcName = (String)vcInfoDocument.get("vcName");
+                    String vcType = (String)vcInfoDocument.get("vcType");
+                    String vcLocationCity = (String)vcLocationDocument.get("city");
+                    String vcLocationState = (String)vcLocationDocument.get("state");
+                    String vcLocationCountry = (String)vcLocationDocument.get("country");
+                    Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
+                    String numberOfDeals = (String)vcInfoDocument.get("numberOfDeals");
+                    String numberOfExits = (String)vcInfoDocument.get("numberOfExits");
+                    String vcUrl = (String)vcInfoDocument.get("vcUrl");
+                    String vcEmail = (String)vcInfoDocument.get("vcEmail");
+                    String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
 
-                vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals,numberOfExits,vcUrl,vcEmail,vcFoundedYear);
+                    vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals,numberOfExits,vcUrl,vcEmail,vcFoundedYear);
 
-                String facebookUrl = (String)socialDataDocument.get("facebookUrl");
-                String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
-                String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
+                    String facebookUrl = (String)socialDataDocument.get("facebookUrl");
+                    String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
+                    String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
 
-                socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
+                    socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
                     fundingHistoryList = new ArrayList<FundingHistory>();
                     if(fundingHistoryDocument!=null) {
                         for (int i = 0; i < fundingHistoryDocument.size(); i++) {
@@ -211,9 +216,87 @@ public class VCDatabaseServices {
                         vcProfile = new VCProfile(vcID,vcInfo,socialData);
                         vcList.add(vcProfile);
                     }
-            }
+                }
 
-        });
+            });
+
+            mongoClient.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+
+            if (mongoClient != null) {
+
+                mongoClient = null;
+        }
+    }
+    return vcList;
+    }
+    public List<VCProfile> readDataFundingHistoryConnectWithNumberOfDeals()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException{
+        final List<VCProfile> vcList = new ArrayList<VCProfile>();
+        try{
+            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
+            MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
+            FindIterable<Document> iterable = coll.find().limit(200);
+            iterable.forEach(new Block<Document>() {
+                @Override
+                public void apply(final Document document) {
+                    ObjectId idDocument = (ObjectId)document.get("_id");
+                    Document vcInfoDocument = (Document) document.get("vcInfo");
+                    Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
+                    Document socialDataDocument = (Document)document.get("socialData");
+                    List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
+
+                    String vcID = idDocument.toString();
+                    String vcName = (String)vcInfoDocument.get("vcName");
+                    String vcType = (String)vcInfoDocument.get("vcType");
+                    String vcLocationCity = (String)vcLocationDocument.get("city");
+                    String vcLocationState = (String)vcLocationDocument.get("state");
+                    String vcLocationCountry = (String)vcLocationDocument.get("country");
+                    Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
+//                    String numberOfDeals = (String)vcInfoDocument.get("numberOfDeals");
+                    String numberOfExits = (String)vcInfoDocument.get("numberOfExits");
+                    String vcUrl = (String)vcInfoDocument.get("vcUrl");
+                    String vcEmail = (String)vcInfoDocument.get("vcEmail");
+                    String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
+
+                    String facebookUrl = (String)socialDataDocument.get("facebookUrl");
+                    String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
+                    String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
+
+                    socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
+                    fundingHistoryList = new ArrayList<FundingHistory>();
+                    if(fundingHistoryDocument!=null) {
+                        for (int i = 0; i < fundingHistoryDocument.size(); i++) {
+                            String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
+                            String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
+                            String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
+                            String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
+                            List<String> categoriesDocumentList = (List<String>) fundingHistoryDocument.get(i).get("categories");
+                            List<String> categoriesList = new ArrayList<String>();
+                            for (int j = 0; j < categoriesDocumentList.size(); j++) {
+                                String category = categoriesDocumentList.get(j);
+                                categoriesList.add(category);
+                            }
+
+                            fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
+
+                            fundingHistoryList.add(fundingHistory);
+
+                        }
+                        String numberOfDeals = Integer.toString(fundingHistoryList.size());
+                        vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals,numberOfExits,vcUrl,vcEmail,vcFoundedYear);
+                        vcProfile = new VCProfile(vcID, vcInfo, socialData, fundingHistoryList);
+                        vcList.add(vcProfile);
+
+                    }else{
+                        vcProfile = new VCProfile(vcID,vcInfo,socialData);
+                        vcList.add(vcProfile);
+                    }
+                }
+
+            });
 
             mongoClient.close();
         }catch(Exception ex){
