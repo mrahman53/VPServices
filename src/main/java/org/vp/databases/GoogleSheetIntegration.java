@@ -72,7 +72,7 @@ public class GoogleSheetIntegration {
     public static Credential authorize() throws IOException {
         // Load client secrets.
         InputStream in =
-                VcModelScraping.class.getResourceAsStream("/client_secret.json");
+                VcModelScraping.class.getResourceAsStream("/service.json");
         GoogleClientSecrets clientSecrets =
                 GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 

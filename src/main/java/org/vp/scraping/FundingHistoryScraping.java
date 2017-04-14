@@ -5,6 +5,7 @@ import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInsta
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
+import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
@@ -77,7 +78,7 @@ public class FundingHistoryScraping {
     public static Credential authorize() throws IOException {
         // Load client secrets.
         InputStream in =
-                VcModelScraping.class.getResourceAsStream("/client_secret.json");
+                VcModelScraping.class.getResourceAsStream("/service.json");
         GoogleClientSecrets clientSecrets =
                 GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 
@@ -89,7 +90,9 @@ public class FundingHistoryScraping {
                         .setAccessType("offline")
                         .build();
         Credential credential = null;
+        //GoogleCredential credential = null;
         try {
+            //credential = GoogleCredential.getApplicationDefault();
             credential = new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
 
             System.out.println("Credentials saved to " + DATA_STORE_DIR.getAbsolutePath());
