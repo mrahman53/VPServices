@@ -9,7 +9,7 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.MongoClientURI;
 import com.mongodb.MongoClientOptions;
 import org.vp.vc.profile.VCProfile;
-import javax.net.*;
+
 import javax.net.SocketFactory;
 import javax.net.ssl.*;
 import java.security.*;
@@ -320,7 +320,7 @@ public class ConnectMongo {
     }
 
     public static void main(String[] args)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException  {
-        List<VCProfile> list = vc.queryListOfCompany("bonsai");
+        List<VCProfile> list = vc.queryListOfCompanyByName("Edison Partners");
     }
 
 }

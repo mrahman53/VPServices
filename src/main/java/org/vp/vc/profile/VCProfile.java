@@ -28,6 +28,7 @@ public class VCProfile {
     }
 
     public VCProfile(String id,VCInfo vcInfo, SocialData socialData) {
+        this._id = id;
         this.vcInfo = vcInfo;
         this.socialData = socialData;
     }
@@ -37,7 +38,9 @@ public class VCProfile {
         this.socialData = socialData;
         this.fundingHistory = fundingHistory;
     }
-
+    public VCProfile(List<FundingHistory> fundingHistory) {
+        this.fundingHistory = fundingHistory;
+    }
 
     public VCProfile(String id,VCInfo vcInfo, SocialData socialData, List<FundingHistory> fundingHistory) {
         this._id = id;

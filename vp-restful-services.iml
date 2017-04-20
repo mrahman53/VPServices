@@ -23,6 +23,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: com.google.api-client:google-api-client-gson:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.http-client:google-http-client-gson:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.apis:google-api-services-plus:v1-rev64-1.13.2-beta" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet-core:2.24" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2.external:javax.inject:2.5.0-b05" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-common:2.24" level="project" />
@@ -82,6 +85,8 @@
     <orderEntry type="library" name="Maven: com.google.http-client:google-http-client-jackson2:1.22.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava-jdk5:17.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.apis:google-api-services-sheets:v4-rev459-1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.api-client:google-api-client-gson:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.http-client:google-http-client-gson:1.22.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.gdata:core:1.47.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:13.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.oauth-client:google-oauth-client-jetty:1.11.0-beta" level="project" />
@@ -93,5 +98,6 @@
     <orderEntry type="library" name="Maven: javax.mail:mail:1.4" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.6.2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.apis:google-api-services-plus:v1-rev64-1.13.2-beta" level="project" />
   </component>
 </module>
