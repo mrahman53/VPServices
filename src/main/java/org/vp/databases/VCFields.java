@@ -2,6 +2,8 @@ package org.vp.databases;
 
 import org.vp.vc.profile.Location;
 
+import java.util.List;
+
 /**
  * Created by mrahman on 7/17/16.
  */
@@ -28,5 +30,13 @@ public class VCFields {
     public String   fundingAmount = "fundingAmount";
     public String   fundingRound = "fundingRound";
     public String   categories = "categories";
+    public String   fundRaisedDate = "fundRaisedDate";
+    public String   fundRaisedName = "fundRaisedName";
+    public String   fundRaisedAmount = "fundRaisedAmount";
+    public String   fundRaisedSourceName = "fundRaisedAmount";
+    public String   fundRaisedSourceURL = "fundRaisedSourceURL";
+    public String   ipoNAcquisitionsDate = "ipoNAcquisitionsDate";
+    public String   ipoNAcquisitionsCompanyName = "ipoNAcquisitionsCompanyName";
+    public String   ipoNAcquisitionsExits = "ipoNAcquisitionsExits";
 
 }

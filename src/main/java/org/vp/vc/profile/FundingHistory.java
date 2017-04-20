@@ -70,6 +70,4 @@ public class FundingHistory {
     public void setCategories(List<String> categories) {
         this.categories = categories;
     }
-
-
 }

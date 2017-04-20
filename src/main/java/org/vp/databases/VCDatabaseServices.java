@@ -29,7 +29,11 @@ public class VCDatabaseServices {
     public static VCInfo vcInfo = null;
     public static SocialData socialData = null;
     public static FundingHistory fundingHistory = null;
+    public static FundRaised fundRaised = null;
+    public static IpoNAcquisitions ipoNAcquisitions = null;
     public List<FundingHistory> fundingHistoryList = null;
+    public List<FundRaised> fundRaisedList = null;
+    public List<IpoNAcquisitions> ipoNAcquisitionsList = null;
     public VCProfile vcProfile = null;
 
     public boolean insertVCProfileNReturn(VCProfile profile)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
@@ -42,9 +46,12 @@ public class VCDatabaseServices {
             Document vcInfoDocument = documentVCInfoData(profile);
             Document socialDataDocument = documentVCSocialData(profile);
             List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
+            List<Document> fundRaisedDocument = documentVCFundRaisedData(profile);
+            List<Document> ipoNAcquisitionsDocument = documentVCIpoNAcquisitionsData(profile);
 
             Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument)
-                    .append("fundingHistory", fundingHistoryDocument);
+                    .append("fundingHistory", fundingHistoryDocument).append("fundRaised", fundRaisedDocument)
+                    .append("ipoNAcquisitions", ipoNAcquisitionsDocument);
 
             mongoCollection.insertOne(preparedDocument);
             mongoClient.close();
@@ -147,7 +154,31 @@ public class VCDatabaseServices {
 
         return fundingHistoryData;
     }
+    public static List<Document> documentVCFundRaisedData(VCProfile profile){
+        List<Document> fundRaisedData = new ArrayList<>();
+        Document document = null;
+        for(FundRaised pr:profile.getFundRaised()) {
+            document = new Document().append(vcFields.fundRaisedDate, pr.getFundRaisedDate()).append(vcFields.fundRaisedName,
+                    pr.getFundRaisedName()).append(vcFields.fundingAmount,pr.getFundRaisedAmount()).append(vcFields.fundRaisedSourceName,
+                    pr.getFundRaisedSourceName()).append(vcFields.fundRaisedSourceURL, pr.getFundRaisedSourceURL());
 
+            fundRaisedData.add(document);
+        }
+
+        return fundRaisedData;
+    }
+    public static List<Document> documentVCIpoNAcquisitionsData(VCProfile profile){
+        List<Document> ipoNAcquisitions = new ArrayList<>();
+        Document document = null;
+        for(IpoNAcquisitions pr:profile.getIpoNAcquisitions()) {
+            document = new Document().append(vcFields.ipoNAcquisitionsDate, pr.getIpoNAcquisitionsDate()).append(vcFields.ipoNAcquisitionsCompanyName,
+                    pr.getIpoNAcquisitionsCompanyName()).append(vcFields.ipoNAcquisitionsExits,pr.getIpoNAcquisitionsExits());
+
+            ipoNAcquisitions.add(document);
+        }
+
+        return ipoNAcquisitions;
+    }
 
     public List<VCProfile> queryListOfCompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
@@ -169,6 +200,9 @@ public class VCDatabaseServices {
                     Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
                     Document socialDataDocument = (Document)document.get("socialData");
                     List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
+                    List<Document> fundRaisedDocument = (List<Document>)document.get("fundRaised");
+                    List<Document> ipoNAcquisitionsDocument = (List<Document>)document.get("ipoNAcquisitions");
+
 
                     String vcID = idDocument.toString();
                     String vcName = (String)vcInfoDocument.get("vcName");
@@ -216,7 +250,29 @@ public class VCDatabaseServices {
                         vcProfile = new VCProfile(vcID,vcInfo,socialData);
                         vcList.add(vcProfile);
                     }
+
+                    fundRaisedList = new ArrayList<FundRaised>();
+                    if(fundRaisedDocument!=null) {
+                    for (int i = 0; i < fundingHistoryDocument.size(); i++) {
+                        String fundRaisedDate = (String) fundRaisedDocument.get(i).get("fundRaisedDate");
+                        String fundRaisedName = (String) fundRaisedDocument.get(i).get("fundRaisedName");
+                        String fundRaisedAmount = (String) fundRaisedDocument.get(i).get("fundRaisedAmount");
+                        String fundRaisedSourceName = (String) fundRaisedDocument.get(i).get("fundRaisedSourceName");
+                        String fundRaisedSourceURL = (String) fundingHistoryDocument.get(i).get("fundRaisedSourceURL");
+
+                        fundRaised = new FundRaised(fundRaisedDate, fundRaisedName, fundRaisedAmount, fundRaisedSourceName, fundRaisedSourceURL);
+
+                        fundRaisedList.add(fundRaised);
+
+                    }
+                    vcProfile = new VCProfile(vcID, vcInfo, socialData, fundingHistoryList, fundRaisedList, ipoNAcquisitionsList);
+                    vcList.add(vcProfile);
+
+                }else{
+                    vcProfile = new VCProfile(vcID,vcInfo,socialData);
+                    vcList.add(vcProfile);
                 }
+            }
 
             });
 
