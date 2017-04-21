@@ -41,7 +41,7 @@ public class VCDatabaseServices {
         try {
             String st = profile.getVcInfo().getVcName() + " " + "is Inserted";
             MongoClient mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("dev");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
             Document vcInfoDocument = documentVCInfoData(profile);
             Document socialDataDocument = documentVCSocialData(profile);
@@ -189,7 +189,7 @@ public class VCDatabaseServices {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try{
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("dev");
             MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
             FindIterable<Document> iterable = coll.find();
             iterable.forEach(new Block<Document>() {
@@ -202,8 +202,6 @@ public class VCDatabaseServices {
                     List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
                     List<Document> fundRaisedDocument = (List<Document>)document.get("fundRaised");
                     List<Document> ipoNAcquisitionsDocument = (List<Document>)document.get("ipoNAcquisitions");
-
-
                     String vcID = idDocument.toString();
                     String vcName = (String)vcInfoDocument.get("vcName");
                     String vcType = (String)vcInfoDocument.get("vcType");
@@ -216,63 +214,19 @@ public class VCDatabaseServices {
                     String vcUrl = (String)vcInfoDocument.get("vcUrl");
                     String vcEmail = (String)vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
-
                     vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals,numberOfExits,vcUrl,vcEmail,vcFoundedYear);
-
                     String facebookUrl = (String)socialDataDocument.get("facebookUrl");
                     String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
                     String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
-
                     socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
                     fundingHistoryList = new ArrayList<FundingHistory>();
-                    if(fundingHistoryDocument!=null) {
-                        for (int i = 0; i < fundingHistoryDocument.size(); i++) {
-                            String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
-                            String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
-                            String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
-                            String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
-                            List<String> categoriesDocumentList = (List<String>) fundingHistoryDocument.get(i).get("categories");
-                            List<String> categoriesList = new ArrayList<String>();
-                            for (int j = 0; j < categoriesDocumentList.size(); j++) {
-                                String category = categoriesDocumentList.get(j);
-                                categoriesList.add(category);
-                            }
-
-                            fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
-
-                            fundingHistoryList.add(fundingHistory);
-
-                        }
-                        vcProfile = new VCProfile(vcID, vcInfo, socialData, fundingHistoryList);
-                        vcList.add(vcProfile);
-
-                    }else{
-                        vcProfile = new VCProfile(vcID,vcInfo,socialData);
-                        vcList.add(vcProfile);
-                    }
-
+                    fundingHistoryList = getFundingHistory(fundingHistoryDocument);
                     fundRaisedList = new ArrayList<FundRaised>();
-                    if(fundRaisedDocument!=null) {
-                    for (int i = 0; i < fundingHistoryDocument.size(); i++) {
-                        String fundRaisedDate = (String) fundRaisedDocument.get(i).get("fundRaisedDate");
-                        String fundRaisedName = (String) fundRaisedDocument.get(i).get("fundRaisedName");
-                        String fundRaisedAmount = (String) fundRaisedDocument.get(i).get("fundRaisedAmount");
-                        String fundRaisedSourceName = (String) fundRaisedDocument.get(i).get("fundRaisedSourceName");
-                        String fundRaisedSourceURL = (String) fundingHistoryDocument.get(i).get("fundRaisedSourceURL");
-
-                        fundRaised = new FundRaised(fundRaisedDate, fundRaisedName, fundRaisedAmount, fundRaisedSourceName, fundRaisedSourceURL);
-
-                        fundRaisedList.add(fundRaised);
-
-                    }
-                    vcProfile = new VCProfile(vcID, vcInfo, socialData, fundingHistoryList, fundRaisedList, ipoNAcquisitionsList);
-                    vcList.add(vcProfile);
-
-                }else{
-                    vcProfile = new VCProfile(vcID,vcInfo,socialData);
-                    vcList.add(vcProfile);
+                    fundRaisedList = getListOfFundRaised(fundRaisedDocument);
+                    ipoNAcquisitionsList = new ArrayList<IpoNAcquisitions>();
+                    ipoNAcquisitionsList = getIpoNAcquisitions(ipoNAcquisitionsDocument);
+                    vcProfile = new VCProfile(vcInfo,socialData,fundingHistoryList,fundRaisedList,ipoNAcquisitionsList);
                 }
-            }
 
             });
 
@@ -284,9 +238,71 @@ public class VCDatabaseServices {
             if (mongoClient != null) {
 
                 mongoClient = null;
+            }
+       }
+      return vcList;
+    }
+
+    public List<FundingHistory> getFundingHistory(List<Document> fundingHistoryDocument) {
+        if(fundingHistoryDocument!=null) {
+            for (int i = 0; i < fundingHistoryDocument.size(); i++) {
+                String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
+                String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
+                String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
+                String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
+                List<String> categoriesDocumentList = (List<String>) fundingHistoryDocument.get(i).get("categories");
+                List<String> categoriesList = new ArrayList<String>();
+                for (int j = 0; j < categoriesDocumentList.size(); j++) {
+                    String category = categoriesDocumentList.get(j);
+                    categoriesList.add(category);
+                }
+                fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
+                fundingHistoryList.add(fundingHistory);
+            }
+            return fundingHistoryList;
+
+        }else {
+            return fundingHistoryList;
+        }
+
+    }
+
+    public List<FundRaised> getListOfFundRaised(List<Document> fundRaisedDocument){
+        List<FundRaised> fundRaisedList = new ArrayList<FundRaised>();
+        if(fundRaisedDocument!=null) {
+            for (int i = 0; i < fundRaisedDocument.size(); i++) {
+                String fundRaisedDate = (String) fundRaisedDocument.get(i).get("fundRaisedDate");
+                String fundRaisedName = (String) fundRaisedDocument.get(i).get("fundRaisedName");
+                String fundRaisedAmount = (String) fundRaisedDocument.get(i).get("fundRaisedAmount");
+                String fundRaisedSourceName = (String) fundRaisedDocument.get(i).get("fundRaisedSourceName");
+                String fundRaisedSourceURL = (String) fundRaisedDocument.get(i).get("fundRaisedSourceURL");
+                fundRaised = new FundRaised(fundRaisedDate, fundRaisedName, fundRaisedAmount, fundRaisedSourceName, fundRaisedSourceURL);
+                fundRaisedList.add(fundRaised);
+            }
+            return fundRaisedList;
+        }else {
+            return fundRaisedList;
         }
     }
-    return vcList;
+
+    public List<IpoNAcquisitions> getIpoNAcquisitions(List<Document> ipoNAcquisitionsDocument) {
+        List<IpoNAcquisitions> ipoNAcquisitionsList = new ArrayList<IpoNAcquisitions>();
+        if (ipoNAcquisitionsDocument != null) {
+            for (int i = 0; i < ipoNAcquisitionsDocument.size(); i++) {
+                String ipoNAcquisitionsDate = (String) ipoNAcquisitionsDocument.get(i).get("ipoNAcquisitionsDate");
+                String ipoNAcquisitionsCompanyName = (String) ipoNAcquisitionsDocument.get(i).get("ipoNAcquisitionsCompanyName");
+                List<String> ipoNAcquisitionsExitsDocumentList = (List<String>) ipoNAcquisitionsDocument.get(i).get("ipoNAcquisitionsExits");
+                List<String> ipoList = new ArrayList<String>();
+                for (int j = 0; j < ipoNAcquisitionsExitsDocumentList.size(); j++) {
+                    String ipo = ipoNAcquisitionsExitsDocumentList.get(j);
+                    ipoList.add(ipo);
+                }
+                ipoNAcquisitions = new IpoNAcquisitions(ipoNAcquisitionsDate, ipoNAcquisitionsCompanyName, ipoList);
+              }
+             return ipoNAcquisitionsList;
+        }else {
+             return  ipoNAcquisitionsList;
+        }
     }
     public List<VCProfile> readDataFundingHistoryConnectWithNumberOfDeals()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException{
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
