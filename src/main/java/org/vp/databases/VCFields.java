@@ -33,7 +33,7 @@ public class VCFields {
     public String   fundRaisedDate = "fundRaisedDate";
     public String   fundRaisedName = "fundRaisedName";
     public String   fundRaisedAmount = "fundRaisedAmount";
-    public String   fundRaisedSourceName = "fundRaisedAmount";
+    public String   fundRaisedSourceName = "fundRaisedSourceName";
     public String   fundRaisedSourceURL = "fundRaisedSourceURL";
     public String   ipoNAcquisitionsDate = "ipoNAcquisitionsDate";
     public String   ipoNAcquisitionsCompanyName = "ipoNAcquisitionsCompanyName";

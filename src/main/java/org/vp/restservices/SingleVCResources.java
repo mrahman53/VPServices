@@ -27,7 +27,6 @@ public class SingleVCResources {
         return vcDatabaseServices.queryListOfCompanyByID(vcId);
     }
 
-
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

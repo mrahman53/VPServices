@@ -50,14 +50,14 @@ public class VCProfile {
         this.socialData = socialData;
         this.fundingHistory = fundingHistory;
     }
-    public VCProfile(VCInfo vcInfo, SocialData socialData, List<FundingHistory> fundingHistory, List<FundRaised> fundRaised, List<IpoNAcquisitions> ipoNAcquisitionses) {
+    public VCProfile(VCInfo vcInfo, SocialData socialData, List<FundingHistory> fundingHistory, List<FundRaised> fundRaised, List<IpoNAcquisitions> ipoNAcquisitions) {
         this.vcInfo = vcInfo;
         this.socialData = socialData;
         this.fundingHistory = fundingHistory;
         this.fundRaised = fundRaised;
         this.ipoNAcquisitions = ipoNAcquisitions;
     }
-    public VCProfile(String _id, VCInfo vcInfo, SocialData socialData, List<FundingHistory> fundingHistory, List<FundRaised> fundRaised, List<IpoNAcquisitions> ipoNAcquisitionses) {
+    public VCProfile(String _id, VCInfo vcInfo, SocialData socialData, List<FundingHistory> fundingHistory, List<FundRaised> fundRaised, List<IpoNAcquisitions> ipoNAcquisitions) {
         this._id = _id;
         this.vcInfo = vcInfo;
         this.socialData = socialData;
@@ -108,7 +108,7 @@ public class VCProfile {
         return fundRaised;
     }
 
-    public void setFundRaiseds(List<FundRaised> fundRaised) {
+    public void setFundRaised(List<FundRaised> fundRaised) {
         this.fundRaised = fundRaised;
     }
 

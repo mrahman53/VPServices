@@ -2,12 +2,174 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7c73fb5-0882-4c9b-9451-df570ec537b2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundRaised.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/IpoNAcquisitions.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/client_secret.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/authentication/AdminUserOperation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/authentication/AdminUserProfile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/authentication/ClientUserOperation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/authentication/ClientUserProfile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/AdminUserDatabaseServices.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/ClientUserDatabaseServices.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/ConnectMongo$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/ConnectMongo$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/ConnectMongo$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/ConnectMongo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/ConvertEnumToString.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/DataReader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/Fields.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/GoogleServiceAccount.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/GoogleSheetIntegration.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/SheetReader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabasePotentialUse$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabasePotentialUse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCFields.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/filter/CORSResponseFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/restservices/AllVcResources.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/restservices/FundingHistoryResources.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/restservices/LogInAuth.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/restservices/SearchVCProfile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/restservices/SignUp.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/restservices/SingleVCResources.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/scraping/FundingHistoryScraping.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/scraping/ScrapingGoogleSheet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/scraping/VcModelScraping.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/scraping/VcProilfeModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/FundingHistory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/Location.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/SocialData.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/VCInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/VCProfile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/service.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/client_secret.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/authentication/AdminUserOperation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/authentication/AdminUserProfile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/authentication/ClientUserOperation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/authentication/ClientUserProfile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/AdminUserDatabaseServices.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/ClientUserDatabaseServices.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/ConnectMongo$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/ConnectMongo$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/ConnectMongo$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/ConnectMongo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/ConvertEnumToString.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/DataReader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/Fields.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/GoogleServiceAccount.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/GoogleSheetIntegration.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/SheetReader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabasePotentialUse$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabasePotentialUse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCFields.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/filter/CORSResponseFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/restservices/AllVcResources.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/restservices/FundingHistoryResources.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/restservices/LogInAuth.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/restservices/SearchVCProfile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/restservices/SignUp.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/restservices/SingleVCResources.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/FundingHistoryScraping.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/ScrapingGoogleSheet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/VcModelScraping.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/VcProilfeModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/FundingHistory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/Location.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/SocialData.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/VCInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/VCProfile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/service.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/activation-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/aopalliance-repackaged-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/commons-codec-1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/commons-logging-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/core-1.47.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/genson-1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/google-api-client-1.22.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/google-api-client-gson-1.22.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/google-api-services-plus-v1-rev64-1.13.2-beta.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/google-api-services-sheets-v4-rev459-1.22.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/google-http-client-1.22.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/google-http-client-gson-1.22.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/google-http-client-jackson2-1.22.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/google-oauth-client-1.22.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/google-oauth-client-java6-1.11.0-beta.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/google-oauth-client-jetty-1.11.0-beta.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/grizzly-framework-2.3.23.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/grizzly-http-2.3.23.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/grizzly-http-server-2.3.23.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/gson-2.6.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/guava-13.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/guava-jdk5-17.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/hk2-api-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/hk2-locator-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/hk2-utils-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/httpclient-4.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/httpcore-4.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jackson-annotations-2.5.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jackson-core-2.8.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jackson-core-asl-1.9.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jackson-databind-2.8.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jackson-jaxrs-1.9.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jackson-jaxrs-base-2.5.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jackson-jaxrs-json-provider-2.5.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jackson-mapper-asl-1.9.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jackson-module-jaxb-annotations-2.5.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jackson-xc-1.9.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/javax.annotation-api-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/javax.inject-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/javax.json-1.0.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/javax.ws.rs-api-2.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jaxb-api-2.2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jaxb-impl-2.2.3-1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-bean-validation-2.0-m12.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-client-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-common-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-container-grizzly2-http-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-container-servlet-core-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-core-1.19.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-entity-filtering-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-guava-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-json-1.19.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-media-jaxb-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-media-json-jackson-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-media-moxy-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-media-multipart-2.22.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jersey-server-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jettison-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jetty-6.1.26.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jetty-util-6.1.26.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jsr305-1.3.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/jsr311-api-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/mail-1.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/mimepull-1.9.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/mongo-java-driver-3.4.0-rc1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/org.eclipse.persistence.asm-2.6.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/org.eclipse.persistence.core-2.6.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/org.eclipse.persistence.moxy-2.6.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/osgi-resource-locator-1.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/servlet-api-2.5-20081211.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/stax-api-1.0-2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/lib/validation-api-1.1.0.Beta2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/index.jsp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCFields.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCFields.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundingHistory.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundingHistory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java" />
     </list>
     <ignored path="vp-restful-services.iws" />
@@ -33,31 +195,17 @@
       <file leaf-file-name="VCDatabaseServices.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="253" column="20" selection-start-line="253" selection-start-column="20" selection-end-line="253" selection-end-column="20" />
+            <state relative-caret-position="167">
+              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding>
                 <element signature="method#insertVCProfileNReturn#0;class#VCDatabaseServices#0" expanded="false" />
-                <element signature="method#updateVCProfileByIDNReturn#0;class#VCDatabaseServices#0" expanded="false" />
-                <element signature="method#deleteVCProfileByIDNReturn#0;class#VCDatabaseServices#0" expanded="false" />
-                <element signature="method#documentVCInfoData#0;class#VCDatabaseServices#0" expanded="false" />
                 <element signature="method#documentVCLocationData#0;class#VCDatabaseServices#0" expanded="false" />
                 <element signature="method#documentVCSocialData#0;class#VCDatabaseServices#0" expanded="false" />
-                <element signature="method#documentVCFundingHistoryData#0;class#VCDatabaseServices#0" expanded="false" />
-                <element signature="method#documentVCFundRaisedData#0;class#VCDatabaseServices#0" expanded="false" />
-                <element signature="method#documentVCIpoNAcquisitionsData#0;class#VCDatabaseServices#0" expanded="false" />
-                <element signature="method#queryListOfCompany#0;class#VCDatabaseServices#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VCFields.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCFields.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#readData#1;class#VCDatabaseServices#0" expanded="false" />
+                <element signature="method#getFundingHistory#0;class#VCDatabaseServices#0" expanded="false" />
+                <element signature="method#readDataFundingHistoryConnectWithNumberOfDeals#0;class#VCDatabaseServices#0" expanded="false" />
+                <element signature="method#queryListOfCompanyByPagination#0;class#VCDatabaseServices#0" expanded="false" />
+                <marker date="1493176047000" expanded="false" signature="34548:34556" ph="&lt;~&gt;" />
               </folding>
             </state>
           </provider>
@@ -66,40 +214,18 @@
       <file leaf-file-name="AllVcResources.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="171">
               <caret line="26" column="52" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VCInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCInfo.java">
+      <file leaf-file-name="OperationIterable.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.0-rc1/mongo-java-driver-3.4.0-rc1.jar!/com/mongodb/OperationIterable.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogInAuth.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/LogInAuth.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminUserOperation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/authentication/AdminUserOperation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="294">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,12 +234,39 @@
       <file leaf-file-name="FundingHistory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundingHistory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="864">
               <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
               <folding>
-                <element signature="e#1712#1713#0" expanded="true" />
-                <element signature="e#1756#1757#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#910#911#0" expanded="false" />
+                <element signature="e#944#945#0" expanded="false" />
+                <element signature="e#998#999#0" expanded="false" />
+                <element signature="e#1044#1045#0" expanded="false" />
+                <element signature="e#1082#1083#0" expanded="false" />
+                <element signature="e#1116#1117#0" expanded="false" />
+                <element signature="e#1170#1171#0" expanded="false" />
+                <element signature="e#1216#1217#0" expanded="false" />
+                <element signature="e#1256#1257#0" expanded="false" />
+                <element signature="e#1292#1293#0" expanded="false" />
+                <element signature="e#1350#1351#0" expanded="false" />
+                <element signature="e#1400#1401#0" expanded="false" />
+                <element signature="e#1439#1440#0" expanded="false" />
+                <element signature="e#1474#1475#0" expanded="false" />
+                <element signature="e#1530#1531#0" expanded="false" />
+                <element signature="e#1578#1579#0" expanded="false" />
+                <element signature="e#1621#1622#0" expanded="false" />
+                <element signature="e#1654#1655#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SingleVCResources.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,47 +274,9 @@
       <file leaf-file-name="FundRaised.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundRaised.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="18" column="37" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#965#966#0" expanded="true" />
-                <element signature="e#1002#1003#0" expanded="true" />
-                <element signature="e#1062#1063#0" expanded="true" />
-                <element signature="e#1114#1115#0" expanded="true" />
-                <element signature="e#1155#1156#0" expanded="true" />
-                <element signature="e#1192#1193#0" expanded="true" />
-                <element signature="e#1252#1253#0" expanded="true" />
-                <element signature="e#1304#1305#0" expanded="true" />
-                <element signature="e#1347#1348#0" expanded="true" />
-                <element signature="e#1386#1387#0" expanded="true" />
-                <element signature="e#1450#1451#0" expanded="true" />
-                <element signature="e#1506#1507#0" expanded="true" />
-                <element signature="e#1553#1554#0" expanded="true" />
-                <element signature="e#1596#1597#0" expanded="true" />
-                <element signature="e#1778#1779#0" expanded="true" />
-                <element signature="e#1820#1821#0" expanded="true" />
-                <element signature="e#1890#1891#0" expanded="true" />
-                <element signature="e#1952#1953#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IpoNAcquisitions.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/IpoNAcquisitions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#869#870#0" expanded="true" />
-                <element signature="e#912#913#0" expanded="true" />
-                <element signature="e#1102#1103#0" expanded="true" />
-                <element signature="e#1152#1153#0" expanded="true" />
-                <element signature="e#1370#1371#0" expanded="true" />
-                <element signature="e#1414#1415#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="630">
+              <caret line="44" column="27" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -169,24 +284,39 @@
       <file leaf-file-name="VCProfile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="50" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="50" />
-              <folding>
-                <element signature="e#1161#1162#0" expanded="true" />
-                <element signature="e#1213#1214#0" expanded="true" />
-                <element signature="e#2288#2289#0" expanded="true" />
-                <element signature="e#2314#2315#0" expanded="true" />
-                <element signature="e#2352#2353#0" expanded="true" />
-                <element signature="e#2382#2383#0" expanded="true" />
-                <element signature="e#2983#2984#0" expanded="true" />
-                <element signature="e#3035#3036#0" expanded="true" />
-                <element signature="e#3082#3083#0" expanded="true" />
-                <element signature="e#3115#3116#0" expanded="true" />
-                <element signature="e#3178#3179#0" expanded="true" />
-                <element signature="e#3222#3223#0" expanded="true" />
-                <element signature="e#3281#3282#0" expanded="true" />
-                <element signature="e#3320#3321#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-73">
+              <caret line="46" column="105" selection-start-line="46" selection-start-column="105" selection-end-line="46" selection-end-column="105" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractJavaResourceMethodDispatcher.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/internal/AbstractJavaResourceMethodDispatcher.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResourceMethodInvocationHandlerFactory.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VCFields.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCFields.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="35" column="64" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -249,15 +379,15 @@
         <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/GoogleReaderWA.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/Location.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/AdminUserDatabaseServices.java" />
         <option value="$PROJECT_DIR$/Jenkinsfile" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundRaised.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/IpoNAcquisitions.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundingHistory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/VCFields.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/VCFields.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" />
       </list>
     </option>
@@ -320,8 +450,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="831" />
+    <option name="width" value="1415" />
+    <option name="height" value="832" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -348,8 +478,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -383,6 +513,58 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VPServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VPServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VPServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VPServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -512,7 +694,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -528,7 +710,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/org/vp" />
     </key>
   </component>
-  <component name="RunManager" selected="GlassFish Server.vp-rest-api">
+  <component name="RunManager" selected="GlassFish Server.192.168.0.14">
     <configuration default="false" name="ConnectMongo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1137,8 +1319,8 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="192.168.0.8" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.1.0" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://192.168.0.8:8080/vpservices/" />
+    <configuration default="false" name="192.168.0.14" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.1.0" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://192.168.0.14:8080/vpservices/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="vp-restful-services:war">
@@ -1281,7 +1463,7 @@
       </method>
     </configuration>
     <list size="7">
-      <item index="0" class="java.lang.String" itemvalue="GlassFish Server.192.168.0.8" />
+      <item index="0" class="java.lang.String" itemvalue="GlassFish Server.192.168.0.14" />
       <item index="1" class="java.lang.String" itemvalue="GlassFish Server.vp-rest-api" />
       <item index="2" class="java.lang.String" itemvalue="Application.ConnectMongo" />
       <item index="3" class="java.lang.String" itemvalue="Application.DataScraper" />
@@ -1329,7 +1511,9 @@
       <workItem from="1486088640928" duration="3000000" />
       <workItem from="1486135378860" duration="91000" />
       <workItem from="1486241719888" duration="7733000" />
-      <workItem from="1492652829815" duration="5779000" />
+      <workItem from="1492652829815" duration="24799000" />
+      <workItem from="1493173708988" duration="950000" />
+      <workItem from="1493175072157" duration="2257000" />
     </task>
     <task id="LOCAL-00001" summary="user-profile">
       <created>1486135457686</created>
@@ -1345,45 +1529,52 @@
       <option name="project" value="LOCAL" />
       <updated>1492655006860</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updated data model insert">
+      <created>1492748106308</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1492748106308</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254526000" />
+    <option name="totallyTimeSpent" value="276753000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="831" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1415" height="832" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32743362" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3263434" sideWeight="0.49722221" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11023622" sideWeight="0.10277778" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26867628" sideWeight="0.24240282" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294271" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.063194446" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11023622" sideWeight="0.8972222" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15053004" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26902887" sideWeight="0.79583335" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39711663" sideWeight="0.8628975" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26867628" sideWeight="0.75759715" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24876325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869786" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3830594" sideWeight="0.87698984" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33944955" sideWeight="0.814841" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869786" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1400,7 +1591,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="user-profile" />
     <MESSAGE value="updated prod" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated prod" />
+    <MESSAGE value="updated data model insert" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated data model insert" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1437,31 +1629,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>113</line>
+          <line>142</line>
           <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>230</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>220</line>
+          <line>246</line>
           <properties />
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>154</line>
-          <properties />
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>184</line>
+          <line>213</line>
           <properties />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
@@ -1478,12 +1658,6 @@
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>117</line>
-          <properties />
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/GoogleReaderWA.java</url>
           <line>85</line>
           <properties />
@@ -1491,19 +1665,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>577</line>
+          <line>689</line>
           <properties />
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>606</line>
+          <line>718</line>
           <properties />
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>616</line>
+          <line>728</line>
           <properties />
           <option name="timeStamp" value="118" />
         </line-breakpoint>
@@ -1513,14 +1687,62 @@
           <properties />
           <option name="timeStamp" value="134" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/IpoNAcquisitions.java</url>
-          <line>17</line>
-          <properties field="ipoNAcquisitionsExits" class="org.vp.vc.profile.IpoNAcquisitions" />
-          <option name="timeStamp" value="159" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
+          <line>598</line>
+          <properties />
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
+          <line>114</line>
+          <properties />
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
+          <line>129</line>
+          <properties />
+          <option name="timeStamp" value="170" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="160" />
+      <option name="time" value="171" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1529,15 +1751,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.0-rc1/mongo-java-driver-3.4.0-rc1.jar!/org/bson/Document.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/lang/Object.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/lang/Math.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/Arrays.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/lang/String.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/lang/Class.java" />
@@ -1667,13 +1880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.0-rc1/mongo-java-driver-3.4.0-rc1.jar!/com/mongodb/FindIterableImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1635">
-          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.0-rc1/mongo-java-driver-3.4.0-rc1.jar!/com/mongodb/MongoCollectionImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2730">
@@ -1691,28 +1897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.0-rc1/mongo-java-driver-3.4.0-rc1.jar!/com/mongodb/OperationIterable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/ClientUserDatabaseServices.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -1721,28 +1905,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/internal/AbstractJavaResourceMethodDispatcher.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1769,7 +1935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1794,129 +1959,174 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/client_secret.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/service.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-130">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
+        <state relative-caret-position="80">
           <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCFields.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundingHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-          <folding>
-            <element signature="e#1712#1713#0" expanded="true" />
-            <element signature="e#1756#1757#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/IpoNAcquisitions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        <state relative-caret-position="-73">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#869#870#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#1102#1103#0" expanded="true" />
-            <element signature="e#1152#1153#0" expanded="true" />
-            <element signature="e#1370#1371#0" expanded="true" />
-            <element signature="e#1414#1415#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#869#870#0" expanded="false" />
+            <element signature="e#912#913#0" expanded="false" />
+            <element signature="e#1102#1103#0" expanded="false" />
+            <element signature="e#1152#1153#0" expanded="false" />
+            <element signature="e#1370#1371#0" expanded="false" />
+            <element signature="e#1414#1415#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.0-rc1/mongo-java-driver-3.4.0-rc1.jar!/org/bson/Document.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="50" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="50" />
-          <folding>
-            <element signature="e#1161#1162#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
-            <element signature="e#2288#2289#0" expanded="true" />
-            <element signature="e#2314#2315#0" expanded="true" />
-            <element signature="e#2352#2353#0" expanded="true" />
-            <element signature="e#2382#2383#0" expanded="true" />
-            <element signature="e#2983#2984#0" expanded="true" />
-            <element signature="e#3035#3036#0" expanded="true" />
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3115#3116#0" expanded="true" />
-            <element signature="e#3178#3179#0" expanded="true" />
-            <element signature="e#3222#3223#0" expanded="true" />
-            <element signature="e#3281#3282#0" expanded="true" />
-            <element signature="e#3320#3321#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="158">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="26" column="52" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="52" />
+        <state relative-caret-position="180">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundRaised.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="37" />
+        <state relative-caret-position="630">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.0-rc1/mongo-java-driver-3.4.0-rc1.jar!/com/mongodb/FindIterableImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundingHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#965#966#0" expanded="true" />
-            <element signature="e#1002#1003#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
-            <element signature="e#1114#1115#0" expanded="true" />
-            <element signature="e#1155#1156#0" expanded="true" />
-            <element signature="e#1192#1193#0" expanded="true" />
-            <element signature="e#1252#1253#0" expanded="true" />
-            <element signature="e#1304#1305#0" expanded="true" />
-            <element signature="e#1347#1348#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1450#1451#0" expanded="true" />
-            <element signature="e#1506#1507#0" expanded="true" />
-            <element signature="e#1553#1554#0" expanded="true" />
-            <element signature="e#1596#1597#0" expanded="true" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1820#1821#0" expanded="true" />
-            <element signature="e#1890#1891#0" expanded="true" />
-            <element signature="e#1952#1953#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#910#911#0" expanded="false" />
+            <element signature="e#944#945#0" expanded="false" />
+            <element signature="e#998#999#0" expanded="false" />
+            <element signature="e#1044#1045#0" expanded="false" />
+            <element signature="e#1082#1083#0" expanded="false" />
+            <element signature="e#1116#1117#0" expanded="false" />
+            <element signature="e#1170#1171#0" expanded="false" />
+            <element signature="e#1216#1217#0" expanded="false" />
+            <element signature="e#1256#1257#0" expanded="false" />
+            <element signature="e#1292#1293#0" expanded="false" />
+            <element signature="e#1350#1351#0" expanded="false" />
+            <element signature="e#1400#1401#0" expanded="false" />
+            <element signature="e#1439#1440#0" expanded="false" />
+            <element signature="e#1474#1475#0" expanded="false" />
+            <element signature="e#1530#1531#0" expanded="false" />
+            <element signature="e#1578#1579#0" expanded="false" />
+            <element signature="e#1621#1622#0" expanded="false" />
+            <element signature="e#1654#1655#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCFields.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="35" column="64" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.0-rc1/mongo-java-driver-3.4.0-rc1.jar!/com/mongodb/OperationIterable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-73">
+          <caret line="46" column="105" selection-start-line="46" selection-start-column="105" selection-end-line="46" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="26" column="52" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="253" column="20" selection-start-line="253" selection-start-column="20" selection-end-line="253" selection-end-column="20" />
+        <state relative-caret-position="167">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding>
             <element signature="method#insertVCProfileNReturn#0;class#VCDatabaseServices#0" expanded="false" />
-            <element signature="method#updateVCProfileByIDNReturn#0;class#VCDatabaseServices#0" expanded="false" />
-            <element signature="method#deleteVCProfileByIDNReturn#0;class#VCDatabaseServices#0" expanded="false" />
-            <element signature="method#documentVCInfoData#0;class#VCDatabaseServices#0" expanded="false" />
             <element signature="method#documentVCLocationData#0;class#VCDatabaseServices#0" expanded="false" />
             <element signature="method#documentVCSocialData#0;class#VCDatabaseServices#0" expanded="false" />
-            <element signature="method#documentVCFundingHistoryData#0;class#VCDatabaseServices#0" expanded="false" />
-            <element signature="method#documentVCFundRaisedData#0;class#VCDatabaseServices#0" expanded="false" />
-            <element signature="method#documentVCIpoNAcquisitionsData#0;class#VCDatabaseServices#0" expanded="false" />
-            <element signature="method#queryListOfCompany#0;class#VCDatabaseServices#0" expanded="false" />
+            <element signature="method#readData#1;class#VCDatabaseServices#0" expanded="false" />
+            <element signature="method#getFundingHistory#0;class#VCDatabaseServices#0" expanded="false" />
+            <element signature="method#readDataFundingHistoryConnectWithNumberOfDeals#0;class#VCDatabaseServices#0" expanded="false" />
+            <element signature="method#queryListOfCompanyByPagination#0;class#VCDatabaseServices#0" expanded="false" />
+            <marker date="1493176047000" expanded="false" signature="34548:34556" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
