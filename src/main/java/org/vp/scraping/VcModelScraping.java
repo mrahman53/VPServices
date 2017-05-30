@@ -127,8 +127,9 @@ public class VcModelScraping {
         //1l2Xp4_SP2yNynVAs86wWrlkmaZt0gOtU7G8fmP_cO68
         // Prints the names and majors of students in a sample spreadsheet:
         // https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
-        String spreadsheetId = "1it6e1F8oFQpH6Thz6Bf9k32QtzlO6WuAPzF1n25DCNM";
-        String range = "Private Equity Firm & Fund Of Fund";
+        //https://docs.google.com/spreadsheets/d/1KAxv8-p2y7C6_xnR-owLIvKN03bg75lucbf2krF8Ecw/edit?usp=sharing
+        String spreadsheetId = "1KAxv8-p2y7C6_xnR-owLIvKN03bg75lucbf2krF8Ecw";
+        String range = "All_Angel";
         ValueRange response = service.spreadsheets().values()
                 .get(spreadsheetId, range)
                 .execute();
