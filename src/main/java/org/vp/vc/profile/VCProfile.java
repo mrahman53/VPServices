@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
+import java.util.*;
 
 /**
  * Created by mrahman on 7/26/16.
@@ -11,7 +12,7 @@ import java.util.List;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class VCProfile {
+public class VCProfile implements Comparable<VCProfile>{
 
     public String _id;
     public VCInfo vcInfo;
@@ -64,6 +65,23 @@ public class VCProfile {
         this.fundingHistory = fundingHistory;
         this.fundRaised = fundRaised;
         this.ipoNAcquisitions = ipoNAcquisitions;
+    }
+
+    public int compareTo(VCProfile vcProfile){
+        int numberOfDeals = 0;
+        if(vcProfile.getVcInfo().getNumberOfDeals().equals("")){
+             numberOfDeals = 0;
+        }else {
+             numberOfDeals = Integer.parseInt(((VCProfile) vcProfile).getVcInfo().getNumberOfDeals().replace(",",""));
+        }
+
+        int updateNumberOfDeals = 0;
+        if(this.vcInfo.numberOfDeals.equals("")){
+            updateNumberOfDeals = 0;
+        }else{
+            updateNumberOfDeals = Integer.parseInt(this.vcInfo.numberOfDeals.replace(",",""));
+        }
+        return numberOfDeals - updateNumberOfDeals;
     }
     public String get_id() {
         return _id;

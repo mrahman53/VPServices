@@ -335,6 +335,7 @@ public class VCDatabaseServices {
                 mongoClient = null;
             }
         }
+        Collections.sort(vcList);
         return vcList;
     }
     public List<FundingHistory> getFundingHistory(List<Document> fundingHistoryDocument) {
