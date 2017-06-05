@@ -129,7 +129,7 @@ public class VcModelScraping {
         // https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
         //https://docs.google.com/spreadsheets/d/1KAxv8-p2y7C6_xnR-owLIvKN03bg75lucbf2krF8Ecw/edit?usp=sharing
         String spreadsheetId = "1KAxv8-p2y7C6_xnR-owLIvKN03bg75lucbf2krF8Ecw";
-        String range = "All_Angel";
+        String range = "Angel_Us";
         ValueRange response = service.spreadsheets().values()
                 .get(spreadsheetId, range)
                 .execute();

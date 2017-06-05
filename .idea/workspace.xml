@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f7c73fb5-0882-4c9b-9451-df570ec537b2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/scraping/VcModelScraping.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/scraping/VcModelScraping.java" />
     </list>
     <ignored path="vp-restful-services.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VCDatabaseServices.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VCDatabaseServices.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="-678">
               <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
               <folding>
                 <element signature="method#deleteVCProfileByIDNReturn#0;class#VCDatabaseServices#0" expanded="false" />
@@ -76,6 +75,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SingleVCResources.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="43" column="75" lean-forward="false" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="VCProfile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -103,6 +112,45 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="175">
               <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VcProilfeModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/scraping/VcProilfeModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-121">
+              <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VcModelScraping.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/scraping/VcModelScraping.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="52" column="48" lean-forward="true" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+              <folding>
+                <element signature="initializer##0;class#VcModelScraping#0" expanded="false" />
+                <element signature="method#authorize#0;class#VcModelScraping#0" expanded="false" />
+                <element signature="docComment;method#getSheetsService#0;class#VcModelScraping#0" expanded="false" />
+                <element signature="method#getSheetsService#0;class#VcModelScraping#0" expanded="false" />
+                <element signature="method#main#0;class#VcModelScraping#0" expanded="false" />
+                <element signature="method#documentVCInfoDataDelta#0;class#VcModelScraping#0" expanded="false" />
+                <element signature="method#vcLocationDocument#0;class#VcModelScraping#0" expanded="false" />
+                <element signature="method#documentVCSocialData#0;class#VcModelScraping#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResourceMethodInvocationHandlerFactory.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -173,10 +221,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundingHistory.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/VCFields.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/vp/scraping/VcModelScraping.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/vp/scraping/VcModelScraping.java" />
       </list>
     </option>
   </component>
@@ -397,6 +445,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="profile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VPServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VPServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scraping" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1306,7 +1384,7 @@
       <workItem from="1493827841956" duration="11533000" />
       <workItem from="1494159866961" duration="403000" />
       <workItem from="1495552931620" duration="10811000" />
-      <workItem from="1496115336385" duration="8962000" />
+      <workItem from="1496115336385" duration="12829000" />
     </task>
     <task id="LOCAL-00001" summary="user-profile">
       <created>1486135457686</created>
@@ -1340,7 +1418,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="317932000" />
+    <option name="totallyTimeSpent" value="321799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="23" width="1415" height="832" extended-state="0" />
@@ -1348,7 +1426,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23984273" sideWeight="0.24876325" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21363041" sideWeight="0.25300354" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294271" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.088339224" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1358,7 +1436,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23984273" sideWeight="0.75123674" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21363041" sideWeight="0.74699646" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3263434" sideWeight="0.49469966" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1367,7 +1445,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4600262" sideWeight="0.8106007" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26867628" sideWeight="0.7448763" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26867628" sideWeight="0.74063605" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24734983" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1874,26 +1952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/scraping/VcProilfeModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/scraping/VcModelScraping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3258">
-          <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/scraping/ScrapingGoogleSheet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1764">
@@ -2005,22 +2063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="43" column="75" lean-forward="false" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
@@ -2077,14 +2119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -2097,7 +2131,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="-678">
           <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
           <folding>
             <element signature="method#deleteVCProfileByIDNReturn#0;class#VCDatabaseServices#0" expanded="false" />
@@ -2130,6 +2164,55 @@
             <element signature="e#39205#39213#0" expanded="true" />
             <marker date="1496239883000" expanded="false" signature="34642:34650" ph="&lt;~&gt;" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/scraping/VcProilfeModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-121">
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/scraping/VcModelScraping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="52" column="48" lean-forward="true" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+          <folding>
+            <element signature="initializer##0;class#VcModelScraping#0" expanded="false" />
+            <element signature="method#authorize#0;class#VcModelScraping#0" expanded="false" />
+            <element signature="docComment;method#getSheetsService#0;class#VcModelScraping#0" expanded="false" />
+            <element signature="method#getSheetsService#0;class#VcModelScraping#0" expanded="false" />
+            <element signature="method#main#0;class#VcModelScraping#0" expanded="false" />
+            <element signature="method#documentVCInfoDataDelta#0;class#VcModelScraping#0" expanded="false" />
+            <element signature="method#vcLocationDocument#0;class#VcModelScraping#0" expanded="false" />
+            <element signature="method#documentVCSocialData#0;class#VcModelScraping#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="43" column="75" lean-forward="false" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="75" />
+          <folding />
         </state>
       </provider>
     </entry>
