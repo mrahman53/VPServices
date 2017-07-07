@@ -16,20 +16,23 @@ public class VCInfo {
     public String   vcType;
     public Location vcLocation;
     public String   numberOfDeals;
+    public String   numberOfExits;
     public String   vcUrl;
     public String   vcEmail;
     public String   vcFoundedYear;
+
 
     public VCInfo(){
 
     }
 
     public VCInfo(String vcName, String vcType, Location vcLocation, String numberOfDeals,
-                  String vcUrl, String vcEmail, String vcFoundedYear) {
+                  String numberOfExits,String vcUrl, String vcEmail, String vcFoundedYear) {
         this.vcName = vcName;
         this.vcType = vcType;
         this.vcLocation = vcLocation;
         this.numberOfDeals = numberOfDeals;
+        this.numberOfExits = numberOfExits;
         this.vcUrl = vcUrl;
         this.vcEmail = vcEmail;
         this.vcFoundedYear = vcFoundedYear;
@@ -65,6 +68,14 @@ public class VCInfo {
 
     public void setNumberOfDeals(String numberOfDeals) {
         this.numberOfDeals = numberOfDeals;
+    }
+
+    public String getNumberOfExits() {
+        return numberOfExits;
+    }
+
+    public void setNumberOfExits(String numberOfExits) {
+        this.numberOfExits = numberOfExits;
     }
 
     public String getVcUrl() {
