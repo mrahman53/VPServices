@@ -347,9 +347,11 @@ public class VCDatabaseServices {
                 String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
                 List<String> categoriesDocumentList = (List<String>) fundingHistoryDocument.get(i).get("categories");
                 List<String> categoriesList = new ArrayList<String>();
-                for (int j = 0; j < categoriesDocumentList.size(); j++) {
-                    String category = categoriesDocumentList.get(j);
-                    categoriesList.add(category);
+                if(categoriesDocumentList !=null) {
+                    for (int j = 0; j < categoriesDocumentList.size(); j++) {
+                        String category = categoriesDocumentList.get(j);
+                        categoriesList.add(category);
+                    }
                 }
                 fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
                 fundingHistoryList.add(fundingHistory);
