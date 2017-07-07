@@ -388,13 +388,9 @@ public class VCDatabaseServices {
             for (int i = 0; i < ipoNAcquisitionsDocument.size(); i++) {
                 String ipoNAcquisitionsDate = (String) ipoNAcquisitionsDocument.get(i).get("ipoNAcquisitionsDate");
                 String ipoNAcquisitionsCompanyName = (String) ipoNAcquisitionsDocument.get(i).get("ipoNAcquisitionsCompanyName");
-                List<String> ipoNAcquisitionsExitsDocumentList = (List<String>) ipoNAcquisitionsDocument.get(i).get("ipoNAcquisitionsExits");
-                List<String> ipoList = new ArrayList<String>();
-                for (int j = 0; j < ipoNAcquisitionsExitsDocumentList.size(); j++) {
-                    String ipo = ipoNAcquisitionsExitsDocumentList.get(j);
-                    ipoList.add(ipo);
-                }
-                ipoNAcquisitions = new IpoNAcquisitions(ipoNAcquisitionsDate, ipoNAcquisitionsCompanyName, ipoList);
+                String ipoNAcquisitionsExits = (String) ipoNAcquisitionsDocument.get(i).get("ipoNAcquisitionsExits");
+
+                ipoNAcquisitions = new IpoNAcquisitions(ipoNAcquisitionsDate, ipoNAcquisitionsCompanyName, ipoNAcquisitionsExits);
                 ipoNAcquisitionsList.add(ipoNAcquisitions);
               }
              return ipoNAcquisitionsList;

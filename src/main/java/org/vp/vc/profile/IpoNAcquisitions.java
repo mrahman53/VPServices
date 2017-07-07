@@ -15,11 +15,11 @@ public class IpoNAcquisitions {
 
     public String ipoNAcquisitionsDate;
     public String ipoNAcquisitionsCompanyName;
-    public List<String> ipoNAcquisitionsExits;
+    public String ipoNAcquisitionsExits;
 
     public IpoNAcquisitions(){}
 
-    public IpoNAcquisitions(String ipoNAcquisitionsDate, String ipoNAcquisitionsCompanyName, List<String> ipoNAcquisitionsExits) {
+    public IpoNAcquisitions(String ipoNAcquisitionsDate, String ipoNAcquisitionsCompanyName, String ipoNAcquisitionsExits) {
         this.ipoNAcquisitionsDate = ipoNAcquisitionsDate;
         this.ipoNAcquisitionsCompanyName = ipoNAcquisitionsCompanyName;
         this.ipoNAcquisitionsExits = ipoNAcquisitionsExits;
@@ -41,11 +41,11 @@ public class IpoNAcquisitions {
         this.ipoNAcquisitionsCompanyName = ipoNAcquisitionsCompanyName;
     }
 
-    public List<String> getIpoNAcquisitionsExits() {
+    public String getIpoNAcquisitionsExits() {
         return ipoNAcquisitionsExits;
     }
 
-    public void setIpoNAcquisitionsExits(List<String> ipoNAcquisitionsExits) {
+    public void setIpoNAcquisitionsExits(String ipoNAcquisitionsExits) {
         this.ipoNAcquisitionsExits = ipoNAcquisitionsExits;
     }
 }
