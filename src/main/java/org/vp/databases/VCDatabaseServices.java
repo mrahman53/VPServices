@@ -347,9 +347,11 @@ public class VCDatabaseServices {
                 String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
                 List<String> categoriesDocumentList = (List<String>) fundingHistoryDocument.get(i).get("categories");
                 List<String> categoriesList = new ArrayList<String>();
-                for (int j = 0; j < categoriesDocumentList.size(); j++) {
-                    String category = categoriesDocumentList.get(j);
-                    categoriesList.add(category);
+                if(categoriesDocumentList !=null) {
+                    for (int j = 0; j < categoriesDocumentList.size(); j++) {
+                        String category = categoriesDocumentList.get(j);
+                        categoriesList.add(category);
+                    }
                 }
                 fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
                 fundingHistoryList.add(fundingHistory);
@@ -361,6 +363,7 @@ public class VCDatabaseServices {
         }
 
     }
+
 
     public List<FundRaised> getListOfFundRaised(List<Document> fundRaisedDocument){
         List<FundRaised> fundRaisedList = new ArrayList<FundRaised>();
@@ -386,18 +389,14 @@ public class VCDatabaseServices {
             for (int i = 0; i < ipoNAcquisitionsDocument.size(); i++) {
                 String ipoNAcquisitionsDate = (String) ipoNAcquisitionsDocument.get(i).get("ipoNAcquisitionsDate");
                 String ipoNAcquisitionsCompanyName = (String) ipoNAcquisitionsDocument.get(i).get("ipoNAcquisitionsCompanyName");
-                List<String> ipoNAcquisitionsExitsDocumentList = (List<String>) ipoNAcquisitionsDocument.get(i).get("ipoNAcquisitionsExits");
-                List<String> ipoList = new ArrayList<String>();
-                for (int j = 0; j < ipoNAcquisitionsExitsDocumentList.size(); j++) {
-                    String ipo = ipoNAcquisitionsExitsDocumentList.get(j);
-                    ipoList.add(ipo);
-                }
-                ipoNAcquisitions = new IpoNAcquisitions(ipoNAcquisitionsDate, ipoNAcquisitionsCompanyName, ipoList);
+                String ipoNAcquisitionsExits = (String) ipoNAcquisitionsDocument.get(i).get("ipoNAcquisitionsExits");
+
+                ipoNAcquisitions = new IpoNAcquisitions(ipoNAcquisitionsDate, ipoNAcquisitionsCompanyName, ipoNAcquisitionsExits);
                 ipoNAcquisitionsList.add(ipoNAcquisitions);
-              }
-             return ipoNAcquisitionsList;
+            }
+            return ipoNAcquisitionsList;
         }else {
-             return  ipoNAcquisitionsList;
+            return  ipoNAcquisitionsList;
         }
     }
     public List<VCProfile> readDataFundingHistoryConnectWithNumberOfDeals()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException{
