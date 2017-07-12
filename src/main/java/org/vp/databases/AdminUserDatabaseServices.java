@@ -24,7 +24,7 @@ public class AdminUserDatabaseServices {
     public MongoClient mongoClient = null;
     public MongoDatabase mongoDatabase = null;
     public List<String> userNameList =  Arrays.asList("rahmanww@gmail.com","riponwen@gmail.com","hasantarek.ny@gmail.com",
-            "kazinoor@juno.com");
+            "kazinoor@juno.com","akita.syeda@gmail.com");
 
 
     public boolean adminRegistration(AdminUserProfile user)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
