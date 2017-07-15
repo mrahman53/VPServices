@@ -25,6 +25,11 @@ import static com.mongodb.client.model.Filters.eq;
 public class VCDatabaseServices {
     public ConnectMongo connectMongo = null;
     public MongoClient mongoClient = null;
+    public MongoDatabase mongoDatabase = null;
+    public MongoCollection mongoCollection = null;
+    public MongoCollection<Document> coll = null;
+    public BasicDBObject basicDBObject = null;
+    public FindIterable<Document> iterable = null;
     public static VCFields vcFields = new VCFields();
     public static VCInfo vcInfo = null;
     public static SocialData socialData = null;
@@ -41,9 +46,9 @@ public class VCDatabaseServices {
         try {
             String st = profile.getVcInfo().getVcName() + " " + "is Inserted";
             connectMongo = new ConnectMongo();
-            MongoClient mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
-            MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
+            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
+            mongoCollection = mongoDatabase.getCollection("profile");
             Document vcInfoDocument = documentVCInfoData(profile);
             Document socialDataDocument = documentVCSocialData(profile);
             List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
@@ -59,9 +64,17 @@ public class VCDatabaseServices {
             }catch(Exception ex){
                 ex.printStackTrace();
             }finally {
-                if (mongoClient != null) {
+                if (mongoCollection != null) {
+                    mongoCollection = null;
+                }
+                if (mongoDatabase != null) {
+                    mongoDatabase = null;
 
+                }
+                if (mongoClient != null) {
                     mongoClient = null;
+                }
+                if (connectMongo != null) {
                     connectMongo = null;
                 }
             }
@@ -102,8 +115,8 @@ public class VCDatabaseServices {
         try{
             connectMongo = new ConnectMongo();
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
-            MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
+            mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
+            mongoCollection = mongoDatabase.getCollection("profile");
             Document vcInfoDocument = documentVCInfoData(profile);
             Document socialDataDocument = documentVCSocialData(profile);
             List<Document> fundingHistoryDocument = documentVCFundingHistoryData(profile);
@@ -120,29 +133,49 @@ public class VCDatabaseServices {
         }catch(Exception ex){
             ex.printStackTrace();
         }finally {
-            if (mongoClient != null) {
+            if (mongoCollection != null) {
+                mongoCollection = null;
+            }
+            if (mongoDatabase != null) {
+                mongoDatabase = null;
 
+            }
+            if (mongoClient != null) {
                 mongoClient = null;
+            }
+            if (connectMongo != null) {
                 connectMongo = null;
             }
         }
         return true;
     }
     public void deleteVCProfileByIDNReturn(String vcId)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-
+        connectMongo = new ConnectMongo();
         try{
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
-            MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
-            BasicDBObject basicDBObject = new BasicDBObject("_id", new ObjectId(vcId));
+            mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
+            mongoCollection = mongoDatabase.getCollection("profile");
+            basicDBObject = new BasicDBObject("_id", new ObjectId(vcId));
             mongoCollection.deleteOne(basicDBObject);
             mongoClient.close();
         }catch(Exception ex){
             ex.printStackTrace();
         }finally {
-            if (mongoClient != null) {
+            if(basicDBObject!= null){
+                basicDBObject = null;
+            }
+            if (mongoCollection != null) {
+                mongoCollection = null;
+            }
+            if (mongoDatabase != null) {
+                mongoDatabase = null;
 
+            }
+            if (mongoClient != null) {
                 mongoClient = null;
+            }
+            if (connectMongo != null) {
+                connectMongo = null;
             }
         }
     }
@@ -223,10 +256,10 @@ public class VCDatabaseServices {
         try{
             connectMongo = new ConnectMongo();
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
-            MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
-            BasicDBObject basicDBObject = new BasicDBObject("_id", new ObjectId(vcID));
-            FindIterable<Document> iterable = coll.find(basicDBObject);
+            mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
+            coll = mongoDatabase.getCollection("profile");
+            basicDBObject = new BasicDBObject("_id", new ObjectId(vcID));
+            iterable = coll.find(basicDBObject);
             iterable.forEach(new Block<Document>() {
                 @Override
                 public void apply(final Document document) {
@@ -270,10 +303,23 @@ public class VCDatabaseServices {
         }catch(Exception ex){
             ex.printStackTrace();
         }finally {
+            if(iterable!= null){
+                iterable = null;
+            }
+            if(basicDBObject!= null){
+                basicDBObject = null;
+            }
+            if ( coll!= null) {
+                 coll = null;
+            }
+            if (mongoDatabase != null) {
+                mongoDatabase = null;
 
+            }
             if (mongoClient != null) {
-
                 mongoClient = null;
+            }
+            if (connectMongo != null) {
                 connectMongo = null;
             }
        }
@@ -290,9 +336,9 @@ public class VCDatabaseServices {
         try{
             connectMongo = new ConnectMongo();
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
-            MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
-            FindIterable<Document> iterable = coll.find();
+            mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
+            coll = mongoDatabase.getCollection("profile");
+            iterable = coll.find();
             iterable.forEach(new Block<Document>() {
                 @Override
                 public void apply(final Document document) {
@@ -336,10 +382,20 @@ public class VCDatabaseServices {
         }catch(Exception ex){
             ex.printStackTrace();
         }finally {
+            if(iterable!= null){
+                iterable = null;
+            }
+            if (coll != null) {
+                coll = null;
+            }
+            if (mongoDatabase != null) {
+                mongoDatabase = null;
 
+            }
             if (mongoClient != null) {
-
                 mongoClient = null;
+            }
+            if (connectMongo != null) {
                 connectMongo = null;
             }
         }
@@ -566,99 +622,17 @@ public class VCDatabaseServices {
         if(start + size >vcList.size()) return vcList;
         return vcList.subList(start, start + size);
     }
-    /*
-    public List<VCProfile> queryListOfCompanyByID(String vcId) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        List<VCProfile> vcList = new ArrayList<VCProfile>();
-        try{
 
-            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("dev");
-            MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
-            BasicDBObject basicDBObject = new BasicDBObject("_id", new ObjectId(vcId));
-            FindIterable<Document> iterable = coll.find(basicDBObject);
-            iterable.forEach(new Block<Document>() {
-                @Override
-                public void apply(final Document document) {
-                    ObjectId idDocument = (ObjectId)document.get("_id");
-                    Document vcInfoDocument = (Document) document.get("vcInfo");
-                    Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
-                    Document socialDataDocument = (Document)document.get("socialData");
-                    List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
-
-                    String vcID = idDocument.toString();
-                    String vcName = (String)vcInfoDocument.get("vcName");
-                    String vcType = (String)vcInfoDocument.get("vcType");
-                    String vcLocationCity = (String)vcLocationDocument.get("city");
-                    String vcLocationState = (String)vcLocationDocument.get("state");
-                    String vcLocationCountry = (String)vcLocationDocument.get("country");
-                    Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
-                    String numberOfDeals = (String)vcInfoDocument.get("numberOfDeals");
-                    String numberOfExits = (String)vcInfoDocument.get("numberOfExits");
-                    String vcUrl = (String)vcInfoDocument.get("vcUrl");
-                    String vcEmail = (String)vcInfoDocument.get("vcEmail");
-                    String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
-
-                    vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals, numberOfExits, vcUrl,vcEmail,vcFoundedYear);
-
-                    String facebookUrl = (String)socialDataDocument.get("facebookUrl");
-                    String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
-                    String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
-
-                    socialData = new SocialData(facebookUrl, twitterUrl, linkedinUrl);
-                    fundingHistoryList = new ArrayList<FundingHistory>();
-                    if(fundingHistoryDocument != null) {
-                        for (int i = 0; i < fundingHistoryDocument.size(); i++) {
-                            String fundingDate = (String) fundingHistoryDocument.get(i).get("fundingDate");
-                            String companyName = (String) fundingHistoryDocument.get(i).get("companyName");
-                            String fundingAmount = (String) fundingHistoryDocument.get(i).get("fundingAmount");
-                            String fundingRound = (String) fundingHistoryDocument.get(i).get("fundingRound");
-                            List<String> categoriesDocumentList = (List<String>) fundingHistoryDocument.get(i).get("categories");
-                            List<String> categoriesList = new ArrayList<String>();
-                            //categoriesList.clear();
-                            for (int j = 0; j < categoriesDocumentList.size(); j++) {
-                                String category = categoriesDocumentList.get(j);
-                                categoriesList.add(category);
-                            }
-                            fundingHistory = new FundingHistory(fundingDate, companyName, fundingAmount, fundingRound, categoriesList);
-                            fundingHistoryList.add(fundingHistory);
-
-                        }
-
-
-                        vcProfile = new VCProfile(vcID, vcInfo, socialData, fundingHistoryList);
-                        vcList.add(vcProfile);
-                    }else{
-                        vcProfile = new VCProfile(vcID,vcInfo, socialData);
-                        vcList.add(vcProfile);
-                    }
-
-                }
-
-            });
-
-            mongoClient.close();
-
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }finally {
-            if (mongoClient != null) {
-
-                mongoClient = null;
-            }
-        }
-        return vcList;
-    }
-     */
     public List<VCProfile> queryListOfCompanyByName(String vcId) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
         try{
             connectMongo = new ConnectMongo();
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
-            MongoCollection<Document> coll = mongoDatabase.getCollection("profile");
-            BasicDBObject basicDBObject = new BasicDBObject();
+            mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
+            coll = mongoDatabase.getCollection("profile");
+            basicDBObject = new BasicDBObject();
             basicDBObject.put("vcInfo.vcName", vcId);
-            FindIterable<Document> iterable = coll.find(basicDBObject);
+            iterable = coll.find(basicDBObject);
             iterable.forEach(new Block<Document>() {
                 @Override
                 public void apply(final Document document) {
@@ -722,10 +696,23 @@ public class VCDatabaseServices {
         }catch(Exception ex){
             ex.printStackTrace();
         }finally {
+            if(iterable!= null){
+                iterable = null;
+            }
+            if(basicDBObject!=null){
+                basicDBObject = null;
+            }
+            if ( coll!= null) {
+                 coll = null;
+            }
+            if (mongoDatabase != null) {
+                mongoDatabase = null;
 
+            }
             if (mongoClient != null) {
-
                 mongoClient = null;
+            }
+            if (connectMongo != null) {
                 connectMongo = null;
             }
         }
@@ -733,9 +720,6 @@ public class VCDatabaseServices {
     }
 
     public static void main(String[] args) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        VCProfile profile = new VCProfile();
-        VCDatabaseServices vp = new VCDatabaseServices();
-        vp.queryListOfCompanyByName("Edison Partners");
-        //vp.deleteVCProfileByIDNReturn("58785d65394dce196a1bd0ff");
+
     }
 }
