@@ -23,6 +23,12 @@ public class FundingHistory {
 
     }
 
+    public FundingHistory(String fundingDate, String companyName, String fundingAmount, String fundingRound) {
+        this.fundingDate = fundingDate;
+        this.companyName = companyName;
+        this.fundingAmount = fundingAmount;
+        this.fundingRound = fundingRound;
+    }
     public FundingHistory(String fundingDate, String companyName, String fundingAmount, String fundingRound, List<String> categories) {
         this.fundingDate = fundingDate;
         this.companyName = companyName;

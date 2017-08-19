@@ -187,7 +187,8 @@ public class VCDatabaseServices {
                 .append(vcFields.numberOfDeals, profile.getVcInfo().getNumberOfDeals())
                 .append(vcFields.numberOfExits, profile.getVcInfo().getNumberOfExits()).append(vcFields.vcUrl,
                  profile.getVcInfo().getVcUrl()).append(vcFields.vcEmail,profile.getVcInfo().getVcEmail())
-                .append(vcFields.vcFoundedYear, profile.getVcInfo().getVcFoundedYear());
+                .append(vcFields.vcFoundedYear, profile.getVcInfo().getVcFoundedYear()).append(vcFields.vcPhoneNumber,
+                 profile.getVcInfo().getVcPhoneNumber());
 
         return document;
     }
@@ -283,7 +284,9 @@ public class VCDatabaseServices {
                     String vcUrl = (String)vcInfoDocument.get("vcUrl");
                     String vcEmail = (String)vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
-                    vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals,numberOfExits,vcUrl,vcEmail,vcFoundedYear);
+                    String vcPhoneNumber = (String)vcInfoDocument.get("vcPhoneNumber");
+                    vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals,numberOfExits,vcUrl,vcEmail,
+                            vcFoundedYear, vcPhoneNumber);
                     String facebookUrl = (String)socialDataDocument.get("facebookUrl");
                     String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
                     String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
@@ -362,7 +365,9 @@ public class VCDatabaseServices {
                         String vcUrl = (String) vcInfoDocument.get("vcUrl");
                         String vcEmail = (String) vcInfoDocument.get("vcEmail");
                         String vcFoundedYear = (String) vcInfoDocument.get("vcFoundedYear");
-                        vcInfo = new VCInfo(vcName, vcType, vcLocation, numberOfDeals, numberOfExits, vcUrl, vcEmail, vcFoundedYear);
+                        String vcPhoneNumber = (String)vcInfoDocument.get("vcPhoneNumber");
+                        vcInfo = new VCInfo(vcName, vcType, vcLocation, numberOfDeals, numberOfExits, vcUrl, vcEmail,
+                                vcFoundedYear, vcPhoneNumber);
                         String facebookUrl = (String) socialDataDocument.get("facebookUrl");
                         String twitterUrl = (String) socialDataDocument.get("twitterUrl");
                         String linkedinUrl = (String) socialDataDocument.get("linkedinUrl");
@@ -491,7 +496,7 @@ public class VCDatabaseServices {
                     String vcUrl = (String)vcInfoDocument.get("vcUrl");
                     String vcEmail = (String)vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
-
+                    String vcPhoneNumber = (String)vcInfoDocument.get("vcPhoneNumber");
                     String facebookUrl = (String)socialDataDocument.get("facebookUrl");
                     String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
                     String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
@@ -517,7 +522,8 @@ public class VCDatabaseServices {
 
                         }
                         String numberOfDeals = Integer.toString(fundingHistoryList.size());
-                        vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals,numberOfExits,vcUrl,vcEmail,vcFoundedYear);
+                        vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals,numberOfExits,vcUrl,vcEmail,
+                                vcFoundedYear, vcPhoneNumber);
                         vcProfile = new VCProfile(vcID, vcInfo, socialData, fundingHistoryList);
                         vcList.add(vcProfile);
 
@@ -557,7 +563,6 @@ public class VCDatabaseServices {
                     Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
                     Document socialDataDocument = (Document)document.get("socialData");
                     List<Document> fundingHistoryDocument = (List<Document>)document.get("fundingHistory");
-
                     String vcID = idDocument.toString();
                     String vcName = (String)vcInfoDocument.get("vcName");
                     String vcType = (String)vcInfoDocument.get("vcType");
@@ -570,9 +575,9 @@ public class VCDatabaseServices {
                     String vcUrl = (String)vcInfoDocument.get("vcUrl");
                     String vcEmail = (String)vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
-
-                    vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals,numberOfExits,vcUrl,vcEmail,vcFoundedYear);
-
+                    String vcPhoneNumber = (String)vcInfoDocument.get("vcPhoneNumber");
+                    vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals,numberOfExits,vcUrl,vcEmail,
+                            vcFoundedYear, vcPhoneNumber);
                     String facebookUrl = (String)socialDataDocument.get("facebookUrl");
                     String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
                     String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
@@ -654,9 +659,9 @@ public class VCDatabaseServices {
                     String vcUrl = (String)vcInfoDocument.get("vcUrl");
                     String vcEmail = (String)vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
-
-                    vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals, numberOfExits, vcUrl,vcEmail,vcFoundedYear);
-
+                    String vcPhoneNumber = (String)vcInfoDocument.get("vcPhoneNumber");
+                    vcInfo = new VCInfo(vcName,vcType,vcLocation,numberOfDeals, numberOfExits, vcUrl,vcEmail,
+                            vcFoundedYear, vcPhoneNumber);
                     String facebookUrl = (String)socialDataDocument.get("facebookUrl");
                     String twitterUrl  = (String)socialDataDocument.get("twitterUrl");
                     String linkedinUrl = (String)socialDataDocument.get("linkedinUrl");
@@ -720,6 +725,7 @@ public class VCDatabaseServices {
     }
 
     public static void main(String[] args) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+
 
     }
 }

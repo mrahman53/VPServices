@@ -14,6 +14,7 @@ import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.SheetsScopes;
 import com.google.api.services.sheets.v4.model.ValueRange;
+import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -132,10 +133,10 @@ public class FundingHistoryScraping {
         // https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
         //1J9aiuz9f-DYDUimEPj5fJgpop0SiM2cfKAl7j6y-Qt4
         //1l_JyK4GxZBLZG8GGIJiuT0G3oapn33CQih5vYubgwo0
-        String spreadsheetId = "1l_JyK4GxZBLZG8GGIJiuT0G3oapn33CQih5vYubgwo0";
-        String range = "First Round Capital";
+        String spreadsheetId = "1TD2v1jDXfV3Vikr8PAw7H7MLNPZWl5dhe1WiiafhV8g";//"1l_JyK4GxZBLZG8GGIJiuT0G3oapn33CQih5vYubgwo0";
+        String vc = "500 Startups";
         ValueRange response = service.spreadsheets().values()
-                .get(spreadsheetId, range)
+                .get(spreadsheetId, vc)
                 .execute();
         List<List<Object>> values = response.getValues();
         if (values == null || values.size() == 0) {
@@ -147,37 +148,40 @@ public class FundingHistoryScraping {
                 String companyName = (String) row.get(1).toString();
                 String fundingAmount = (String) row.get(2).toString();
                 String fundingRound = (String) row.get(3).toString();
-                String categories = (String) row.get(4).toString();
-                String[] categoriesArray = categories.split(",");
-                List<String> categoriesList = new ArrayList<String>(Arrays.asList(categoriesArray));
+                //String categories = (String) row.get(4).toString();
+                //String[] categoriesArray = categories.split(",");
+                //List<String> categoriesList = new ArrayList<String>(Arrays.asList(categoriesArray));
                 fundingHistory.setFundingDate(date);
                 fundingHistory.setCompanyName(companyName);
                 fundingHistory.setFundingAmount(fundingAmount);
                 fundingHistory.setFundingRound(fundingRound);
-                fundingHistory.setCategories(categoriesList);
+                //fundingHistory.setCategories(categoriesList);
 
                 fundingHistory = new FundingHistory(fundingHistory.getFundingDate(), fundingHistory.getCompanyName(),
-                        fundingHistory.getFundingAmount(), fundingHistory.getFundingRound(), fundingHistory.getCategories());
+                        fundingHistory.getFundingAmount(), fundingHistory.getFundingRound());
                 fh.add(fundingHistory);
-                vcProfile = new VCProfile(fh);
+                //vcProfile = new VCProfile(fh);
                 System.out.printf("%s, %s,%s, %s,%s,\n", row.get(0), row.get(1), row.get(2), row.get(3),
                         row.get(4));
 
             }
         }
-    }
+
         /*
         for(int i=1; i<listProfile.size(); i++) {
             Document vcInfoDocument = documentVCInfoDataDelta(listProfile.get(i));
             Document socialDataDocument = documentVCSocialData(listProfile.get(i));
             Document preparedDocument = new Document("vcInfo", vcInfoDocument).append("socialData", socialDataDocument);
             documentProfile.add(preparedDocument);
-        }
+        } */
         try{
             MongoClient mongoClient = connectMongo.connectMongoClientSSLToAtlasWithMinimalSecurity();
             MongoDatabase mongoDatabase = mongoClient.getDatabase("PROD_VC_PROFILE");
             MongoCollection mongoCollection = mongoDatabase.getCollection("profile");
-            mongoCollection.insertMany(documentProfile);
+            Document filter = new Document("vcInfo.vcName", vc);
+            List<Document> documentFH = documentVCFundingHistoryData(fh);
+            Document preparedFH = new Document("fundingHistory",documentFH);
+            mongoCollection.updateOne(filter,new BasicDBObject("$set",new BasicDBObject(preparedFH)));;
             mongoClient.close();
         }catch(Exception ex){
             ex.printStackTrace();
@@ -188,7 +192,21 @@ public class FundingHistoryScraping {
             }
         }
 
-    } */
+    }
+
+    public static List<Document> documentVCFundingHistoryData(List<FundingHistory> fh){
+        List<Document> fundingHistoryData = new ArrayList<>();
+        Document document = null;
+        for(FundingHistory itr:fh) {
+            document = new Document().append(vcFields.fundingDate, itr.getFundingDate()).append(vcFields.companyName,
+                    itr.getCompanyName()).append(vcFields.fundingAmount,itr.getFundingAmount()).append(vcFields.fundingRound,
+                    itr.getFundingRound()).append(vcFields.categories, itr.getCategories());
+
+            fundingHistoryData.add(document);
+        }
+
+        return fundingHistoryData;
+    }
 
     public static Document documentVCInfoDataDelta(VCProfile profile){
         Document document = new Document().append(vcFields.vcName, profile.getVcInfo().getVcName())

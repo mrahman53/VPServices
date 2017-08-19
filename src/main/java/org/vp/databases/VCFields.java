@@ -22,6 +22,7 @@ public class VCFields {
     public String   vcUrl = "vcUrl";
     public String   vcEmail = "vcEmail";
     public String   vcFoundedYear = "vcFoundedYear";
+    public String   vcPhoneNumber = "vcPhoneNumber";
     public String   facebookUrl = "facebookUrl";
     public String   twitterUrl = "twitterUrl";
     public String   linkedinUrl = "linkedinUrl";
