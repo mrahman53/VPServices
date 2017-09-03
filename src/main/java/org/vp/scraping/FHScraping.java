@@ -111,17 +111,40 @@ public class FHScraping {
                 .setApplicationName(APPLICATION_NAME)
                 .build();
     }
+    public static List<String> getVcListFromSheet() throws IOException {
+        List<String> vcNameList = new ArrayList<>();
+        Sheets service = getSheetsService();
+        String spreadsheetId = "1qeywtoRyXOETcu3ypeJtppE30OWt1Av_gjzmjipEsq0";
+        String vc = "VcToBeScrape";
+        ValueRange response = service.spreadsheets().values()
+                .get(spreadsheetId, vc)
+                .execute();
+        List<List<Object>> values = response.getValues();
+        if (values == null || values.size() == 0) {
+            System.out.println("No data found.");
+        } else {
+            for (List row : values) {
+                try {
+                    String vcName = (String) row.get(0).toString();
+                    vcNameList.add(vcName);
+                } catch (Exception ex) {
+
+                }
+            }
+        }
+        return vcNameList;
+    }
 
     public static void main(String[] args) throws IOException {
-        VcList vcList = new VcList();
-        for(int i=0; i<vcList.getVcList().size(); i++) {
+        List<String> vcList = getVcListFromSheet();
+        for(int i=1; i<vcList.size(); i++) {
             ConnectMongo connectMongo = new ConnectMongo();
             FundingHistory fundingHistory = new FundingHistory();
             List<FundingHistory> fh = new ArrayList<FundingHistory>();
             List<FundingHistory> fhSorted = new ArrayList<FundingHistory>();
             Sheets service = getSheetsService();
-            String spreadsheetId = "1TD2v1jDXfV3Vikr8PAw7H7MLNPZWl5dhe1WiiafhV8g";
-            String vc = vcList.getVcList().get(i);//"Greylock Partners";
+            String spreadsheetId = "1qeywtoRyXOETcu3ypeJtppE30OWt1Av_gjzmjipEsq0";
+            String vc = vcList.get(i);
             ValueRange response = service.spreadsheets().values()
                     .get(spreadsheetId, vc)
                     .execute();

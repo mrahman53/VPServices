@@ -9,6 +9,7 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.vp.vc.profile.*;
+import redis.clients.jedis.Jedis;
 
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
@@ -332,6 +333,10 @@ public class VCDatabaseServices {
 
     public List<VCProfile> queryListOfCompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
+        /*Jedis jedis = new Jedis("localhost");
+        jedis.set("All", "");
+        String all = jedis.get("All");
+        */
         vcList = readData();
         return vcList;
     }
@@ -405,7 +410,7 @@ public class VCDatabaseServices {
                 connectMongo = null;
             }
         }
-        Collections.sort(vcList);
+        //Collections.sort(vcList);
         return vcList;
     }
     public List<FundingHistory> getFundingHistory(List<Document> fundingHistoryDocument) {
