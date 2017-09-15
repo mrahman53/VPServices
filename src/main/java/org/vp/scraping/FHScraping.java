@@ -56,6 +56,8 @@ public class FHScraping {
      * If modifying these scopes, delete your previously saved credentials
      * at ~/.credentials/sheets.googleapis.com-java-quickstart
      */
+
+    public static String spreadsheetId = "1lgILpEliFsk-T3NEdpDS2_9_6v3JYbQIJPr7AIj_e6w";
     private static final List<String> SCOPES =
             Arrays.asList(SheetsScopes.SPREADSHEETS_READONLY);
 
@@ -114,7 +116,6 @@ public class FHScraping {
     public static List<String> getVcListFromSheet() throws IOException {
         List<String> vcNameList = new ArrayList<>();
         Sheets service = getSheetsService();
-        String spreadsheetId = "1qeywtoRyXOETcu3ypeJtppE30OWt1Av_gjzmjipEsq0";
         String vc = "VcToBeScrape";
         ValueRange response = service.spreadsheets().values()
                 .get(spreadsheetId, vc)
@@ -143,7 +144,6 @@ public class FHScraping {
             List<FundingHistory> fh = new ArrayList<FundingHistory>();
             List<FundingHistory> fhSorted = new ArrayList<FundingHistory>();
             Sheets service = getSheetsService();
-            String spreadsheetId = "1qeywtoRyXOETcu3ypeJtppE30OWt1Av_gjzmjipEsq0";
             String vc = vcList.get(i);
             ValueRange response = service.spreadsheets().values()
                     .get(spreadsheetId, vc)

@@ -340,6 +340,67 @@ public class VCDatabaseServices {
         vcList = readData();
         return vcList;
     }
+    public List<VCProfile> queryListOfLandingPageVC()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        List<VCProfile> vcList = new ArrayList<VCProfile>();
+        vcList = readDataForLandingPage();
+        return vcList;
+    }
+    public List<VCProfile> readDataForLandingPage()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException{
+        final List<VCProfile> vcList = new ArrayList<VCProfile>();
+        try{
+            connectMongo = new ConnectMongo();
+            mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
+            mongoDatabase = mongoClient.getDatabase(databaseName);
+            coll = mongoDatabase.getCollection("profile");
+            iterable = coll.find();
+            iterable.forEach(new Block<Document>() {
+                @Override
+                public void apply(final Document document) {
+                    ObjectId idDocument = (ObjectId) document.get("_id");
+                    Document vcInfoDocument = (Document) document.get("vcInfo");
+                    Document vcLocationDocument = (Document) vcInfoDocument.get("vcLocation");
+                    String vcID = idDocument.toString();
+                    String vcName = (String) vcInfoDocument.get("vcName");
+                    String vcType = (String) vcInfoDocument.get("vcType");
+                    String vcLocationCity = (String) vcLocationDocument.get("city");
+                    String vcLocationState = (String) vcLocationDocument.get("state");
+                    String vcLocationCountry = (String) vcLocationDocument.get("country");
+                    Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
+                    String numberOfDeals = (String) vcInfoDocument.get("numberOfDeals");
+                    String numberOfExits = (String) vcInfoDocument.get("numberOfExits");
+
+                    vcInfo = new VCInfo(vcName, vcType, vcLocation, numberOfDeals, numberOfExits);
+                    vcProfile = new VCProfile(vcID, vcInfo);
+                    vcList.add(vcProfile);
+                }
+
+            });
+
+            mongoClient.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if(iterable!= null){
+                iterable = null;
+            }
+            if (coll != null) {
+                coll = null;
+            }
+            if (mongoDatabase != null) {
+                mongoDatabase = null;
+
+            }
+            if (mongoClient != null) {
+                mongoClient = null;
+            }
+            if (connectMongo != null) {
+                connectMongo = null;
+            }
+        }
+        Collections.sort(vcList);
+        return vcList;
+    }
+
     public List<VCProfile> readData()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException{
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try{
@@ -410,7 +471,7 @@ public class VCDatabaseServices {
                 connectMongo = null;
             }
         }
-        //Collections.sort(vcList);
+        Collections.sort(vcList);
         return vcList;
     }
     public List<FundingHistory> getFundingHistory(List<Document> fundingHistoryDocument) {

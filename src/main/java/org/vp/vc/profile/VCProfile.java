@@ -25,6 +25,10 @@ public class VCProfile implements Comparable<VCProfile>{
 
     }
 
+    public VCProfile(String _id,VCInfo vcInfo){
+        this._id = _id;
+        this.vcInfo = vcInfo;
+    }
     public VCProfile(VCInfo vcInfo, SocialData socialData) {
         this.vcInfo = vcInfo;
         this.socialData = socialData;

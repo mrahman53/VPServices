@@ -24,6 +24,14 @@ public class VCInfo {
 
     public VCInfo(){}
     public VCInfo(String vcName, String vcType, Location vcLocation, String numberOfDeals,
+                  String numberOfExits){
+        this.vcName = vcName;
+        this.vcType = vcType;
+        this.vcLocation = vcLocation;
+        this.numberOfDeals = numberOfDeals;
+        this.numberOfExits = numberOfExits;
+    }
+    public VCInfo(String vcName, String vcType, Location vcLocation, String numberOfDeals,
                   String numberOfExits,String vcUrl, String vcEmail, String vcFoundedYear) {
         this.vcName = vcName;
         this.vcType = vcType;

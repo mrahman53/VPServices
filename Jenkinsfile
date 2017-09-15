@@ -10,7 +10,7 @@ node {
             archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
 
             // Copy artifact to s3
-            sh "/usr/local/bin/aws s3 cp target/vpservices.war s3://api-artifact/${BRANCH_NAME}/${BUILD_NUMBER}/vpservices.war"
+            sh "/usr/local/bin/aws s3 cp target/vpservices.war s3://api-artifact/${BRANCH_NAME}/${BUILD_NUMBER}/sdlvpservices.war"
         }
 
         stage ('Deploy to staging, run tests, push to prod') {
