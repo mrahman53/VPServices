@@ -57,7 +57,7 @@ public class FHScraping {
      * at ~/.credentials/sheets.googleapis.com-java-quickstart
      */
 
-    public static String spreadsheetId = "1lgILpEliFsk-T3NEdpDS2_9_6v3JYbQIJPr7AIj_e6w";
+    public static String spreadsheetId = "1_948_WqSAulTKzoC_aYZA5B0Qj0ne1srv1ktTBBljCA";
     private static final List<String> SCOPES =
             Arrays.asList(SheetsScopes.SPREADSHEETS_READONLY);
 
@@ -78,8 +78,7 @@ public class FHScraping {
      */
     public static Credential authorize() throws IOException {
         // Load client secrets.
-        InputStream in =
-                VcModelScraping.class.getResourceAsStream("/client_secret.json");
+        InputStream in = VcModelScraping.class.getResourceAsStream("/client_secret.json");
         GoogleClientSecrets clientSecrets =
                 GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 
@@ -189,8 +188,8 @@ public class FHScraping {
                 List<Document> documentFH = documentVCFundingHistoryData(fhSorted);
                 Document preparedFH = new Document("fundingHistory", documentFH);
                 mongoCollection.updateOne(filter, new BasicDBObject("$set", new BasicDBObject(preparedFH)));
-                ;
                 mongoClient.close();
+                System.out.println(vc + " is inserted");
             } catch (Exception ex) {
                 ex.printStackTrace();
             } finally {
