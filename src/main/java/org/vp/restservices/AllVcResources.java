@@ -15,12 +15,13 @@ import java.util.List;
  * Created by mrahman on 9/15/16.
  */
 
-@Path("AllVcResources")
+@Path("secured")
 public class AllVcResources {
 
     VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
 
     @GET
+    @Path("AllVcResources")
     @Produces(MediaType.APPLICATION_JSON)
     public List<VCProfile> getCompanyList()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         return vcDatabaseServices.queryListOfCompany();
