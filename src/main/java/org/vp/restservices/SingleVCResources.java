@@ -15,7 +15,7 @@ import java.util.List;
  * Created by mrahman on 7/17/16.
  */
 
-@Path("SingleVcResources")
+@Path("secured/SingleVcResources")
 public class SingleVCResources {
 
     VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();

@@ -35,13 +35,12 @@ public class CORSResponseFilter implements ContainerResponseFilter, ContainerReq
                 StringTokenizer tokenizer = new StringTokenizer(decodedString, ":");
                 String userName = tokenizer.nextToken();
                 String passWord = tokenizer.nextToken();
-
-                if ("user".equals(userName) && "password".equals(passWord)) {
+                if ("vpdb".equals(userName) && "kmhr@1234".equals(passWord)) {
                     return;
                 }
             }
             Response unauthorizedStatus = Response.status(Response.Status.UNAUTHORIZED).
-                    entity("User can not access the resources").build();
+                    entity("You can not access the resources").build();
             requestContext.abortWith(unauthorizedStatus);
         }
     }

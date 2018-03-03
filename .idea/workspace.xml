@@ -7,38 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7c73fb5-0882-4c9b-9451-df570ec537b2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/vp/filter/CrossDomain.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/vp/filter/CrossDomainInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/vp/filter/SecurityFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/GoogleSheetIntegration.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/GoogleSheetIntegration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabasePotentialUse.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabasePotentialUse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/filter/CORSResponseFilter.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/filter/CORSResponseFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/restservices/AllVcResources.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/restservices/AllVcResources.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/scraping/FHScraping.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/scraping/FHScraping.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/scraping/FundingHistoryScraping.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/scraping/FundingHistoryScraping.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/scraping/VcModelScraping.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/scraping/VcModelScraping.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/scraping/VcProilfeModel.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/scraping/VcProilfeModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices.war" afterPath="$PROJECT_DIR$/target/vpservices.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/GoogleSheetIntegration.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/GoogleSheetIntegration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabasePotentialUse.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabasePotentialUse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/filter/CORSResponseFilter.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/filter/CORSResponseFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/restservices/AllVcResources.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/restservices/AllVcResources.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/FHScraping.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/FHScraping.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/FundingHistoryScraping.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/FundingHistoryScraping.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/VcModelScraping.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/VcModelScraping.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/VcProilfeModel.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/VcProilfeModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/vp_restful_services_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/vp_restful_services_war_exploded.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/vp/filter/CrossDomain.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/filter/CrossDomain.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/vpservices/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vp-restful-services.iml" afterPath="$PROJECT_DIR$/vp-restful-services.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java" />
     </list>
     <ignored path="vp-restful-services.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,12 +35,22 @@
       <file leaf-file-name="CORSResponseFilter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="80" column="69" lean-forward="false" selection-start-line="80" selection-start-column="69" selection-end-line="80" selection-end-column="69" />
+            <state relative-caret-position="150">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#CORSResponseFilter#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SingleVCResources.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="48" column="11" lean-forward="false" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,8 +70,8 @@
       <file leaf-file-name="SecurityFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/SecurityFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="23" column="96" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="23" selection-end-column="96" />
+            <state relative-caret-position="2">
+              <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,33 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CrossDomainInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CrossDomainInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CrossDomain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CrossDomain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ContainerFilteringStage.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/ContainerFilteringStage.class">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="141">
-              <caret line="108" column="89" lean-forward="false" selection-start-line="108" selection-start-column="89" selection-end-line="108" selection-end-column="89" />
+              <caret line="36" column="91" lean-forward="false" selection-start-line="36" selection-start-column="91" selection-end-line="36" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -151,8 +112,8 @@
       <file leaf-file-name="AllVcResources.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="260">
+              <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -220,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/GoogleReaderWA.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/Location.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundRaised.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/scraping/VcModelScraping.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/IpoNAcquisitions.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -243,6 +203,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/vp/filter/RegisterFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/filter/SecurityFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java" />
       </list>
     </option>
   </component>
@@ -422,9 +383,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="GlassFish Server.192.168.0.8">
-    <configuration name="192.168.0.8" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.1.0" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://192.168.0.8:8080/vpservices/" />
+  <component name="RunManager" selected="GlassFish Server.192.168.0.14">
+    <configuration name="192.168.0.14" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.1.0" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://192.168.0.14:8080/vpservices/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="vp-restful-services:war">
@@ -1231,7 +1192,7 @@
     </configuration>
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="GlassFish Server.vp-rest-api" />
-      <item index="1" class="java.lang.String" itemvalue="GlassFish Server.192.168.0.8" />
+      <item index="1" class="java.lang.String" itemvalue="GlassFish Server.192.168.0.14" />
       <item index="2" class="java.lang.String" itemvalue="Application.GoogleReaderWA" />
       <item index="3" class="java.lang.String" itemvalue="Application.VcModelScraping" />
       <item index="4" class="java.lang.String" itemvalue="Application.VCDatabaseServices" />
@@ -1302,7 +1263,7 @@
       <workItem from="1507072160319" duration="1288000" />
       <workItem from="1507083817298" duration="339000" />
       <workItem from="1517361048993" duration="15592000" />
-      <workItem from="1518736898529" duration="57151000" />
+      <workItem from="1518736898529" duration="60501000" />
     </task>
     <task id="LOCAL-00001" summary="user-profile">
       <created>1486135457686</created>
@@ -1343,7 +1304,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="513111000" />
+    <option name="totallyTimeSpent" value="516461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="23" width="1428" height="823" extended-state="0" />
@@ -1359,7 +1320,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33155793" sideWeight="0.6522048" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33155793" sideWeight="0.6522048" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32356858" sideWeight="0.48669466" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1367,8 +1328,8 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30226365" sideWeight="0.7091038" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18242344" sideWeight="0.70412517" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30226365" sideWeight="0.7091038" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34753662" sideWeight="0.70412517" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20518208" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1588,7 +1549,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java</url>
-          <line>51</line>
+          <line>50</line>
           <properties />
           <option name="timeStamp" value="351" />
         </line-breakpoint>
@@ -1600,7 +1561,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java</url>
-          <line>62</line>
+          <line>61</line>
           <properties />
           <option name="timeStamp" value="355" />
         </line-breakpoint>
@@ -1618,12 +1579,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java</url>
-          <line>77</line>
+          <line>76</line>
           <properties />
           <option name="timeStamp" value="361" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java</url>
+          <line>68</line>
+          <properties />
+          <option name="timeStamp" value="362" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="362" />
+      <option name="time" value="363" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1895,14 +1862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SignUp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
@@ -1964,39 +1923,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CrossDomainInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CrossDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/SecurityFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="23" column="96" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="23" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2018,28 +1949,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/ContainerFilteringStage.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CrossDomainInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="108" column="89" lean-forward="false" selection-start-line="108" selection-start-column="89" selection-end-line="108" selection-end-column="89" />
+        <state relative-caret-position="315">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CrossDomain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/ContainerFilteringStage.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="36" column="91" lean-forward="false" selection-start-line="36" selection-start-column="91" selection-end-line="36" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/SecurityFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="48" column="11" lean-forward="false" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="80" column="69" lean-forward="false" selection-start-line="80" selection-start-column="69" selection-end-line="80" selection-end-column="69" />
+        <state relative-caret-position="150">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#CORSResponseFilter#0" expanded="false" />
