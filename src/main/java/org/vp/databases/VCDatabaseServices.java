@@ -694,7 +694,7 @@ public class VCDatabaseServices {
         return vcList.subList(start, start + size);
     }
 
-    public List<VCProfile> queryListOfCompanyByName(String vcId) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> queryListOfCompanyByName(String vcName) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
         try{
             connectMongo = new ConnectMongo();
@@ -702,7 +702,7 @@ public class VCDatabaseServices {
             mongoDatabase = mongoClient.getDatabase(databaseName);
             coll = mongoDatabase.getCollection("profile");
             basicDBObject = new BasicDBObject();
-            basicDBObject.put("vcInfo.vcName", vcId);
+            basicDBObject.put("vcInfo.vcName", vcName);
             iterable = coll.find(basicDBObject);
             iterable.forEach(new Block<Document>() {
                 @Override

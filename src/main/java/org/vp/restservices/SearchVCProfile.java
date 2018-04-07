@@ -18,7 +18,7 @@ import java.util.List;
  * Created by mrahman on 3/9/17.
  */
 
-@Path("SearchVCProfile")
+@Path("secured/SearchVCProfile")
 public class SearchVCProfile {
 
     VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
