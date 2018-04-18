@@ -8,6 +8,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.types.ObjectId;
+import org.vp.cache.JedisMain;
 import org.vp.vc.profile.*;
 import redis.clients.jedis.Jedis;
 
@@ -333,11 +334,13 @@ public class VCDatabaseServices {
 
     public List<VCProfile> queryListOfCompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
-        /*Jedis jedis = new Jedis("localhost");
-        jedis.set("All", "");
-        String all = jedis.get("All");
-        */
-        vcList = readData();
+        vcList = getProfileListFromRedis();
+        if(vcList.size() > 0){
+            return vcList;
+        }else{
+            vcList = readData();
+       }
+
         return vcList;
     }
     public List<VCProfile> queryUnsortedListOfCompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
@@ -871,6 +874,13 @@ public class VCDatabaseServices {
         return vcList;
     }
 
+    public List<VCProfile> getProfileListFromRedis(){
+        JedisMain main = new JedisMain();
+        Object profileList = main.getObjectValue("vcList");
+        List<VCProfile> profileData = (List<VCProfile>)profileList;
+
+        return profileData;
+    }
     public static void main(String[] args) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
 

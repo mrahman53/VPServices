@@ -3,6 +3,7 @@ package org.vp.vc.profile;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ import java.util.List;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class IpoNAcquisitions {
+public class IpoNAcquisitions implements Serializable {
 
     public String ipoNAcquisitionsDate;
     public String ipoNAcquisitionsCompanyName;

@@ -3,6 +3,7 @@ package org.vp.vc.profile;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.List;
 import java.util.*;
 
@@ -12,7 +13,7 @@ import java.util.*;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class VCProfile implements Comparable<VCProfile>{
+public class VCProfile implements Comparable<VCProfile>, Serializable {
 
     public String _id;
     public VCInfo vcInfo;

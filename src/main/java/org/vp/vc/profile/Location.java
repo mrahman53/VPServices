@@ -3,6 +3,7 @@ package org.vp.vc.profile;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 /**
  * Created by mrahman on 7/26/16.
@@ -11,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Location {
+public class Location implements Serializable {
 
     public String city;
     public String state;
