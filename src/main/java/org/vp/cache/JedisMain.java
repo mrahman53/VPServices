@@ -138,6 +138,10 @@ public class JedisMain {
         Jedis jedis = pool.getResource();
         return fromBytes(jedis.get(key.getBytes()));
     }
+    public boolean getVcListKeys() {
+        Jedis jedis = pool.getResource();
+        return jedis.exists("vcList");
+    }
     public Object getAllKeys() {
         Jedis jedis = pool.getResource();
         return jedis.keys("*");
@@ -174,9 +178,14 @@ public class JedisMain {
     }
 
     public static void main(String[] args) throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
+        JedisMain main = new JedisMain();
+        boolean object = main.getVcListKeys();
+        if(object==true){
+            System.out.println();
+        }
         VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
         List<VCProfile> list = vcDatabaseServices.readData();
-        JedisMain main = new JedisMain();
+//        JedisMain main = new JedisMain();
         main.setObjectValue("vcList", list);
         Object profileList = main.getObjectValue("vcList");
         List<VCProfile> profile = (List<VCProfile>)profileList;

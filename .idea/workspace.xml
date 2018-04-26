@@ -6,53 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7c73fb5-0882-4c9b-9451-df570ec537b2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundRaised.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundRaised.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundingHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/FundingHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/IpoNAcquisitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/IpoNAcquisitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/SocialData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/SocialData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/restservices/SearchVCProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/restservices/SearchVCProfile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/FundRaised.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/FundRaised.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/FundingHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/FundingHistory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/IpoNAcquisitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/IpoNAcquisitions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/Location.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/SocialData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/SocialData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/VCInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/VCInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/VCProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/vp/vc/profile/VCProfile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/restservices/SearchVCProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/restservices/SearchVCProfile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/FundRaised.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/FundRaised.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/FundingHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/FundingHistory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/IpoNAcquisitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/IpoNAcquisitions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/Location.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/SocialData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/SocialData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/VCInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/VCInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/VCProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/vc/profile/VCProfile.class" afterDir="false" />
-    </list>
     <list id="97a8502a-43ba-4585-81f4-b6046ad96556" name="Revert: ipo" comment="" />
+    <list default="true" id="f7c73fb5-0882-4c9b-9451-df570ec537b2" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java" afterDir="false" />
+    </list>
     <ignored path="vp-restful-services.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,20 +31,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VCDatabaseServices.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VCDatabaseServices.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2046">
-              <caret line="338" selection-start-line="338" selection-end-line="338" />
+            <state relative-caret-position="338">
+              <caret line="486" selection-start-line="486" selection-end-line="486" />
+              <folding>
+                <element signature="e#16289#16300#0" expanded="true" />
+                <element signature="e#16671#16682#0" expanded="true" />
+                <element signature="e#19811#19822#0" expanded="true" />
+                <element signature="e#24147#24158#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OperationIterable.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.0-rc1/mongo-java-driver-3.4.0-rc1.jar!/com/mongodb/OperationIterable.class">
+      <file leaf-file-name="VCProfile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="180">
+              <caret line="86" selection-start-line="86" selection-end-line="86" />
             </state>
           </provider>
         </entry>
@@ -93,8 +58,63 @@
       <file leaf-file-name="AllVcResources.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="240">
+              <caret line="25" column="117" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="117" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JedisMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="142" selection-start-line="142" selection-end-line="142" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JedisPool.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/JedisPool.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="167" selection-start-line="167" selection-end-line="167" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedisReset.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SHA2.class" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar!/sun/security/provider/SHA2.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="72" column="17" lean-forward="true" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+              <folding>
+                <element signature="e#2342#2343#0" expanded="true" />
+                <element signature="e#2398#2399#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="175" column="36" selection-start-line="175" selection-start-column="36" selection-end-line="175" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -108,63 +128,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FundingHistoryResources.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/FundingHistoryResources.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SecurityFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/SecurityFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CORSResponseFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="290">
+              <caret line="50" selection-start-line="50" selection-end-line="51" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#CORSResponseFilter#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContainerFilteringStage.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/ContainerFilteringStage.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1305">
-              <caret line="108" column="89" selection-start-line="108" selection-start-column="89" selection-end-line="108" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JedisMain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2535">
-              <caret line="180" column="38" selection-start-line="179" selection-start-column="8" selection-end-line="182" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BinaryJedis.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/BinaryJedis.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2730">
-              <caret line="219" selection-start-line="219" selection-end-line="219" />
             </state>
           </provider>
         </entry>
@@ -186,7 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/vp/MyResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/authentication/LoginUserProfile.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/authentication/ClientUserProfile.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/LoginDatabaseServices.java" />
@@ -235,8 +206,9 @@
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/SocialData.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/Location.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/IpoNAcquisitions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java" />
       </list>
     </option>
   </component>
@@ -298,9 +270,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -341,15 +310,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="vp" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VPServices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VPServices" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="vp" type="462c0819:PsiDirectoryNode" />
               <item name="cache" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -379,19 +339,14 @@
               <item name="vp" type="462c0819:PsiDirectoryNode" />
               <item name="restservices" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="VPServices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VPServices" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="vp" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -445,17 +400,6 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="FundingHistoryScraping" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.vp.scraping.FundingHistoryScraping" />
-      <module name="vp-restful-services" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.vp.scraping.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
     <configuration name="JedisMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.vp.cache.JedisMain" />
       <module name="vp-restful-services" />
@@ -463,6 +407,17 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.vp.cache.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="RedisReset" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.vp.restservices.RedisReset" />
+      <module name="vp-restful-services" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.vp.restservices.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1240,17 +1195,17 @@
       <item itemvalue="GlassFish Server.192.168.0.4" />
       <item itemvalue="Application.VcModelScraping" />
       <item itemvalue="Application.VCDatabaseServices" />
-      <item itemvalue="Application.FundingHistoryScraping" />
       <item itemvalue="Application.FHScraping" />
       <item itemvalue="Application.JedisMain" />
+      <item itemvalue="Application.RedisReset" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.JedisMain" />
+        <item itemvalue="Application.RedisReset" />
         <item itemvalue="Application.VCDatabaseServices" />
         <item itemvalue="Application.FHScraping" />
         <item itemvalue="Application.VcModelScraping" />
-        <item itemvalue="Application.FundingHistoryScraping" />
       </list>
     </recent_temporary>
   </component>
@@ -1351,11 +1306,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="532718000" />
+    <option name="totallyTimeSpent" value="536564000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="23" width="1862" height="952" extended-state="0" />
-    <editor active="true" />
+    <frame x="8" y="23" width="1862" height="952" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.29089615" side_tool="true" weight="0.3027523" />
@@ -1369,9 +1323,9 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6522048" visible="true" weight="0.33143508" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.6522048" visible="true" weight="0.45102507" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48364154" weight="0.3231788" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48364154" weight="0.32232347" />
       <window_info id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
@@ -1379,22 +1333,49 @@
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7091038" weight="0.30182233" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.70412517" weight="0.34624144" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20461869" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20461869" />
       <window_info anchor="right" id="Bean Validation" order="7" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Nl-Palette" order="2" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Run with VisualVM" order="13" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32869786" />
-      <window_info anchor="bottom" id="Debug with VisualVM" order="13" sideWeight="0.49142858" weight="0.32896462" />
-      <window_info anchor="right" id="Properties" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.29089615" side_tool="true" weight="0.3027523" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7091038" weight="0.30182233" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.70412517" weight="0.34624144" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="bottom" id="Application Servers" order="8" weight="0.3294271" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20461869" />
+      <window_info id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Dependency Viewer" order="9" sideWeight="0.49719888" weight="0.32896462" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven Projects" order="4" visible="true" weight="0.12996778" />
+      <window_info anchor="right" id="CDI" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="13" sideWeight="0.49142858" weight="0.32896462" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32869786" />
+      <window_info anchor="right" id="Properties" order="4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Designer" order="5" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" />
+      <window_info id="Web" order="4" side_tool="true" />
+      <window_info anchor="right" id="Bean Validation" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="13" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48364154" weight="0.3231788" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6522048" visible="true" weight="0.33143508" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1610,37 +1591,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java</url>
-          <line>125</line>
+          <line>124</line>
           <properties />
           <option name="timeStamp" value="364" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java</url>
-          <line>131</line>
+          <line>130</line>
           <properties />
           <option name="timeStamp" value="365" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java</url>
-          <line>121</line>
+          <line>120</line>
           <properties />
           <option name="timeStamp" value="375" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java</url>
-          <line>122</line>
+          <line>121</line>
           <properties />
           <option name="timeStamp" value="377" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java</url>
-          <line>182</line>
+          <line>190</line>
           <properties />
           <option name="timeStamp" value="382" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java</url>
-          <line>184</line>
+          <line>192</line>
           <properties />
           <option name="timeStamp" value="384" />
         </line-breakpoint>
@@ -1650,8 +1631,62 @@
           <properties />
           <option name="timeStamp" value="389" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="401" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="402" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="405" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java</url>
+          <line>183</line>
+          <properties />
+          <option name="timeStamp" value="406" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java</url>
+          <line>181</line>
+          <properties />
+          <option name="timeStamp" value="407" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="408" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java</url>
+          <line>22</line>
+          <properties />
+          <option name="timeStamp" value="409" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="410" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="411" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="397" />
+      <option name="time" value="412" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1659,37 +1694,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/BinaryJedis.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3285">
-          <caret line="219" selection-start-line="219" selection-end-line="219" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/SheetReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/scraping/VcModelScraping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2502">
-          <caret line="169" column="28" selection-start-line="169" selection-start-column="28" selection-end-line="169" selection-end-column="28" />
-          <folding>
-            <element signature="docComment;method#getSheetsService#0;class#VcModelScraping#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/authentication/AdminUserOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/authentication/ClientUserProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1784,13 +1788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="181" column="26" selection-start-line="181" selection-start-column="26" selection-end-line="181" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/MyApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1852,15 +1849,15 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CrossDomain.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SingleVCResources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+        <state relative-caret-position="315">
+          <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/UnsortedAllVcResources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="165">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -1882,13 +1879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="380" selection-start-line="380" selection-end-line="380" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-871">
-          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1941,16 +1931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2535">
-          <caret line="180" column="38" selection-start-line="179" selection-start-column="8" selection-end-line="182" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/SecurityFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1986,10 +1966,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="175" column="36" selection-start-line="175" selection-start-column="36" selection-end-line="175" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="117" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/KQueueArrayWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="133" column="23" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar!/sun/security/provider/SHA2.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="72" column="17" lean-forward="true" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+          <folding>
+            <element signature="e#2342#2343#0" expanded="true" />
+            <element signature="e#2398#2399#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/vc/profile/VCProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/JedisPool.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="290">
+          <caret line="50" selection-start-line="50" selection-end-line="51" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#CORSResponseFilter#0" />
@@ -1997,17 +2023,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="160">
+          <caret line="142" selection-start-line="142" selection-end-line="142" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2046">
-          <caret line="338" selection-start-line="338" selection-end-line="338" />
+        <state relative-caret-position="338">
+          <caret line="486" selection-start-line="486" selection-end-line="486" />
+          <folding>
+            <element signature="e#16289#16300#0" expanded="true" />
+            <element signature="e#16671#16682#0" expanded="true" />
+            <element signature="e#19811#19822#0" expanded="true" />
+            <element signature="e#24147#24158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
