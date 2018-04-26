@@ -1,6 +1,5 @@
 package org.vp.cache;
 
-import com.sun.glass.ui.SystemClipboard;
 import org.vp.databases.VCDatabaseServices;
 import org.vp.vc.profile.VCProfile;
 import redis.clients.jedis.Jedis;
