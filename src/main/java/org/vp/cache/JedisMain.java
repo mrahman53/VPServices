@@ -176,9 +176,9 @@ public class JedisMain {
 
     public static void main(String[] args) throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
         VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
-        //List<VCProfile> list = vcDatabaseServices.readData();
+        List<VCProfile> list = vcDatabaseServices.readData();
         JedisMain main = new JedisMain();
-        //main.setObjectValue("vcList", list);
+        main.setObjectValue("vcList", list);
         Object profileList = main.getObjectValue("vcList");
         List<VCProfile> profile = (List<VCProfile>)profileList;
         for(VCProfile pro:profile){

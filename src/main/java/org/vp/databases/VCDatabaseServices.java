@@ -336,7 +336,7 @@ public class VCDatabaseServices {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
         vcList = getProfileListFromRedis();
         if(vcList.size() > 0){
-            return vcList;
+           return vcList;
         }else{
             vcList = readData();
        }
