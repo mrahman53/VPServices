@@ -1,7 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 .gitignore
 target/generated-sources/
-/target/*
+target/
 target/classes/org/vp/restservices/UnsortedAllVcResources.class
 target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$7.class
 target/vpservices/WEB-INF/classes/org/vp/restservices/UnsortedAllVcResources.class
