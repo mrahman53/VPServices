@@ -334,13 +334,13 @@ public class VCDatabaseServices {
 
     public List<VCProfile> queryListOfCompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
-        vcList = getProfileListFromRedis();
+        /*vcList = getProfileListFromRedis();
         if(vcList.size() > 0){
            return vcList;
         }else{
-            vcList = readData();
-       }
 
+       } */
+        vcList = readData();
         return vcList;
     }
     public List<VCProfile> queryUnsortedListOfCompany()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
