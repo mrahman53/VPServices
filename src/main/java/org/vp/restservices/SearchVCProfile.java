@@ -27,7 +27,7 @@ public class SearchVCProfile {
     @Path("/{vcName}")
     @Produces(MediaType.APPLICATION_JSON)
     public List<VCProfile> getACompany(@PathParam("vcName") String vcName)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        return vcDatabaseServices.queryListOfCompanyByName(vcName);
+        return vcDatabaseServices.readDataByVcName(vcName);
     }
 
 }

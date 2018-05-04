@@ -184,7 +184,7 @@ public class JedisMain {
             System.out.println();
         }
         VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
-        List<VCProfile> list = vcDatabaseServices.readData();
+        List<VCProfile> list = vcDatabaseServices.readAllVcData();
 //        JedisMain main = new JedisMain();
         main.setObjectValue("vcList", list);
         Object profileList = main.getObjectValue("vcList");

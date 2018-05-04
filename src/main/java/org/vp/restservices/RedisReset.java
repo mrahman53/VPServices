@@ -30,7 +30,7 @@ public class RedisReset {
             }
             if (profile == null) {
                 VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
-                List<VCProfile> list = vcDatabaseServices.readData();
+                List<VCProfile> list = vcDatabaseServices.readAllVcData();
                 main.setObjectValue("vcList", list);
             }
             profileList = main.getObjectValue("vcList");
@@ -53,7 +53,7 @@ public class RedisReset {
             }
             if (profile == null) {
                 VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
-                List<VCProfile> list = vcDatabaseServices.readData();
+                List<VCProfile> list = vcDatabaseServices.readAllVcData();
                 main.setObjectValue("vcList", list);
             }
             profileList = main.getObjectValue("vcList");
