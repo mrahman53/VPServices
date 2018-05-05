@@ -893,8 +893,7 @@ public class VCDatabaseServices {
                     List<Document> fundRaisedDocument = (List<Document>)document.get("fundRaised");
                     List<Document> ipoNAcquisitionsDocument = (List<Document>)document.get("ipoNAcquisitions");
                     String vcID = idDocument.toString();
-                    String vcNameExtract = (String)vcInfoDocument.get("vcName");
-                    String vcName = vcNameExtract.replace(" ", "-");
+                    String vcName = (String)vcInfoDocument.get("vcName");
                     String vcType = (String)vcInfoDocument.get("vcType");
                     String vcLocationCity = (String)vcLocationDocument.get("city");
                     String vcLocationState = (String)vcLocationDocument.get("state");
