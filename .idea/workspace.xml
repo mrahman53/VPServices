@@ -7,24 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7c73fb5-0882-4c9b-9451-df570ec537b2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/GoogleSheetIntegration.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/GoogleSheetIntegration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabasePotentialUse.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabasePotentialUse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/databases/VCDatabaseServices.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/scraping/FundingHistoryScraping.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/scraping/FundingHistoryScraping.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/vp/scraping/VcModelScraping.class" afterPath="$PROJECT_DIR$/target/classes/org/vp/scraping/VcModelScraping.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices.war" afterPath="$PROJECT_DIR$/target/vpservices.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/GoogleSheetIntegration.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/GoogleSheetIntegration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabasePotentialUse.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabasePotentialUse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/FundingHistoryScraping.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/FundingHistoryScraping.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/VcModelScraping.class" afterPath="$PROJECT_DIR$/target/vpservices/WEB-INF/classes/org/vp/scraping/VcModelScraping.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/vp/restservices/SearchVCProfile.java" afterPath="$PROJECT_DIR$/src/main/java/org/vp/restservices/SearchVCProfile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vpservices/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/vpservices/META-INF/MANIFEST.MF" />
     </list>
     <list id="97a8502a-43ba-4585-81f4-b6046ad96556" name="Revert: ipo" comment="" />
     <ignored path="vp-restful-services.iws" />
@@ -50,28 +34,9 @@
       <file leaf-file-name="VCDatabaseServices.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="484" column="0" lean-forward="false" selection-start-line="484" selection-start-column="0" selection-end-line="484" selection-end-column="0" />
-              <folding>
-                <element signature="e#11691#11702#0" expanded="true" />
-                <element signature="e#11956#11967#0" expanded="true" />
-                <element signature="e#16267#16278#0" expanded="true" />
-                <element signature="e#16654#16665#0" expanded="true" />
-                <element signature="e#17039#17050#0" expanded="true" />
-                <element signature="e#17305#17316#0" expanded="true" />
-                <element signature="e#19799#19810#0" expanded="true" />
-                <element signature="e#24135#24146#0" expanded="true" />
-                <element signature="e#28899#28907#0" expanded="true" />
-                <element signature="e#29655#29667#0" expanded="true" />
-                <element signature="e#30759#30777#0" expanded="true" />
-                <element signature="e#31856#31867#0" expanded="true" />
-                <element signature="e#35069#35077#0" expanded="true" />
-                <element signature="e#36645#36656#0" expanded="true" />
-                <element signature="e#40058#40066#0" expanded="true" />
-                <element signature="e#41472#41483#0" expanded="true" />
-                <element signature="e#44938#44946#0" expanded="true" />
-                <element signature="e#46655#46666#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="142">
+              <caret line="896" column="57" lean-forward="false" selection-start-line="896" selection-start-column="57" selection-end-line="896" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,7 +44,7 @@
       <file leaf-file-name="JedisMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
+            <state relative-caret-position="3168">
               <caret line="186" column="65" lean-forward="false" selection-start-line="186" selection-start-column="65" selection-end-line="186" selection-end-column="65" />
               <folding />
             </state>
@@ -89,8 +54,8 @@
       <file leaf-file-name="RedisReset.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+            <state relative-caret-position="450">
+              <caret line="36" column="43" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -109,8 +74,8 @@
       <file leaf-file-name="AllVcResources.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="26" column="52" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="52" />
+            <state relative-caret-position="261">
+              <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SearchVCProfile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <caret line="29" column="50" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="50" />
               <folding>
                 <marker date="1525471904000" expanded="true" signature="900:907" ph="{...}" />
               </folding>
@@ -153,7 +118,7 @@
       <file leaf-file-name="CORSResponseFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
+            <state relative-caret-position="666">
               <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="docComment;class#CORSResponseFilter#0" expanded="false" />
@@ -241,10 +206,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/SocialData.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/Location.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/vc/profile/IpoNAcquisitions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/restservices/SearchVCProfile.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java" />
       </list>
     </option>
   </component>
@@ -324,6 +289,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -443,7 +409,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -1385,7 +1350,8 @@
       <workItem from="1518736898529" duration="60501000" />
       <workItem from="1523316162806" duration="53000" />
       <workItem from="1524077198297" duration="1116000" />
-      <workItem from="1525470984440" duration="1381000" />
+      <workItem from="1525470984440" duration="1948000" />
+      <workItem from="1525482805092" duration="285000" />
     </task>
     <task id="LOCAL-00001" summary="user-profile">
       <created>1486135457686</created>
@@ -1426,7 +1392,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="543163000" />
+    <option name="totallyTimeSpent" value="544015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="17" y="23" width="1406" height="824" extended-state="0" />
@@ -1454,7 +1420,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30198675" sideWeight="0.7091038" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25430465" sideWeight="0.70412517" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25817922" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.257468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1809,18 +1775,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>920</line>
+          <line>921</line>
           <properties />
           <option name="timeStamp" value="423" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
-          <line>949</line>
+          <line>950</line>
           <properties />
           <option name="timeStamp" value="424" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java</url>
+          <line>896</line>
+          <properties />
+          <option name="timeStamp" value="425" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="425" />
+      <option name="time" value="426" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2111,7 +2083,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/filter/CORSResponseFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
+        <state relative-caret-position="666">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#CORSResponseFilter#0" expanded="false" />
@@ -2127,19 +2099,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="26" column="52" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/cache/JedisMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
+        <state relative-caret-position="3168">
           <caret line="186" column="65" lean-forward="false" selection-start-line="186" selection-start-column="65" selection-end-line="186" selection-end-column="65" />
           <folding />
         </state>
@@ -2147,19 +2109,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/RedisReset.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+        <state relative-caret-position="450">
+          <caret line="36" column="43" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SearchVCProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <marker date="1525471904000" expanded="true" signature="900:907" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2171,30 +2123,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/AllVcResources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/restservices/SearchVCProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="29" column="50" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="50" />
+          <folding>
+            <marker date="1525471904000" expanded="true" signature="900:907" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/vp/databases/VCDatabaseServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="484" column="0" lean-forward="false" selection-start-line="484" selection-start-column="0" selection-end-line="484" selection-end-column="0" />
-          <folding>
-            <element signature="e#11691#11702#0" expanded="true" />
-            <element signature="e#11956#11967#0" expanded="true" />
-            <element signature="e#16267#16278#0" expanded="true" />
-            <element signature="e#16654#16665#0" expanded="true" />
-            <element signature="e#17039#17050#0" expanded="true" />
-            <element signature="e#17305#17316#0" expanded="true" />
-            <element signature="e#19799#19810#0" expanded="true" />
-            <element signature="e#24135#24146#0" expanded="true" />
-            <element signature="e#28899#28907#0" expanded="true" />
-            <element signature="e#29655#29667#0" expanded="true" />
-            <element signature="e#30759#30777#0" expanded="true" />
-            <element signature="e#31856#31867#0" expanded="true" />
-            <element signature="e#35069#35077#0" expanded="true" />
-            <element signature="e#36645#36656#0" expanded="true" />
-            <element signature="e#40058#40066#0" expanded="true" />
-            <element signature="e#41472#41483#0" expanded="true" />
-            <element signature="e#44938#44946#0" expanded="true" />
-            <element signature="e#46655#46666#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="142">
+          <caret line="896" column="57" lean-forward="false" selection-start-line="896" selection-start-column="57" selection-end-line="896" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
