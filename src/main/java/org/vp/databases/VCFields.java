@@ -11,6 +11,7 @@ public class VCFields {
 
 
     public String   vcID = "id";
+    public String   vcTargetName = "vcTargetName";
     public String   vcName = "vcName";
     public String   vcType = "vcType";
     public String   city = "city";

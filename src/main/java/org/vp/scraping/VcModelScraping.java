@@ -206,7 +206,7 @@ public class VcModelScraping {
             }
         }
 
-        }
+    }
 
     public static Document documentVCInfoDataDelta(VCProfile profile){
         Document document = new Document().append(vcFields.vcName, profile.getVcInfo().getVcName())

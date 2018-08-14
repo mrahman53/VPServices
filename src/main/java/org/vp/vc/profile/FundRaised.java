@@ -1,5 +1,8 @@
 package org.vp.vc.profile;
 
+import org.bson.Document;
+import org.vp.databases.VCFields;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -18,9 +21,9 @@ public class FundRaised implements Serializable {
     public String fundRaisedAmount;
     public String fundRaisedSourceName;
     public String fundRaisedSourceURL;
+    public static VCFields vcFields;
 
     public FundRaised(){}
-
     public FundRaised(String fundRaisedDate, String fundRaisedName, String fundRaisedAmount, String fundRaisedSourceName, String fundRaisedSourceURL) {
         this.fundRaisedDate = fundRaisedDate;
         this.fundRaisedName = fundRaisedName;
@@ -28,7 +31,10 @@ public class FundRaised implements Serializable {
         this.fundRaisedSourceName = fundRaisedSourceName;
         this.fundRaisedSourceURL = fundRaisedSourceURL;
     }
-
+    public FundRaised(Document doc) {
+        this(doc.getString(vcFields.fundRaisedDate),doc.getString(vcFields.fundRaisedName),doc.getString(vcFields.
+         fundingAmount), doc.getString(vcFields.fundRaisedSourceName),doc.getString(vcFields.fundRaisedSourceURL));
+    }
 
     public String getFundRaisedDate() {
         return fundRaisedDate;

@@ -1,5 +1,8 @@
 package org.vp.vc.profile;
 
+import org.bson.Document;
+import org.vp.databases.VCFields;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -17,6 +20,7 @@ public class IpoNAcquisitions implements Serializable {
     public String ipoNAcquisitionsDate;
     public String ipoNAcquisitionsCompanyName;
     public String ipoNAcquisitionsExits;
+    public static VCFields vcFields;
 
     public IpoNAcquisitions(){}
 
@@ -24,6 +28,10 @@ public class IpoNAcquisitions implements Serializable {
         this.ipoNAcquisitionsDate = ipoNAcquisitionsDate;
         this.ipoNAcquisitionsCompanyName = ipoNAcquisitionsCompanyName;
         this.ipoNAcquisitionsExits = ipoNAcquisitionsExits;
+    }
+    public IpoNAcquisitions(Document doc) {
+        this(doc.getString(vcFields.ipoNAcquisitionsDate),doc.getString(vcFields.ipoNAcquisitionsCompanyName),
+                doc.getString(vcFields.ipoNAcquisitionsExits));
     }
 
     public String getIpoNAcquisitionsDate() {

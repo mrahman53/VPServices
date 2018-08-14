@@ -1,9 +1,13 @@
 package org.vp.vc.profile;
 
+import org.bson.Document;
+import org.vp.databases.VCFields;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,10 +23,9 @@ public class FundingHistory implements Serializable {
     public String fundingAmount;
     public String fundingRound;
     public List<String> categories;
+    public static VCFields vcFields;
 
-    public FundingHistory(){
-
-    }
+    public FundingHistory(){ }
 
     public FundingHistory(String fundingDate, String companyName, String fundingAmount, String fundingRound) {
         this.fundingDate = fundingDate;
@@ -36,6 +39,11 @@ public class FundingHistory implements Serializable {
         this.fundingAmount = fundingAmount;
         this.fundingRound = fundingRound;
         this.categories = categories;
+    }
+
+    public FundingHistory(Document doc) {
+        this(doc.getString(vcFields.fundingDate),doc.getString(vcFields.companyName),
+        doc.getString(vcFields.fundingAmount), doc.getString(vcFields.fundingRound),(List<String>)doc.get(vcFields.categories));
     }
 
     public String getFundingDate() {

@@ -1,5 +1,7 @@
 package org.vp.vc.profile;
 
+import org.bson.Document;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -14,19 +16,18 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Location implements Serializable {
 
-    public String city;
-    public String state;
-    public String country;
+    public static String city = "city";
+    public static String state = "state";
+    public static String country = "country";
 
-
-
-    public Location(){
-
-    }
+    public Location(){ }
     public Location(String city, String state, String country) {
         this.city = city;
         this.state = state;
         this.country = country;
+    }
+    public Location(Document doc){
+        this(doc.getString(city),doc.getString(state),doc.getString(country));
     }
 
     public String getCity() {

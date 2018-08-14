@@ -1,5 +1,10 @@
 package org.vp.vc.profile;
 
+import org.vp.databases.VCDatabaseServices;
+
+import org.bson.Document;
+import org.vp.databases.VCFields;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -21,11 +26,14 @@ public class VCProfile implements Comparable<VCProfile>, Serializable {
     public List<FundingHistory> fundingHistory;
     public List<FundRaised> fundRaised;
     public List<IpoNAcquisitions> ipoNAcquisitions;
+    public static VCFields vcFields;
 
-    public VCProfile(){
-
+    public VCProfile(){ }
+    public VCProfile(Document doc) {
+        this(doc.getString(vcFields.vcID),(VCInfo)doc.get("vcInfo"),(SocialData)doc.get("socialData"),
+        (List<FundingHistory>)doc.get("fundingHistory"),(List<FundRaised>)doc.get("fundRaised"),(List<IpoNAcquisitions>)
+        doc.get("ipoNAcquisitions"));
     }
-
     public VCProfile(String _id,VCInfo vcInfo){
         this._id = _id;
         this.vcInfo = vcInfo;
