@@ -1,11 +1,13 @@
 package org.vp.databases;
 
+import akka.NotUsed;
+import akka.http.scaladsl.server.directives.Credentials;
+import akka.stream.javadsl.JavaFlowSupport;
+import akka.stream.javadsl.Source;
 import com.mongodb.*;
 
-import com.mongodb.client.FindIterable;
-
-import com.mongodb.connection.ClusterSettings;
-import com.mongodb.connection.SslSettings;
+import com.mongodb.async.SingleResultCallback;
+import com.mongodb.async.client.Observables;
 import com.mongodb.reactivestreams.client.*;
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.selector.ReadPreferenceServerSelector;
@@ -16,6 +18,8 @@ import org.bson.Document;
 
 import static akka.stream.impl.EmptyPublisher.subscribe;
 import static com.mongodb.client.model.Filters.eq;
+
+import org.eclipse.persistence.jaxb.Crate;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -24,10 +28,11 @@ import org.vp.vc.profile.VCProfile;
 import javax.net.SocketFactory;
 import javax.net.ssl.*;
 import java.io.File;
+import java.io.IOException;
 import java.security.*;
 import java.security.cert.X509Certificate;
 import java.util.*;
-import java.util.stream.Collectors;
+import rx.RxReactiveStreams.*;
 
 /**
  * Created by mrahman on 7/20/18.
@@ -38,6 +43,7 @@ public class ReactiveConnectMongo {
     public static MongoClientURI mongoClientURI = null;
     public static MongoClientOptions mongoClientOptions = null;
     public static MongoDatabase mongoDatabase = null;
+    public static MongoCollection<Document> profileCollection = null;
     public static DB db = null;
     public static VCDatabaseServices vc = new VCDatabaseServices();
 
@@ -47,22 +53,25 @@ public class ReactiveConnectMongo {
     public static List<Object> dbObjectList = new ArrayList<>();
 
     private static SocketFactory _sf = null;
-    public static String dataBaseName = "vp";
+    public static String dataBaseName = "LOAD_5_VC_PROFILE";
 
-    public MongoDatabase connectRecommendedSSLAtlas(String dataBaseName) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public ReactiveConnectMongo()throws Throwable{
+        final MongoDatabase db = connectRecommendedSSLAtlas(dataBaseName);
+        profileCollection = db.getCollection("profile");
+    }
 
-        final TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-        trustManagerFactory.init((KeyStore) null);
-        final TrustManager defaultTm = Arrays.stream(trustManagerFactory.getTrustManagers())
-                .filter(tm -> tm instanceof X509TrustManager)
-                .findFirst()
-                .get();
-        final SSLContext context = SSLContext.getInstance("TLS");
-        context.init(new KeyManager[0], new TrustManager[]{defaultTm}, null);
+    public MongoDatabase connectRecommendedSSLAtlas(String dataBaseName)throws Throwable {
         EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
         MongoClient mongoClient = MongoClients.create("mongodb+srv://vpcluster0:vpdatahosting0@cluster0-b2mbe.mongodb.net/test?streamType=netty");
-        MongoDatabase mongoDatabase = mongoClient.getDatabase("LOAD_5_VC_PROFILE");
+        MongoDatabase mongoDatabase = mongoClient.getDatabase(dataBaseName);
         return mongoDatabase;
+    }
+
+    public void readProfileCollection()throws Throwable {
+        MongoCollection<Document> profileCollection = mongoDatabase.getCollection("profile");
+        SubscriberHelpers.PrintDocumentSubscriber subscriber = new SubscriberHelpers.PrintDocumentSubscriber();
+        profileCollection.find().subscribe(subscriber);
+        subscriber.await();
     }
 
     public MongoClient connectToRecommendedSSLAtlasMongoClient() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
@@ -88,68 +97,6 @@ public class ReactiveConnectMongo {
 
         mongoClient =  MongoClients.create();
         return mongoClient;
-    }
-
-    public MongoClient connectMongoClientSSLToAtlasWithMinimalSecurity() {
-        try {
-            SSLContext context = SSLContext.getInstance("TLS");
-            context.init(null, trustAllCerts, null);
-            _sf = context.getSocketFactory();
-
-        } catch (GeneralSecurityException e) {
-            System.out.println(e.getStackTrace());
-        }
-        String userName = "vpcluster0";
-        String authDB = "admin";
-        char[] password = new char[]{'v', 'p', 'd', 'a', 't', 'a', 'h', 'o', 's', 't', 'i', 'n', 'g', '0'};
-        MongoCredential credential = MongoCredential.createCredential(userName, authDB, password);
-
-        MongoClientOptions.Builder optionBuilder = new MongoClientOptions.Builder();
-        optionBuilder.sslEnabled(true);
-        optionBuilder.socketFactory(_sf);
-        MongoClientOptions options = optionBuilder.build();
-
-        mongoClient = MongoClients.create();
-                /*Arrays.asList(
-                        new ServerAddress("cluster0-shard-00-00-b2mbe.mongodb.net", 27017),
-                        new ServerAddress("cluster0-shard-00-01-b2mbe.mongodb.net", 27017),
-                        new ServerAddress("cluster0-shard-00-02-b2mbe.mongodb.net", 27017)
-                ),
-                Arrays.asList(credential), options); */
-
-
-        return mongoClient;
-    }
-
-    public MongoDatabase connectWithSSLToAtlasWithMinimalSecurity() {
-        try {
-            SSLContext context = SSLContext.getInstance("TLS");
-            context.init(null, trustAllCerts, null);
-            _sf = context.getSocketFactory();
-
-        } catch (GeneralSecurityException e) {
-            System.out.println(e.getStackTrace());
-        }
-        String userName = "vpcluster0";
-        String authDB = "admin";
-        char[] password = new char[]{'v', 'p', 'd', 'a', 't', 'a', 'h', 'o', 's', 't', 'i', 'n', 'g', '0'};
-        MongoCredential credential = MongoCredential.createCredential(userName, authDB, password);
-
-        MongoClientOptions.Builder optionBuilder = new MongoClientOptions.Builder();
-        optionBuilder.sslEnabled(true);
-        optionBuilder.socketFactory(_sf);
-        MongoClientOptions options = optionBuilder.build();
-
-        mongoClient = MongoClients.create();
-                /*Arrays.asList(
-                        new ServerAddress("cluster0-shard-00-00-b2mbe.mongodb.net", 27017),
-                        new ServerAddress("cluster0-shard-00-01-b2mbe.mongodb.net", 27017),
-                        new ServerAddress("cluster0-shard-00-02-b2mbe.mongodb.net", 27017)
-                ),
-                Arrays.asList(credential), options); */
-        mongoDatabase = mongoClient.getDatabase("devVcProfile");
-
-        return mongoDatabase;
     }
 
 
@@ -189,5 +136,47 @@ public class ReactiveConnectMongo {
         //subscriber.await();
 
     }
+    /*
+    private SingleResultCallback<VCProfile> _findUserByName(final String name) {
+        return profileCollection.find().subscribe()
+                .map(doc -> new User(doc));
+    }
+    private Source<String, NotUsed> sourceData() {
+        return JavaFlowSupport.Source.fromPublisher(ReactiveConnectMongo.c(credentials.username))
+                .map(user -> checkUserLoggedIn(user, credentials))
+                .map(user -> user.name);
+    } */
+    /*
+    Observables.observe(collection.find()).subscribe(new Observer<Document>(){
+        private long batchSize = 10;
+        private long seen = 0;
+        private Subscription subscription;
+
+        @Override
+        void onSubscribe(final Subscription subscription) {
+            this.subscription = subscription;
+            subscription.request(batchSize);
+        }
+
+        @Override
+        void onNext(final Document document) {
+            System.out.println(document.toJson());
+            seen += 1;
+            if (seen == batchSize) {
+                seen = 0;
+                subscription.request(batchSize);
+            }
+        }
+
+        @Override
+        void onError(final Throwable e) {
+            System.out.println("There was an error: " + e.getMessage());
+        }
+
+        @Override
+        void onComplete() {
+            System.out.println("Finished iterating all documents");
+        }
+    }); */
 
 }

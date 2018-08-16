@@ -45,7 +45,7 @@ public class ReactiveVCDBServices {
     public VCProfile vcProfile = null;
     String databaseName = "PROD_VC_PROFILE";
 
-    public boolean insertVCProfileNReturn(VCProfile profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public boolean insertVCProfileNReturn(VCProfile profile) throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
         try {
             String st = profile.getVcInfo().getVcName() + " " + "is Inserted";
@@ -87,7 +87,7 @@ public class ReactiveVCDBServices {
     }
 
 
-    public boolean updateVCProfileByIDNReturnOld(VCProfile profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public boolean updateVCProfileByIDNReturnOld(VCProfile profile) throws Throwable, KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
         try {
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
@@ -114,7 +114,7 @@ public class ReactiveVCDBServices {
         return true;
     }
 
-    public boolean updateVCProfileByIDNReturn(VCProfile profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public boolean updateVCProfileByIDNReturn(VCProfile profile) throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
         try {
             connectMongo = new ReactiveConnectMongo();
@@ -154,7 +154,7 @@ public class ReactiveVCDBServices {
         return true;
     }
 
-    public void deleteVCProfileByIDNReturn(String vcId) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public void deleteVCProfileByIDNReturn(String vcId) throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         connectMongo = new ReactiveConnectMongo();
         try {
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
@@ -261,13 +261,13 @@ public class ReactiveVCDBServices {
         return ipoNAcquisitions;
     }
 
-    public List<VCProfile> queryListOfCompanyByID(String vcID) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> queryListOfCompanyByID(String vcID) throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
         vcList = readDataByVcID(vcID);
         return vcList;
     }
 
-    public List<VCProfile> readDataByVcID(String vcID) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> readDataByVcID(String vcID) throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try {
             connectMongo = new ReactiveConnectMongo();
@@ -344,7 +344,7 @@ public class ReactiveVCDBServices {
         return vcList;
     }
 
-    public List<VCProfile> queryListOfCompany() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> queryListOfCompany() throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
         /*vcList = getProfileListFromRedis();
         if(vcList.size() > 0){
@@ -356,7 +356,7 @@ public class ReactiveVCDBServices {
         return vcList;
     }
 
-    public List<VCProfile> queryUnsortedListOfCompany() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> queryUnsortedListOfCompany() throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
         /*Jedis jedis = new Jedis("localhost");
         jedis.set("All", "");
@@ -366,13 +366,13 @@ public class ReactiveVCDBServices {
         return vcList;
     }
 
-    public List<VCProfile> queryListOfLandingPageVC() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> queryListOfLandingPageVC() throws Throwable, KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
         vcList = readDataForLandingPage();
         return vcList;
     }
 
-    public List<VCProfile> readDataForLandingPage() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> readDataForLandingPage() throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try {
             connectMongo = new ReactiveConnectMongo();
@@ -427,7 +427,7 @@ public class ReactiveVCDBServices {
         return vcList;
     }
 
-    public List<VCProfile> readAllVcData() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> readAllVcData() throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try {
             /*SingleResultCallback<Document> printDocument = new SingleResultCallback<Document>() {
@@ -507,7 +507,7 @@ public class ReactiveVCDBServices {
         return vcList;
     }
 
-    public List<VCProfile> readUnsortedData() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> readUnsortedData() throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try {
             connectMongo = new ReactiveConnectMongo();
@@ -641,7 +641,7 @@ public class ReactiveVCDBServices {
         }
     }
 
-    public List<VCProfile> readDataFundingHistoryConnectWithNumberOfDeals() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> readDataFundingHistoryConnectWithNumberOfDeals() throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try {
             mongoClient = connectMongo.connectToRecommendedSSLAtlasMongoClient();
@@ -721,7 +721,7 @@ public class ReactiveVCDBServices {
         return vcList;
     }
 
-    public List<VCProfile> queryListOfCompanyByPagination(int start, int size) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> queryListOfCompanyByPagination(int start, int size) throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try {
             connectMongo = new ReactiveConnectMongo();
@@ -802,7 +802,7 @@ public class ReactiveVCDBServices {
         return vcList.subList(start, start + size);
     }
 
-    public List<VCProfile> queryListOfCompanyByName(String vcName) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> queryListOfCompanyByName(String vcName) throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         List<VCProfile> vcList = new ArrayList<VCProfile>();
         try {
             connectMongo = new ReactiveConnectMongo();
@@ -898,7 +898,7 @@ public class ReactiveVCDBServices {
         return vcList;
     }
 
-    public List<VCProfile> readDataByVcName(String vcName) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public List<VCProfile> readDataByVcName(String vcName) throws Throwable,KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final List<VCProfile> vcList = new ArrayList<VCProfile>();
         try {
             connectMongo = new ReactiveConnectMongo();

@@ -7,3 +7,4 @@ target/vpservices/WEB-INF/classes/org/vp/databases/VCDatabaseServices$7.class
 target/vpservices/WEB-INF/classes/org/vp/restservices/UnsortedAllVcResources.class
 
 .idea/workspace.xml
+.idea/*

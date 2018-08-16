@@ -1,5 +1,10 @@
 package org.vp.restservices;
 
+import com.mongodb.reactivestreams.client.MongoCollection;
+import com.mongodb.reactivestreams.client.MongoDatabase;
+import org.bson.Document;
+import org.vp.databases.ReactiveConnectMongo;
+import org.vp.databases.SubscriberHelpers;
 import  org.vp.databases.VCDatabaseServices;
 import  org.vp.vc.profile.VCProfile;
 
@@ -19,18 +24,20 @@ import java.util.List;
 public class AllVcResources {
 
     VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
-
-    @GET
+    ReactiveConnectMongo reactiveConnectMongo = null;
+    //@GET
     @Path("AllVcResources")
     @Produces(MediaType.APPLICATION_JSON)
     public List<VCProfile> getCompanyList()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         return vcDatabaseServices.queryListOfCompany();
     }
 
-    //@GET
+    @GET
+    @Path("AllVcResources")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<VCProfile> getACompanies()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-        return vcDatabaseServices.queryListOfCompanyByPagination(0,199);
+    public void getACompanies()throws Throwable {
+        reactiveConnectMongo = new ReactiveConnectMongo();
+        reactiveConnectMongo.readProfileCollection();
     }
 
     @POST

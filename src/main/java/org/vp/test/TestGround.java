@@ -18,7 +18,7 @@ import java.util.List;
  * Created by mrahman on 7/6/18.
  */
 public class TestGround {
-    public static void main(String[] args)throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+    public static void main(String[] args)throws KeyStoreException,Throwable, NoSuchAlgorithmException, KeyManagementException {
         /*VCDatabaseServices vcDatabaseServices = new VCDatabaseServices();
         List<VCProfile> profile = vcDatabaseServices.readAllVcData(); */
         ReactiveConnectMongo connect = new ReactiveConnectMongo();
