@@ -16,17 +16,17 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class VCInfo implements Serializable {
 
-    public static String   vcTargetName;
-    public static String   vcName;
-    public static String   vcType;
-    public static Location vcLocation;
-    public static String   numberOfDeals;
-    public static String   numberOfExits;
-    public static String   vcUrl;
-    public static String   vcEmail;
-    public static String   vcFoundedYear;
-    public static String   vcPhoneNumber;
-    public static VCFields vcFields;
+    public  String   vcTargetName;
+    public  String   vcName;
+    public  String   vcType;
+    public  Location vcLocation;
+    public  String   numberOfDeals;
+    public  String   numberOfExits;
+    public  String   vcUrl;
+    public  String   vcEmail;
+    public  String   vcFoundedYear;
+    public  String   vcPhoneNumber;
+    public  VCFields vcFields;
 
     public VCInfo(){}
     public VCInfo(String vcName, String vcType, Location vcLocation, String numberOfDeals,
@@ -96,10 +96,10 @@ public class VCInfo implements Serializable {
         this.vcPhoneNumber = vcPhoneNumber;
     }
     public VCInfo(Document doc) {
-        this(doc.getString(vcFields.vcName),doc.getString(vcFields.vcType),
+        /*this(doc.getString(vcFields.vcName),doc.getString(vcFields.vcType),
         (Location)doc.get("vcLocation"),doc.getString(vcFields.numberOfDeals),doc.getString(vcFields.numberOfExits),
         doc.getString(vcFields.vcUrl),doc.getString(vcFields.vcEmail), doc.getString(vcFields.vcFoundedYear),
-        doc.getString(vcFields.vcPhoneNumber));
+        doc.getString(vcFields.vcPhoneNumber)); */
 
     }
 
@@ -181,7 +181,5 @@ public class VCInfo implements Serializable {
     public void setVcPhoneNumber(String vcPhoneNumber) {
         this.vcPhoneNumber = vcPhoneNumber;
     }
-
-
 
 }

@@ -82,6 +82,7 @@ public class VCProfile implements Comparable<VCProfile>, Serializable {
 
     public int compareTo(VCProfile vcProfile){
         int numberOfDeals = 0;
+        System.out.println(vcProfile.getVcInfo().getVcName());
         if(vcProfile.getVcInfo().getNumberOfDeals().equals("")){
              numberOfDeals = 0;
         }else {
@@ -89,10 +90,14 @@ public class VCProfile implements Comparable<VCProfile>, Serializable {
         }
 
         int updateNumberOfDeals = 0;
-        if(this.vcInfo.numberOfDeals.equals("")){
-            updateNumberOfDeals = 0;
-        }else{
-            updateNumberOfDeals = Integer.parseInt(this.vcInfo.numberOfDeals.replace(",",""));
+        try {
+            if (this.vcInfo.numberOfDeals.equals("")) {
+                updateNumberOfDeals = 0;
+            } else {
+                updateNumberOfDeals = Integer.parseInt(this.vcInfo.numberOfDeals.replace(",", ""));
+            }
+        }catch(Exception ex){
+            System.out.println(vcProfile.getVcInfo().getVcName() + " throws error on funding history");
         }
         return numberOfDeals - updateNumberOfDeals;
     }

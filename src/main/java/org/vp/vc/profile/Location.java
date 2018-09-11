@@ -16,9 +16,9 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Location implements Serializable {
 
-    public static String city = "city";
-    public static String state = "state";
-    public static String country = "country";
+    public  String city = "city";
+    public  String state = "state";
+    public  String country = "country";
 
     public Location(){ }
     public Location(String city, String state, String country) {
@@ -27,7 +27,7 @@ public class Location implements Serializable {
         this.country = country;
     }
     public Location(Document doc){
-        this(doc.getString(city),doc.getString(state),doc.getString(country));
+        //this(doc.getString(city),doc.getString(state),doc.getString(country));
     }
 
     public String getCity() {
