@@ -25,5 +25,7 @@ public class TestGround {
         MongoDatabase database = connect.connectRecommendedSSLAtlas("pnt");
         MongoCollection collection = database.getCollection("profile");
         FindPublisher<Document> data = collection.find();
+        VCDatabaseServices vcData = new VCDatabaseServices();
+        List<VCProfile> list = vcData.readAllVcData();
     }
 }

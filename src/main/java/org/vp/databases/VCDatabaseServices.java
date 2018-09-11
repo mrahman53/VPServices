@@ -976,12 +976,6 @@ public class VCDatabaseServices {
 
     public static void main(String[] args) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
-        /*
-        String st = "Test_Moore&";
-        if(st.contains("_")||st.contains("&")){
-            String newSt = st.replace("_", "-").replace("&", "-");
-                    System.out.println(newSt);
-        } */
 
     }
 }
