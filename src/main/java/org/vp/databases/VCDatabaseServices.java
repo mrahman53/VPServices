@@ -482,7 +482,7 @@ public class VCDatabaseServices {
                 connectMongo = null;
             }
         }
-        Collections.sort(vcList);
+        //Collections.sort(vcList);
         return vcList;
     }
     public List<VCProfile> readUnsortedData()throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException{
