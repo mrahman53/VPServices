@@ -1,5 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-.gitignore
 target/generated-sources/
 target/*
 target/classes/org/vp/restservices/UnsortedAllVcResources.class
