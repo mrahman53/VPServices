@@ -190,7 +190,11 @@ public class VCDatabaseServices {
                     .replace("_", "-");
             processedVcTarget.toLowerCase();
         }
-        Document document = new Document().append(vcFields.vcTargetName, processedVcTarget).append(vcFields.vcName, profile.getVcInfo().getVcName().toLowerCase())
+        String numberOfDeals = profile.getVcInfo().getNumberOfDeals();
+        if(numberOfDeals=="null" || numberOfDeals==""){
+            profile.getVcInfo().setNumberOfDeals("0");
+        }
+        Document document = new Document().append(vcFields.vcTargetName, processedVcTarget).append(vcFields.vcName, profile.getVcInfo().getVcName())
                 .append(vcFields.vcType, profile.getVcInfo().getVcType()).append(vcFields.vcLocation, documentVCLocationData(profile))
                 .append(vcFields.numberOfDeals, profile.getVcInfo().getNumberOfDeals())
                 .append(vcFields.numberOfExits, profile.getVcInfo().getNumberOfExits()).append(vcFields.vcUrl,
