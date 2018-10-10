@@ -40,7 +40,7 @@ public class VCDatabaseServices {
     public List<FundRaised> fundRaisedList = null;
     public List<IpoNAcquisitions> ipoNAcquisitionsList = null;
     public VCProfile vcProfile = null;
-    String databaseName = "PROD_VC_PROFILE";
+    String databaseName = "BETA_VC_PROFILE";
 
     public boolean insertVCProfileNReturn(VCProfile profile) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
