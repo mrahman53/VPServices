@@ -190,10 +190,6 @@ public class VCDatabaseServices {
                     .replace("_", "-");
             processedVcTarget.toLowerCase();
         }
-        String numberOfDeals = profile.getVcInfo().getNumberOfDeals();
-        if(numberOfDeals=="null" || numberOfDeals==""){
-            profile.getVcInfo().setNumberOfDeals("0");
-        }
         Document document = new Document().append(vcFields.vcTargetName, processedVcTarget).append(vcFields.vcName, profile.getVcInfo().getVcName())
                 .append(vcFields.vcType, profile.getVcInfo().getVcType()).append(vcFields.vcLocation, documentVCLocationData(profile))
                 .append(vcFields.numberOfDeals, profile.getVcInfo().getNumberOfDeals())
@@ -294,8 +290,8 @@ public class VCDatabaseServices {
                     String vcLocationState = (String) vcLocationDocument.get("state");
                     String vcLocationCountry = (String) vcLocationDocument.get("country");
                     Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
-                    String numberOfDeals = (String) vcInfoDocument.get("numberOfDeals");
-                    String numberOfExits = (String) vcInfoDocument.get("numberOfExits");
+                    int numberOfDeals = (int) vcInfoDocument.get("numberOfDeals");
+                    int numberOfExits = (int) vcInfoDocument.get("numberOfExits");
                     String vcUrl = (String) vcInfoDocument.get("vcUrl");
                     String vcEmail = (String) vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String) vcInfoDocument.get("vcFoundedYear");
@@ -394,8 +390,8 @@ public class VCDatabaseServices {
                     String vcLocationState = (String) vcLocationDocument.get("state");
                     String vcLocationCountry = (String) vcLocationDocument.get("country");
                     Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
-                    String numberOfDeals = (String) vcInfoDocument.get("numberOfDeals");
-                    String numberOfExits = (String) vcInfoDocument.get("numberOfExits");
+                    int numberOfDeals = (int) vcInfoDocument.get("numberOfDeals");
+                    int numberOfExits = (int) vcInfoDocument.get("numberOfExits");
                     vcInfo = new VCInfo(vcName, vcType, vcLocation, numberOfDeals, numberOfExits);
                     vcProfile = new VCProfile(vcID, vcInfo);
                     vcList.add(vcProfile);
@@ -453,8 +449,8 @@ public class VCDatabaseServices {
                     String vcLocationState = (String) vcLocationDocument.get("state");
                     String vcLocationCountry = (String) vcLocationDocument.get("country");
                     Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
-                    String numberOfDeals = (String) vcInfoDocument.get("numberOfDeals");
-                    String numberOfExits = (String) vcInfoDocument.get("numberOfExits");
+                    int numberOfDeals = (int) vcInfoDocument.get("numberOfDeals");
+                    int numberOfExits = (int) vcInfoDocument.get("numberOfExits");
                     String vcUrl = (String) vcInfoDocument.get("vcUrl");
                     String vcEmail = (String) vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String) vcInfoDocument.get("vcFoundedYear");
@@ -527,8 +523,8 @@ public class VCDatabaseServices {
                     String vcLocationState = (String) vcLocationDocument.get("state");
                     String vcLocationCountry = (String) vcLocationDocument.get("country");
                     Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
-                    String numberOfDeals = (String) vcInfoDocument.get("numberOfDeals");
-                    String numberOfExits = (String) vcInfoDocument.get("numberOfExits");
+                    int numberOfDeals = (int) vcInfoDocument.get("numberOfDeals");
+                    int numberOfExits = (int) vcInfoDocument.get("numberOfExits");
                     String vcUrl = (String) vcInfoDocument.get("vcUrl");
                     String vcEmail = (String) vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String) vcInfoDocument.get("vcFoundedYear");
@@ -659,8 +655,8 @@ public class VCDatabaseServices {
                     String vcLocationState = (String) vcLocationDocument.get("state");
                     String vcLocationCountry = (String) vcLocationDocument.get("country");
                     Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
-//                    String numberOfDeals = (String)vcInfoDocument.get("numberOfDeals");
-                    String numberOfExits = (String) vcInfoDocument.get("numberOfExits");
+                    int numberOfDeals = (int)vcInfoDocument.get("numberOfDeals");
+                    int numberOfExits = (int) vcInfoDocument.get("numberOfExits");
                     String vcUrl = (String) vcInfoDocument.get("vcUrl");
                     String vcEmail = (String) vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String) vcInfoDocument.get("vcFoundedYear");
@@ -689,7 +685,7 @@ public class VCDatabaseServices {
                             fundingHistoryList.add(fundingHistory);
 
                         }
-                        String numberOfDeals = Integer.toString(fundingHistoryList.size());
+                        numberOfDeals = fundingHistoryList.size();
                         vcInfo = new VCInfo(vcName, vcType, vcLocation, numberOfDeals, numberOfExits, vcUrl, vcEmail,
                                 vcFoundedYear, vcPhoneNumber);
                         vcProfile = new VCProfile(vcID, vcInfo, socialData, fundingHistoryList);
@@ -739,8 +735,8 @@ public class VCDatabaseServices {
                     String vcLocationState = (String) vcLocationDocument.get("state");
                     String vcLocationCountry = (String) vcLocationDocument.get("country");
                     Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
-                    String numberOfDeals = (String) vcInfoDocument.get("numberOfDeals");
-                    String numberOfExits = (String) vcInfoDocument.get("numberOfExits");
+                    int numberOfDeals = (int) vcInfoDocument.get("numberOfDeals");
+                    int numberOfExits = (int) vcInfoDocument.get("numberOfExits");
                     String vcUrl = (String) vcInfoDocument.get("vcUrl");
                     String vcEmail = (String) vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String) vcInfoDocument.get("vcFoundedYear");
@@ -823,8 +819,8 @@ public class VCDatabaseServices {
                     String vcLocationState = (String) vcLocationDocument.get("state");
                     String vcLocationCountry = (String) vcLocationDocument.get("country");
                     Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
-                    String numberOfDeals = (String) vcInfoDocument.get("numberOfDeals");
-                    String numberOfExits = (String) vcInfoDocument.get("numberOfExits");
+                    int numberOfDeals = (int) vcInfoDocument.get("numberOfDeals");
+                    int numberOfExits = (int) vcInfoDocument.get("numberOfExits");
                     String vcUrl = (String) vcInfoDocument.get("vcUrl");
                     String vcEmail = (String) vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String) vcInfoDocument.get("vcFoundedYear");
@@ -919,8 +915,8 @@ public class VCDatabaseServices {
                     String vcLocationState = (String) vcLocationDocument.get("state");
                     String vcLocationCountry = (String) vcLocationDocument.get("country");
                     Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
-                    String numberOfDeals = (String) vcInfoDocument.get("numberOfDeals");
-                    String numberOfExits = (String) vcInfoDocument.get("numberOfExits");
+                    int numberOfDeals = (int) vcInfoDocument.get("numberOfDeals");
+                    int numberOfExits = (int) vcInfoDocument.get("numberOfExits");
                     String vcUrl = (String) vcInfoDocument.get("vcUrl");
                     String vcEmail = (String) vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String) vcInfoDocument.get("vcFoundedYear");
@@ -979,7 +975,9 @@ public class VCDatabaseServices {
     }
 
     public static void main(String[] args) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-
+            String st = "null";
+            String mod = st.replace("\"", "");
+            System.out.println(mod);
 
     }
 }

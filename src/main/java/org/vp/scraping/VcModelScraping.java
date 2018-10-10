@@ -143,8 +143,8 @@ public class VcModelScraping {
                     String city = (String) row.get(2).toString();
                     String state = (String) row.get(3).toString();
                     String country = (String) row.get(4).toString();
-                    String numberOfDeals = (String) row.get(5).toString();
-                    String numberOfExits = (String) row.get(6).toString();
+                    int numberOfDeals = (int) row.get(5);
+                    int numberOfExits = (int) row.get(6);
                     String vcUrl = (String) row.get(7).toString();
                     String vcEmail = (String) row.get(8).toString();
                     String vcFoundedYear = (String) row.get(9).toString();

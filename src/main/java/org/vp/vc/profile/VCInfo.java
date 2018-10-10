@@ -20,8 +20,8 @@ public class VCInfo implements Serializable {
     public  String   vcName;
     public  String   vcType;
     public  Location vcLocation;
-    public  String   numberOfDeals;
-    public  String   numberOfExits;
+    public  int      numberOfDeals;
+    public  int      numberOfExits;
     public  String   vcUrl;
     public  String   vcEmail;
     public  String   vcFoundedYear;
@@ -29,16 +29,14 @@ public class VCInfo implements Serializable {
     public  VCFields vcFields;
 
     public VCInfo(){}
-    public VCInfo(String vcName, String vcType, Location vcLocation, String numberOfDeals,
-                  String numberOfExits){
+    public VCInfo(String vcName, String vcType, Location vcLocation, int numberOfDeals, int numberOfExits){
         this.vcName = vcName;
         this.vcType = vcType;
         this.vcLocation = vcLocation;
         this.numberOfDeals = numberOfDeals;
         this.numberOfExits = numberOfExits;
     }
-    public VCInfo(String vcTargetName, String vcName, String vcType, Location vcLocation, String numberOfDeals,
-                  String numberOfExits){
+    public VCInfo(String vcTargetName, String vcName, String vcType, Location vcLocation, int numberOfDeals, int numberOfExits){
         //this.vcTargetName = vcTargetName;
         this.vcName = vcName;
         this.vcType = vcType;
@@ -46,8 +44,8 @@ public class VCInfo implements Serializable {
         this.numberOfDeals = numberOfDeals;
         this.numberOfExits = numberOfExits;
     }
-    public VCInfo(String vcName, String vcType, Location vcLocation, String numberOfDeals,
-                  String numberOfExits,String vcUrl, String vcEmail, String vcFoundedYear) {
+    public VCInfo(String vcName, String vcType, Location vcLocation, int numberOfDeals,
+                  int numberOfExits,String vcUrl, String vcEmail, String vcFoundedYear) {
         this.vcName = vcName;
         this.vcType = vcType;
         this.vcLocation = vcLocation;
@@ -57,8 +55,8 @@ public class VCInfo implements Serializable {
         this.vcEmail = vcEmail;
         this.vcFoundedYear = vcFoundedYear;
     }
-    public VCInfo(String vcTargetName, String vcName, String vcType, Location vcLocation, String numberOfDeals,
-                  String numberOfExits,String vcUrl, String vcEmail, String vcFoundedYear) {
+    public VCInfo(String vcTargetName, String vcName, String vcType, Location vcLocation, int numberOfDeals,
+                  int numberOfExits,String vcUrl, String vcEmail, String vcFoundedYear) {
         this.vcTargetName = vcTargetName;
         this.vcName = vcName;
         this.vcType = vcType;
@@ -69,8 +67,8 @@ public class VCInfo implements Serializable {
         this.vcEmail = vcEmail;
         this.vcFoundedYear = vcFoundedYear;
     }
-    public VCInfo(String vcName, String vcType, Location vcLocation, String numberOfDeals,
-                  String numberOfExits,String vcUrl, String vcEmail, String vcFoundedYear, String vcPhoneNumber) {
+    public VCInfo(String vcName, String vcType, Location vcLocation, int numberOfDeals,
+                  int numberOfExits,String vcUrl, String vcEmail, String vcFoundedYear, String vcPhoneNumber) {
 
         this.vcName = vcName;
         this.vcType = vcType;
@@ -82,8 +80,8 @@ public class VCInfo implements Serializable {
         this.vcFoundedYear = vcFoundedYear;
         this.vcPhoneNumber = vcPhoneNumber;
     }
-    public VCInfo(String vcTargetName, String vcName, String vcType, Location vcLocation, String numberOfDeals,
-                  String numberOfExits,String vcUrl, String vcEmail, String vcFoundedYear, String vcPhoneNumber) {
+    public VCInfo(String vcTargetName, String vcName, String vcType, Location vcLocation, int numberOfDeals,
+                  int numberOfExits,String vcUrl, String vcEmail, String vcFoundedYear, String vcPhoneNumber) {
         this.vcTargetName = vcTargetName;
         this.vcName = vcName;
         this.vcType = vcType;
@@ -135,19 +133,19 @@ public class VCInfo implements Serializable {
         this.vcLocation = vcLocation;
     }
 
-    public String getNumberOfDeals() {
+    public int getNumberOfDeals() {
         return numberOfDeals;
     }
 
-    public void setNumberOfDeals(String numberOfDeals) {
+    public void setNumberOfDeals(int numberOfDeals) {
         this.numberOfDeals = numberOfDeals;
     }
 
-    public String getNumberOfExits() {
+    public int getNumberOfExits() {
         return numberOfExits;
     }
 
-    public void setNumberOfExits(String numberOfExits) {
+    public void setNumberOfExits(int numberOfExits) {
         this.numberOfExits = numberOfExits;
     }
 

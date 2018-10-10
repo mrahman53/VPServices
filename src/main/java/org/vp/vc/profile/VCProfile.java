@@ -79,28 +79,49 @@ public class VCProfile implements Comparable<VCProfile>, Serializable {
         this.fundRaised = fundRaised;
         this.ipoNAcquisitions = ipoNAcquisitions;
     }
-
     public int compareTo(VCProfile vcProfile){
         int numberOfDeals = 0;
         System.out.println(vcProfile.getVcInfo().getVcName());
-        if(vcProfile.getVcInfo().getNumberOfDeals().equals("")){
-             numberOfDeals = 0;
+        if(Integer.toString(vcProfile.getVcInfo().numberOfDeals)=="null"){
+            numberOfDeals = 0;
         }else {
-             numberOfDeals = Integer.parseInt(((VCProfile) vcProfile).getVcInfo().getNumberOfDeals().replace(",",""));
+            numberOfDeals = ((VCProfile) vcProfile).getVcInfo().getNumberOfDeals();
         }
 
         int updateNumberOfDeals = 0;
         try {
-            if (this.vcInfo.numberOfDeals.equals("")) {
+            if (Integer.toString(this.vcInfo.numberOfDeals)=="null") {
                 updateNumberOfDeals = 0;
             } else {
-                updateNumberOfDeals = Integer.parseInt(this.vcInfo.numberOfDeals.replace(",", ""));
+                updateNumberOfDeals = this.vcInfo.numberOfDeals;
             }
         }catch(Exception ex){
             System.out.println(vcProfile.getVcInfo().getVcName() + " throws error on funding history");
         }
         return numberOfDeals - updateNumberOfDeals;
     }
+
+//    public int compareTo(VCProfile vcProfile){
+//        int numberOfDeals = 0;
+//        System.out.println(vcProfile.getVcInfo().getVcName());
+//        if(Integer.toString(vcProfile.getVcInfo().numberOfDeals)=="null"){
+//             numberOfDeals = 0;
+//        }else {
+//             numberOfDeals = ((VCProfile) vcProfile).getVcInfo().getNumberOfDeals();
+//        }
+//
+//        int updateNumberOfDeals = 0;
+//        try {
+//            if (Integer.toString(this.vcInfo.numberOfDeals)=="null") {
+//                updateNumberOfDeals = 0;
+//            } else {
+//                updateNumberOfDeals = this.vcInfo.numberOfDeals;
+//            }
+//        }catch(Exception ex){
+//            System.out.println(vcProfile.getVcInfo().getVcName() + " throws error on funding history");
+//        }
+//        return numberOfDeals - updateNumberOfDeals;
+//    }
     public String get_id() {
         return _id;
     }

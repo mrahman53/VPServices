@@ -114,8 +114,8 @@ public class VCDatabasePotentialUse {
                     String vcLocationState = (String)vcLocationDocument.get("state");
                     String vcLocationCountry = (String)vcLocationDocument.get("country");
                     Location vcLocation = new Location(vcLocationCity, vcLocationState, vcLocationCountry);
-                    String numberOfDeals = (String)vcInfoDocument.get("numberOfDeals");
-                    String numberOfExits = (String)vcInfoDocument.get("numberOfExits");
+                    int numberOfDeals = (int)vcInfoDocument.get("numberOfDeals");
+                    int numberOfExits = (int)vcInfoDocument.get("numberOfExits");
                     String vcUrl = (String)vcInfoDocument.get("vcUrl");
                     String vcEmail = (String)vcInfoDocument.get("vcEmail");
                     String vcFoundedYear = (String)vcInfoDocument.get("vcFoundedYear");
