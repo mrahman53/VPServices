@@ -83,7 +83,7 @@ public class VCProfile implements Comparable<VCProfile>, Serializable {
     public int compareTo(VCProfile vcProfile){
         int numberOfDeals = 0;
         System.out.println(vcProfile.getVcInfo().getVcName());
-        if(vcProfile.getVcInfo().getNumberOfDeals().equals("")){
+        if(vcProfile.getVcInfo().getNumberOfDeals().equals("")||vcProfile.getVcInfo().getNumberOfDeals().equals("null")){
              numberOfDeals = 0;
         }else {
              numberOfDeals = Integer.parseInt(((VCProfile) vcProfile).getVcInfo().getNumberOfDeals().replace(",",""));
@@ -91,7 +91,7 @@ public class VCProfile implements Comparable<VCProfile>, Serializable {
 
         int updateNumberOfDeals = 0;
         try {
-            if (this.vcInfo.numberOfDeals.equals("")) {
+            if (this.vcInfo.numberOfDeals.equals("") || this.vcInfo.numberOfDeals.equals("null")) {
                 updateNumberOfDeals = 0;
             } else {
                 updateNumberOfDeals = Integer.parseInt(this.vcInfo.numberOfDeals.replace(",", ""));

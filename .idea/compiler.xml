@@ -13,8 +13,4 @@
       <module name="vp-restful-services" target="1.8" />
     </bytecodeTargetLevel>
   </component>
-  <component name="JavacSettings">
-    <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
-    <option name="ADDITIONAL_OPTIONS_STRING" value="--add-modules java.xml.bind" />
-  </component>
 </project>
