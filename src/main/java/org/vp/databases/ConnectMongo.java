@@ -49,7 +49,7 @@ public class ConnectMongo {
 
         String userName = "vpcluster0";
         String authDB = "admin";
-        char[] password = new char[]{'v', 'p', 'd', 'a', 't', 'a', 'h', 'o', 's', 't', 'i', 'n', 'g', '0'};
+        char[] password = new char[]{'V', 'p', 'D', 'a', 't', 'a', 'S', 'o', 'u', 'r', 'c', 'e', '0'};
         MongoCredential credential = MongoCredential.createCredential(userName, authDB, password);
 
         MongoClientOptions.Builder optionBuilder = new MongoClientOptions.Builder();
