@@ -81,7 +81,7 @@ public class ConnectMongo {
 
         String userName = "vpcluster0";
         String authDB = "admin";
-        char[] password = new char[]{'V', 'p', 'D', 'a', 't', 'a', 'S', 'o', 'u', 'r', 'c', 'e', '0'};
+        char[] password = new char[]{'V', 'p', 'D', 'a', 't', 'a', 'S', 'o', 'u', 'r', 'c', 'e', '1'};
         MongoCredential credential = MongoCredential.createCredential(userName, authDB, password);
 
         MongoClientOptions.Builder optionBuilder = new MongoClientOptions.Builder();
@@ -200,7 +200,8 @@ public class ConnectMongo {
         mongoClientURI = new MongoClientURI("mongodb://vpcluster0:vpdatahosting0@cluster0-shard-00-00-b2mbe.mongodb.net:27017,cluster0-shard-00-01-b2mbe.mongodb.net:27017,cluster0-shard-00-02-b2mbe.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin");//,cluster0-shard-00-01-b2mbe.mongodb.net:27017,cluster0-shard-00-02-b2mbe.mongodb.net:27017
         MongoClient mongoClient = new MongoClient("mongodb://vpcluster0:vpdatahosting0@cluster0-shard-00-00-b2mbe.mongodb.net:27017,cluster0-shard-00-01-b2mbe.mongodb.net:27017,cluster0-shard-00-02-b2mbe.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin", mongoClientOptions);
 
-        String host = "mongodb://vpcluster0:VpDataSource0@cluster0-shard-00-00-b2mbe.mongodb.net:27017,cluster0-shard-00-01-b2mbe.mongodb.net:27017,cluster0-shard-00-02-b2mbe.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin";
+        String host = "mongodb://vpcluster0:VpDataSource0" +
+                "@cluster0-shard-00-00-b2mbe.mongodb.net:27017,cluster0-shard-00-01-b2mbe.mongodb.net:27017,cluster0-shard-00-02-b2mbe.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin";
         //MongoClient mongoClient = new MongoClient(new ServerAddress(host, 27017), Arrays.asList(credential));
 
         MongoClientURI mongoClientURI = new MongoClientURI(host);
